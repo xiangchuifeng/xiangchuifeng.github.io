@@ -1,8 +1,8 @@
 
 
 {
-  "name": "Chirpy",
-  "short_name": "Chirpy",
+  "name": "Chirpy-blog",
+  "short_name": "Chirpy-blog",
   "description": "A minimal, responsive and feature-rich Jekyll theme for technical writing.",
   "icons": [
     {

@@ -9,7 +9,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en"
+<html lang="zh-CN"
   
 >
 
@@ -37,7 +37,7 @@
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="404: Page not found" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh_CN" />
 <meta name="description" content="frontend, 一个前端开发技术总结的博客." />
 <meta property="og:description" content="frontend, 一个前端开发技术总结的博客." />
 <link rel="canonical" href="/404.html" />
@@ -271,7 +271,7 @@
     <li class="nav-item">
       <a href="/" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>HOME</span>
+        <span>首页</span>
       </a>
     </li>
     <!-- the real tabs -->
@@ -281,7 +281,7 @@
         <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
         
 
-        <span>CATEGORIES</span>
+        <span>分类</span>
       </a>
     </li> <!-- .nav-item -->
     
@@ -290,7 +290,7 @@
         <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
         
 
-        <span>TAGS</span>
+        <span>标签</span>
       </a>
     </li> <!-- .nav-item -->
     
@@ -299,7 +299,7 @@
         <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
         
 
-        <span>ARCHIVES</span>
+        <span>归档</span>
       </a>
     </li> <!-- .nav-item -->
     
@@ -308,7 +308,7 @@
         <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
         
 
-        <span>ABOUT</span>
+        <span>关于</span>
       </a>
     </li> <!-- .nav-item -->
     
@@ -425,7 +425,7 @@
         
           <span>
             <a href="/">
-              Home
+              首页
             </a>
           </span>
 
@@ -457,9 +457,9 @@
     <span id="search-wrapper" class="align-items-center">
       <i class="fas fa-search fa-fw"></i>
       <input class="form-control" id="search-input" type="search"
-        aria-label="search" autocomplete="off" placeholder="Search...">
+        aria-label="search" autocomplete="off" placeholder="搜索...">
     </span>
-    <span id="search-cancel" >Cancel</span>
+    <span id="search-cancel" >取消</span>
   </div>
 
 </div>
@@ -556,7 +556,7 @@
 <!-- return -->
 
 <div class="lead">
-  <p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.</p>
+  <p>抱歉，我们放错了该 URL，或者它指向了不存在的内容。</p>
 </div>
 
 
@@ -817,7 +817,7 @@
 
 
   <div id="access-tags">
-    <div class="panel-heading">Trending Tags</div>
+    <div class="panel-heading">热门标签</div>
     <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
 
     
@@ -1094,7 +1094,7 @@
 
 
   <div id="access-tags">
-    <div class="panel-heading">Trending Tags</div>
+    <div class="panel-heading">热门标签</div>
     <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
 
     
@@ -1143,13 +1143,13 @@
           <a href="https://twitter.com/username">your_full_name</a>.
           
           <span data-toggle="tooltip" data-placement="top"
-            title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span>
+            title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
           
         </p>
       </div>
 
       <div class="footer-right">
-        <p class="mb-0">Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>.
+        <p class="mb-0">本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，采用 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> 主题。
         </p>
       </div>
     </div>
@@ -1174,9 +1174,9 @@
           </button>
         </div>
         <div class="toast-body text-center pt-0">
-          <p class="pl-2 pr-2 mb-3">A new version of content is available.</p>
+          <p class="pl-2 pr-2 mb-3">发现新版本的内容。</p>
           <button type="button" class="btn btn-primary" aria-label="Update">
-            Update
+            更新
           </button>
         </div>
       </div>
@@ -1199,7 +1199,7 @@ SimpleJekyllSearch({
   resultsContainer: document.getElementById('search-results'),
   json: '/assets/js/data/search.json',
   searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
-  noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+  noResultsText: '<p class="mt-5">搜索结果为空</p>',
   templateMiddleware: function(prop, value, template) {
     if (prop === 'categories') {
       if (value === '') {

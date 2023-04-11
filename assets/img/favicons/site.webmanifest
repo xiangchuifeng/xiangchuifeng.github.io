@@ -1,9 +1,9 @@
 
 
 {
-  "name": "Chirpy-blog",
-  "short_name": "Chirpy-blog",
-  "description": "A minimal, responsive and feature-rich Jekyll theme for technical writing.",
+  "name": "想吹风",
+  "short_name": "想吹风",
+  "description": "frontend, 一个前端开发技术总结的博客.",
   "icons": [
     {
       "src": "/assets/img/favicons/android-chrome-192x192.png",

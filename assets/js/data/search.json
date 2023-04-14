@@ -14,7 +14,7 @@
 
     
     "snippet": "现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码&lt;script&gt;var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?edfeb971...",
-    "content": "现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码&lt;script&gt;var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?edfeb9717f4a5e0c482c0779c323d4f7\";  var s = document.getElementsByTagName(\"script\")[0];   s.parentNode.insertBefore(hm, s);})();&lt;/script&gt;需要将这段代码添加到网站全部页面的head标签前建议在header.htm类似的页头模板页面中安装，以达到一处安装，全站皆有的效果。如果代码安装正确，一般20分钟后，可以查看网站分析数据在百度统计的网站中心tab中检查首页代码状态，显示代码安装正确，就成功了代码安装完成后，您可以在“代码安装检查”页面自动检测或手动检测代码安装情况::: tip 提示:::"
+    "content": "现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码&lt;script&gt;var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?edfeb9717f4a5e0c482c0779c323d4f7\";  var s = document.getElementsByTagName(\"script\")[0];   s.parentNode.insertBefore(hm, s);})();&lt;/script&gt;需要将这段代码添加到网站全部页面的head标签前建议在header.htm类似的页头模板页面中安装，以达到一处安装，全站皆有的效果。如果代码安装正确，一般20分钟后，可以查看网站分析数据在百度统计的网站中心tab中检查首页代码状态，显示代码安装正确，就成功了代码安装完成后，您可以在“代码安装检查”页面自动检测或手动检测代码安装情况  春天是美好的季节"
   },
   
   {

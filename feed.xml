@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-04-14T11:56:59+08:00</updated>
+  <updated>2023-04-14T12:00:39+08:00</updated>
   <author>
     <name>王的宇</name>
     <uri>/</uri>
@@ -62,9 +62,7 @@ var _hmt = _hmt || [];
 
 
 需要将这段代码添加到网站全部页面的head标签前
-
-
-如果代码安装正确，一般20分钟后，可以查看网站分析...
+建议在header.htm类似的页头模板页面中安装，以...
     </summary>
   
 

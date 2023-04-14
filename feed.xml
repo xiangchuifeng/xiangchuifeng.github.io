@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-04-14T00:47:33+08:00</updated>
+  <updated>2023-04-14T11:56:59+08:00</updated>
   <author>
     <name>王的宇</name>
     <uri>/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>博客添加百度统计</title>
+    <link href="/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/" rel="alternate" type="text/html" title="博客添加百度统计" />
+    <published>2023-04-14T11:12:00+08:00</published>
+  
+    <updated>2023-04-14T11:12:00+08:00</updated>
+  
+    <id>/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/</id>
+    <content src="/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/" />
+    <author>
+      <name>王的宇</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Tutorial" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码
+
+&amp;lt;script&amp;gt;
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?edfeb9717f4a5e0c482c0779c323d4f7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+&amp;lt;/script&amp;gt;
+
+
+需要将这段代码添加到网站全部页面的head标签前
+
+
+如果代码安装正确，一般20分钟后，可以查看网站分析...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -183,54 +235,6 @@ This post is to enable Page Views on the Chirpy theme based blog that you just b
 Generate the favicon
 
 Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Getting Started</title>
-    <link href="/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
-    <published>2019-08-09T20:55:00+08:00</published>
-  
-    <updated>2019-08-09T20:55:00+08:00</updated>
-  
-    <id>/posts/getting-started/</id>
-    <content src="/posts/getting-started/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Prerequisites
-
-Follow the instructions in the Jekyll Docs to complete the installation of the basic environment. Git also needs to be installed.
-
-Installation
-
-Creating a New Site
-
-There are two ways to create a new repository for this theme:
-
-
-  Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
-  GitHub Fork - Convenient for custom devel...
     </summary>
   
 

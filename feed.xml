@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-04-21T10:58:35+08:00</updated>
+  <updated>2023-04-23T09:57:23+08:00</updated>
   <author>
     <name>王的宇</name>
     <uri>/</uri>
@@ -51,7 +51,7 @@
 
 如上图所示：“@click=”后面自动补全“$event =&amp;gt;”
 
-这时候 操作 ctrl+p ,搜索 setting.json打开 setting.json 文件并修改以下代码即可
+这时候 操作 ctrl+shift+p ,搜索 setting.json打开 setting.json 文件并修改以下代码即可
 
 {
   "editor.inlayHints.enabled":"offUnlessPressed"

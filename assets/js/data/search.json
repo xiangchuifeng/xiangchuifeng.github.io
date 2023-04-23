@@ -13,8 +13,8 @@
 
 
     
-    "snippet": "在 Vue 中的点击事件 @click 后会自动补全一段“$event =&gt;”，这是 VSCode 中setting.json未设置好的缘故，具体情况如下：  如上图所示：“@click=”后面自动补全“$event =&gt;”这时候 操作 ctrl+p ,搜索 setting.json打开 setting.json 文件并修改以下代码即可{  \"editor.inlayHints....",
-    "content": "在 Vue 中的点击事件 @click 后会自动补全一段“$event =&gt;”，这是 VSCode 中setting.json未设置好的缘故，具体情况如下：  如上图所示：“@click=”后面自动补全“$event =&gt;”这时候 操作 ctrl+p ,搜索 setting.json打开 setting.json 文件并修改以下代码即可{  \"editor.inlayHints.enabled\":\"offUnlessPressed\"}若没有该行代码,对应添加进去就可以了"
+    "snippet": "在 Vue 中的点击事件 @click 后会自动补全一段“$event =&gt;”，这是 VSCode 中setting.json未设置好的缘故，具体情况如下：  如上图所示：“@click=”后面自动补全“$event =&gt;”这时候 操作 ctrl+shift+p ,搜索 setting.json打开 setting.json 文件并修改以下代码即可{  \"editor.inlay...",
+    "content": "在 Vue 中的点击事件 @click 后会自动补全一段“$event =&gt;”，这是 VSCode 中setting.json未设置好的缘故，具体情况如下：  如上图所示：“@click=”后面自动补全“$event =&gt;”这时候 操作 ctrl+shift+p ,搜索 setting.json打开 setting.json 文件并修改以下代码即可{  \"editor.inlayHints.enabled\":\"offUnlessPressed\"}若没有该行代码,对应添加进去就可以了"
   },
   
   {

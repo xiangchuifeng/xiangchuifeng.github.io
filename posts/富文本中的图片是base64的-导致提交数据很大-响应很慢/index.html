@@ -748,7 +748,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="666 字">
+  title="663 字">
   <em>3 分钟</em>阅读</span>
 
     </div>
@@ -768,12 +768,18 @@
 <ul>
   <li>测试会提出富文本的内容过长，限制内容，限制输入等等类似的问题： 其实为什么是富文本，就是要写文章用的，这个用户行为，是不建议给限制的。 那么测试会提 内容太长，限制字数的问题，不用想，限制不了的，字数是不准确的，包括了html标签，特殊符号等等,或者会说可以使用获取text content 等各个富文本组件对应的api。但是这个只是限制了text 或者content的长度，无法限制html string 的总长度的。<br />
   —&gt; 所以直白的结论是，这个限制富文本长度，富文本限制输入的问题，90% 不是问题，就是这样的，不用解决！或者限制一个极限最大长度，但这个对文章长度限制，几乎很微弱，不如让接口直接自己做长度安全限制。</li>
-  <li>富文本中，图片的复制粘贴的时候，图片会自动转为 base64格式的。加载在提交的html字符串中，一般来说，图片大小，转为base64之后的字符长度对应的数据大小比例为 pic/base64 ~= 1/1.3 或者可能会更大。一个500kb的图片，转换之后，大概650kb靠上，而且富文本提交时候，这是直接提交到接口上的，这个对项目接口的影响太大了，正常一个接口才上传一些json数据，这个就要上传几百kb,1Mb靠上等等。</li>
+  <li>富文本中，图片的复制粘贴的时候，图片会自动转为 base64格式的。加载在提交的html字符串中，一般来说，图片大小，转为base64之后的字符长度对应的数据大小比例为 pic/base64 ~= 1/1.3 或者可能会更大。一个500kb的图片，转换之后，大概650kb靠上，而且富文本提交时候，这是直接提交到接口上的，这个对项目接口的影响太大了，正常一个接口才上传一些json数据，这个就要上传几百kb,1Mb靠上等等。<br />
+  —&gt; 这样不行的，目前本人的好的解决办法有两个
+    <ul>
+      <li>1.使用 <a href="https://www.npmjs.com/package/html-base64-img-to-upload">html-base64-img-to-upload</a>,在富文本数据提交接口的时候，识别字符串中的含有base64图片的标签，上传到目标oss云服务，或者自己的资源服务器，然后用上传后的地址替换到字符串中</li>
+      <li>
+        <ol>
+          <li>使用一些富文本编辑器的扩展插件，比如vue @vueup/vue-quill 编辑器中的扩展插件 <a href="https://www.npmjs.com/package/quill-image-upload-v2">quill-image-upload-v2</a>,基本可以解决该问题，适当有一些小问题，影响不是很大。</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
 </ul>
-
-<p>—&gt; 这样不行的，目前本人的好的解决办法有两个
-    - 1.使用 <a href="https://www.npmjs.com/package/html-base64-img-to-upload">html-base64-img-to-upload</a>,在富文本数据提交接口的时候，识别字符串中的含有base64图片的标签，上传到目标oss云服务，或者自己的资源服务器，然后用上传后的地址替换到字符串中
-    - 2. 使用一些富文本编辑器的扩展插件，比如vue @vueup/vue-quill 编辑器中的扩展插件 <a href="https://www.npmjs.com/package/quill-image-upload-v2">quill-image-upload-v2</a>,基本可以解决该问题，适当有一些小问题，影响不是很大。</p>
 
 
 </div>

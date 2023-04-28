@@ -584,6 +584,15 @@
       
 
     
+      
+
+      
+      
+      
+
+      
+
+    
 
     <!-- take out classes -->
     
@@ -762,7 +771,8 @@
 <h4 id="富文本编辑器-图片base64太长问题"><span class="mr-2"><span style="color:hsl(270,60%,50%);">富文本编辑器 图片base64太长问题</span></span><a href="#富文本编辑器-图片base64太长问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>前端开发人员在遇到富文本编辑器的时候，经常会被测试 或者产品提各种需求优化或者一些体验的bug ;</p>
 
-<p><a href="100x" class="popup img-link "><img data-src="/assets/img/bug.png =100x" alt="bug" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/bug.png" class="popup img-link "><img data-src="/assets/img/bug.png" alt="bug" style="width:100px;" class="lazyload" data-proofer-ignore></a>
+<!-- ![bug](/assets/img/bug.png =100x)  --></p>
 
 <p>比如：</p>
 <ul>
@@ -775,7 +785,7 @@
         <p>1.使用 <a href="https://www.npmjs.com/package/html-base64-img-to-upload">html-base64-img-to-upload</a>,在富文本数据提交接口的时候，识别字符串中的含有base64图片的标签，上传到目标oss云服务，或者自己的资源服务器，然后用上传后的地址替换到字符串中</p>
       </li>
       <li>
-        <p>3.使用一些富文本编辑器的扩展插件，比如vue @vueup/vue-quill 编辑器中的扩展插件 <a href="https://www.npmjs.com/package/quill-image-upload-v2">quill-image-upload-v2</a>,基本可以解决该问题，适当有一些小问题，影响不是很大。</p>
+        <p>2.使用一些富文本编辑器的扩展插件，比如vue @vueup/vue-quill 编辑器中的扩展插件 <a href="https://www.npmjs.com/package/quill-image-upload-v2">quill-image-upload-v2</a>,基本可以解决该问题，适当有一些小问题，影响不是很大。</p>
       </li>
     </ul>
   </li>

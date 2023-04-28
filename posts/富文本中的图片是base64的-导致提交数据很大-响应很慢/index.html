@@ -771,10 +771,9 @@
 <h4 id="富文本编辑器-图片base64太长问题"><span class="mr-2"><span style="color:hsl(270,60%,50%);">富文本编辑器 图片base64太长问题</span></span><a href="#富文本编辑器-图片base64太长问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>前端开发人员在遇到富文本编辑器的时候，经常会被测试 或者产品提各种需求优化或者一些体验的bug ;</p>
 
-<p><a href="/assets/img/bug.png" class="popup img-link "><img data-src="/assets/img/bug.png" alt="bug" style="width:100px;" class="lazyload" data-proofer-ignore></a>
-<!-- ![bug](/assets/img/bug.png =100x)  --></p>
-
-<p>比如：</p>
+<p><a href="/assets/img/webIcon.png" class="popup img-link "><img data-src="/assets/img/webIcon.png" alt="前端开发" style="width:200px;" class="lazyload" data-proofer-ignore></a>
+<!-- ![bug](/assets/img/bug.png =100x)  -->
+比如：</p>
 <ul>
   <li>测试会提出富文本的内容过长，限制内容，限制输入等等类似的问题： 其实为什么是富文本，就是要写文章用的，这个用户行为，是不建议给限制的。 那么测试会提 内容太长，限制字数的问题，不用想，限制不了的，字数是不准确的，包括了html标签，特殊符号等等,或者会说可以使用获取text content 等各个富文本组件对应的api。但是这个只是限制了text 或者content的长度，无法限制html string 的总长度的。<br />
   —&gt; 所以直白的结论是，这个限制富文本长度，富文本限制输入的问题，90% 不是问题，就是这样的，不用解决！或者限制一个极限最大长度，但这个对文章长度限制，几乎很微弱，不如让接口直接自己做长度安全限制。</li>

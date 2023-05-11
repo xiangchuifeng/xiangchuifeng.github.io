@@ -1198,6 +1198,43 @@ There are two wa...
     </div>
     <!-- .post-review -->
   
+
+
+  <div>
+    <canvas id="canvasTest" width="500" height="300"></canvas>
+      <script>
+          var canvasDom = document.getElementById('canvasTest');
+          var ctx = canvasDom.getContext('2d');
+          
+         /*  ctx.fillStyle = "rgba(200,33,44,0.8)";
+          ctx.fillRect(10,10,300,300); 
+          ctx.stokeRect(10,10,220,220); */
+          ctx.beginPath();
+          ctx.moveTo(20,20);
+          ctx.lineTo(200,50);
+          ctx.lineTo(20,200);
+          ctx.lineWidth="20";
+          ctx.closePath();
+          ctx.stroke();
+          ctx.fillStyle = "rgba(200,33,44,0.8)";
+  
+          ctx.fill();
+          
+          ctx.beginPath();
+          
+          ctx.arc(200,200,50,0,90,false)
+          ctx.closePath();
+          ctx.setLineDash([30,10])
+          ctx.strokeStyle = "rgba(200,33,44,0.8)";
+          ctx.stroke();   
+  
+          ctx.font = "100px";
+          ctx.fillText("nihao",50,100);
+          var url=ctx.toDataURL()
+          alert(url);
+          
+      </script>
+  </div>
 </div>
 <!-- #post-list -->
 

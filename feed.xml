@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-05-11T11:48:55+08:00</updated>
+  <updated>2023-05-11T11:49:34+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>
@@ -17,6 +17,53 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>js设计模式-单体模式</title>
+    <link href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="js设计模式-单体模式" />
+    <published>2023-05-11T11:49:00+08:00</published>
+  
+    <updated>2023-05-11T11:49:00+08:00</updated>
+  
+    <id>/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/</id>
+    <content src="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/" />
+    <author>
+      <name>xiangchuifeng</name>
+    </author>
+
+  
+    
+    <category term="js设计模式理解" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      单体模式
+
+单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。
+
+这种模式在 JavaScript 中非常重要，也许比在其他任何语言中都更重要。在网页上使用全局变量有很大的风险，而用单体对象创建的命名空间则是清除这些全局变量的最佳手段之一，他们可以划分命名空间，清除减少全局的变量数目，
+
+
+  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
+
+
+一个比较基本的单体结构如下
+
+const singleton = {
+  attribute1: tru...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -203,50 +250,6 @@ var _hmt = _hmt || [];
 
 需要将这段代码添加到网站全部页面的head标签前
 建议在header.htm类似的页头模板页面中安装，以...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>gpt4和chatgpt区别在哪里</title>
-    <link href="/posts/gpt4%E5%92%8Cchatgpt%E5%8C%BA%E5%88%AB%E5%9C%A8%E5%93%AA%E9%87%8C/" rel="alternate" type="text/html" title="gpt4和chatgpt区别在哪里" />
-    <published>2023-04-14T00:42:00+08:00</published>
-  
-    <updated>2023-04-14T00:42:00+08:00</updated>
-  
-    <id>/posts/gpt4%E5%92%8Cchatgpt%E5%8C%BA%E5%88%AB%E5%9C%A8%E5%93%AA%E9%87%8C/</id>
-    <content src="/posts/gpt4%E5%92%8Cchatgpt%E5%8C%BA%E5%88%AB%E5%9C%A8%E5%93%AA%E9%87%8C/" />
-    <author>
-      <name>xiangchuifeng</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      gpt4和chatgpt都是由OpenAI公司开发的自然语言处理模型，gpt4和chatgpt的区别在于gpt4可以处理图像内容，可以更正确的理解信息和处理问题，且回复的准确性提高不少；chatgpt不支持图像内容处理，有时还会出现错误或者矛盾的回答。此外，GPT-4支持图文语义化的解读，以及更好的回答组织能力，而chatgpt则带来了AI对语义理解的突破。
-
-区别一：理解和推理能力
-
-gpt4和chatgpt都是基于深度学习的自然语言生成模型，但是它们之间有重要的区别。利用深度学习的方法，gpt4可以进行复杂、抽象问题的思考，可以根据内容推断出例如因果关系、逻辑传递等事物内在的联系，并且可以根据给出的上下文及文意中对目标的转变事实调整应对策略，表现非常智能。而chatgpt的理解和推理能力一般，仅能进行简单的理解和推理。
-
-区别二：知识的丰富程度
-
-gpt4可以根据任意的文本输入生...
     </summary>
   
 

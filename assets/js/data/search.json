@@ -87,7 +87,7 @@
   
   {
     "title": "设计模式",
-    "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/",
+    "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/",
     "categories": "js设计模式理解",
     "tags": "js基础知识",
     "date": "2023-04-11 10:10:00 +0800",
@@ -100,6 +100,23 @@
     
     "snippet": "js设计模式什么是设计模式？先抛开javascript不讲，单单设计模式的定义：设计模式是指在软件设计中，被反复使用的一种代码设计经验。使用设计模式的目的是为了可重用代码，提高代码的可扩展性和可维护性学习设计模式，关键是学习设计思想，不能简单地生搬硬套，也不能为了使用设计模式而过度设计，要合理平衡设计的复杂度和灵活性，并意识到设计模式也并不是万能的。设计模式不单单是适用于javascript...",
     "content": "js设计模式什么是设计模式？先抛开javascript不讲，单单设计模式的定义：设计模式是指在软件设计中，被反复使用的一种代码设计经验。使用设计模式的目的是为了可重用代码，提高代码的可扩展性和可维护性学习设计模式，关键是学习设计思想，不能简单地生搬硬套，也不能为了使用设计模式而过度设计，要合理平衡设计的复杂度和灵活性，并意识到设计模式也并不是万能的。设计模式不单单是适用于javascript语言中的，它是一种理念，思路，解决方法，在其他程序应用中也同样适用。设计模式分类设计模式分为三种类型，共23种。创建型模式：单例模式、抽象工厂模式、建造者模式、工厂模式、原型模式。结构型模式：适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式。行为型模式：模版方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式（Interpreter模式）、状态模式、策略模式、职责链模式(责任链模式)、访问者模式。  后面将一点一点的理解掌握一些实用，常见的设计模式。。"
+  },
+  
+  {
+    "title": "js设计模式-单体模式",
+    "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/",
+    "categories": "js设计模式理解",
+    "tags": "js基础知识",
+    "date": "2023-04-11 10:10:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "单体模式单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。这种模式在 JavaScript 中非常重要，也...",
+    "content": "单体模式单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。这种模式在 JavaScript 中非常重要，也许比在其他任何语言中都更重要。在网页上使用全局变量有很大的风险，而用单体对象创建的命名空间则是清除这些全局变量的最佳手段之一，他们可以划分命名空间，清除减少全局的变量数目，  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。一个比较基本的单体结构如下const singleton = {  attribute1: true,  attribute2: 10,  method1: function () {},  method2: function () {}};在通用的编程开发中单体模式单体是一个只能被实例化一次并且对象访问点 . 访问的类。如果按照这个意义来说，上面这个基本结构就算不上是一个单体，因为它不是一个可以实例化的类。在 js 设计模式中，我们给它的定义，显得更广义一点，上面的也算是单体。即：单体是一个用来划分命名空间并将已批相关方法和属性组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。  对象字面量只是创建单体的一种方法，并非所有的对象字面量都是单体，如果它用来模仿关联数组或者容纳数据的话，那就显然不是单体，但是用过它是组织一些相关的属性和方法，那就可能是单体，这个取决于设计者的意图。划分命名空间命名空间，其实就是上面那个基础例子的 变量名 singleton，/* use a namespace */var myNamespace = {function1:function(id){}// ...}1.内部的成员方法不会被全局命名空间中声明的变量所改写。2.其他程序员在使用此方法时候，通过 namespace.function 去调用，大概能知道它出自哪里，它的作用3.用命名空间把类似的方法组织到一起，有助于增强代码的文档性。  命名空间还可以进一步的分割，网页上的代码，除了你写的代码，还有库代码、广告代码、徽章代码等，这些变量都会出现在全局命名空间中， 为了避免冲突，可以定义一个包含自己所有代码的全局对象/* AllNamespace */var AllNamespace = {};AllNamespace.common = {  // ...};AllNamespace.ErrorCodes = {  // ...};来源于外部代码的与 AllNamespace 变量发生冲突的可能性比较小，如果真有冲突，也会很容易发现。  虽然中小项目开发参与人员不多，变量冲突的可能比较小，养成良好的习惯还是好的，自己也会更清晰。用作特定网页专用代码的包装器单体下面是包装特定网页专用代码的单体的骨架AllNamespace.PageName = {  constant1:true,  constant2:10,  method1:function(){    // ...  },  method2:function(){    // ...  }，  init:function(){    // ...  }}拥有私用成员的单体1.使用下划线表示法AllNamespace.DataParser = {  // private method  _function1:function(str){    // ....  }  // public method  function2:function(str){    // ...  }}由于在单体中使用 this 访问单体成员有一定的风险，因为它的 this 指向可能会不是指向 AllNamespace.DataParser，当然有的 js 库可能都会有作用域矫正，代码开发中可以去使用，去调试，只不过，使用 AllNamespace.DataParser 的方法去访问单体可能会更保险一点。2.使用闭包之前的单体是这样的：MyNamespace.singleton = {};现在我们首先用自执行函数创建一个基本的单体MyNamespace.singleton = (function () {  return {    // ...  };})();有些人喜欢在匿名函数的定义之外再加一个 (),这样会更醒目，更清晰一点。 你可以把公用成员返回到那个返回的字面量对象中。MyNamespace.singleton = (function () {  return {    // ...    attribute1: true,    attribute2: 10,    method1: function () {},    method2: function () {}  };})();不要忘了，我们之所以用闭包创建单体，是因为要拥有私有成员。MyNamespace.singleton = (function () {  // private 自己用的，不是给外界访问的  let privateAttr1 = true;  let privateMethod1 = function () {    // ...  };  return {    // public    // ...    attribute1: true,    attribute2: 10,    method1: function (str) {      // maybe      // let s = privateMethod1(str);      // return s;    },    method2: function () {}  };})();  使用闭包 相比 下划线来说,前者的私用成员是不能被外界访问的，后者只是用下划线特殊标识了一下，还是可以访问到的。惰性实例化单体（懒加载实例化单体）上面讲的那些单体，脚本加载时候就会被创建出来，对于资源密集型，配置开销比较大的单体，我们可以将其实例化推迟到需要适用它的时候这种懒加载的实现方法在于，实例化时候要借助于一个静态方法。适用方法类似于： Singleton.getInstance().methodName() getInstance 方法会检查单体是否已经被实例化，如果还么有，就创建它，返回实例。如果已经实例化过，就返回现有实例。MyNamespace.singleton = (function () {  var uniqueInstance;  function constructor() {    // private 自己用的，不是给外界访问的    let privateAttr1 = true;    let privateMethod1 = function () {      // ...    };    return {      // public      // ...      attribute1: true,      attribute2: 10,      method1: function (str) {        // maybe        // let s = privateMethod1(str);        // return s;      },      method2: function () {}    };  }  return {    getInstance: function () {      if (!uniqueInstance) {        uniqueInstance = constructor();      }      return uniqueInstance;    }  };})();// 使用： MyNamespace.singleton.getInstance().method1();单体的分支MyNamespace.singleton = (function () {  let objA = {    attribute1: true,    attribute2: 10,    method1: function () {},    method2: function () {}  };  let objB = {    attribute1: true,    attribute2: 10,    method1: function () {},    method2: function () {}  };  return someCondition ? objA : objB;})();如上就是单体的两个分支。我们可以根据各种场景创建多个分支。比如我们原生的 ajax请求封装时候，就需要兼容不同版本的api.  其实我们日常工作中，前端开发代码，我们已经在不知不觉中可能使用了单体模式，而理论是一种总结，可以让我们更清晰的了解它，掌握它。单体是一种有属性有方法的一个组织，用来模仿关联数组或者容纳数据的对象不是单体。  后面将一点一点的理解掌握一些实用，常见的设计模式。。"
   },
   
   {

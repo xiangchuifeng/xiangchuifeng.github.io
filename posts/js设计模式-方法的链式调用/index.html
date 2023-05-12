@@ -51,25 +51,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="js设计模式-单体模式" />
+<meta property="og:title" content="js设计模式-方法的链式调用" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="单体模式" />
-<meta property="og:description" content="单体模式" />
-<link rel="canonical" href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/" />
-<meta property="og:url" content="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/" />
+<meta name="description" content="链式调用" />
+<meta property="og:description" content="链式调用" />
+<link rel="canonical" href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/" />
+<meta property="og:url" content="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/" />
 <meta property="og:site_name" content="王的宇" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-05-11T11:49:00+08:00" />
+<meta property="article:published_time" content="2023-05-12T17:02:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="js设计模式-单体模式" />
+<meta property="twitter:title" content="js设计模式-方法的链式调用" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-11T11:49:00+08:00","datePublished":"2023-05-11T11:49:00+08:00","description":"单体模式","headline":"js设计模式-单体模式","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-12T17:02:00+08:00","datePublished":"2023-05-12T17:02:00+08:00","description":"链式调用","headline":"js设计模式-方法的链式调用","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>js设计模式-单体模式 | 王的宇
+  <title>js设计模式-方法的链式调用 | 王的宇
   </title>
 
   <!--
@@ -460,7 +460,7 @@
         
 
           
-            <span>js设计模式-单体模式</span>
+            <span>js设计模式-方法的链式调用</span>
           
 
         
@@ -576,78 +576,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -691,7 +619,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>js设计模式-单体模式</h1>
+<h1 data-toc-skip>js设计模式-方法的链式调用</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -707,10 +635,10 @@
 
 
 <em class=""
-    data-ts="1683776940"
+    data-ts="1683882120"
     data-df="YYYY/MM/DD"
     data-toggle="tooltip" data-placement="bottom">
-  2023/05/11
+  2023/05/12
 </em>
 
     </span>
@@ -758,8 +686,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2012 字">
-  <em>11 分钟</em>阅读</span>
+  title="454 字">
+  <em>2 分钟</em>阅读</span>
 
     </div>
 
@@ -768,18 +696,14 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h3 id="单体模式"><span class="mr-2">单体模式</span><a href="#单体模式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+  <h3 id="链式调用"><span class="mr-2">链式调用</span><a href="#链式调用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。</p>
+<p>链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。</p>
 
-<p>这种模式在 JavaScript 中非常重要，也许比在其他任何语言中都更重要。在网页上使用全局变量有很大的风险，而用单体对象创建的命名空间则是清除这些全局变量的最佳手段之一，他们可以划分命名空间，清除减少全局的变量数目，</p>
-
-<blockquote class="prompt-tip">
-  <p>用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。</p>
+<blockquote>
+  <p class="prompt-tip">用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。</p>
 </blockquote>
 
-<h3 id="一个比较基本的单体结构如下"><span class="mr-2">一个比较基本的单体结构如下</span><a href="#一个比较基本的单体结构如下" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -787,113 +711,14 @@
 3
 4
 5
-6
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">singleton</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">attribute1</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">attribute2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-  <span class="na">method1</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{},</span>
-  <span class="na">method2</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{}</span>
-<span class="p">};</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>在通用的编程开发中单体模式单体是一个只能被实例化一次并且对象访问点 . 访问的类。如果按照这个意义来说，上面这个基本结构就算不上是一个单体，因为它不是一个可以实例化的类。</p>
-
-<p>在 js 设计模式中，我们给它的定义，显得更广义一点，上面的也算是单体。即：单体是一个用来划分命名空间并将已批相关方法和属性组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。</p>
-
-<blockquote class="prompt-tip">
-  <p>对象字面量只是创建单体的一种方法，并非所有的对象字面量都是单体，如果它用来模仿关联数组或者容纳数据的话，那就显然不是单体，但是用过它是组织一些相关的属性和方法，那就可能是单体，这个取决于设计者的意图。</p>
-</blockquote>
-
-<h3 id="划分命名空间"><span class="mr-2">划分命名空间</span><a href="#划分命名空间" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>命名空间，其实就是上面那个基础例子的 变量名 singleton，</p>
-
-<div class="language-js highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="cm">/* use a namespace */</span>
-<span class="kd">var</span> <span class="nx">myNamespace</span> <span class="o">=</span> <span class="p">{</span>
-<span class="na">function1</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
-
-<span class="p">}</span>
-<span class="c1">// ...</span>
-
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>1.内部的成员方法不会被全局命名空间中声明的变量所改写。<br />
-2.其他程序员在使用此方法时候，通过 namespace.function 去调用，大概能知道它出自哪里，它的作用<br />
-3.用命名空间把类似的方法组织到一起，有助于增强代码的文档性。</p>
-
-<ul>
-  <li>命名空间还可以进一步的分割，网页上的代码，除了你写的代码，还有库代码、广告代码、徽章代码等，这些变量都会出现在全局命名空间中， 为了避免冲突，可以定义一个包含自己所有代码的全局对象</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="cm">/* AllNamespace */</span>
-<span class="kd">var</span> <span class="nx">AllNamespace</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="nx">AllNamespace</span><span class="p">.</span><span class="nx">common</span> <span class="o">=</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// 大概这个意思</span>
+<span class="kd">function</span> <span class="nf">b</span><span class="p">(</span><span class="nx">dataIn</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="p">};</span>
-<span class="nx">AllNamespace</span><span class="p">.</span><span class="nx">ErrorCodes</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="c1">// ...</span>
-<span class="p">};</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>来源于外部代码的与 AllNamespace 变量发生冲突的可能性比较小，如果真有冲突，也会很容易发现。</p>
-<blockquote class="prompt-tip">
-  <p>虽然中小项目开发参与人员不多，变量冲突的可能比较小，养成良好的习惯还是好的，自己也会更清晰。</p>
-</blockquote>
-
-<h3 id="用作特定网页专用代码的包装器单体"><span class="mr-2">用作特定网页专用代码的包装器单体</span><a href="#用作特定网页专用代码的包装器单体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<h4 id="下面是包装特定网页专用代码的单体的骨架"><span class="mr-2">下面是包装特定网页专用代码的单体的骨架</span><a href="#下面是包装特定网页专用代码的单体的骨架" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<div class="language-js highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="nx">AllNamespace</span><span class="p">.</span><span class="nx">PageName</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">constant1</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="na">constant2</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
-  <span class="na">method1</span><span class="p">:</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="c1">// ...</span>
-  <span class="p">},</span>
-  <span class="na">method2</span><span class="p">:</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="c1">// ...</span>
-  <span class="p">}</span><span class="err">，</span>
-  <span class="na">init</span><span class="p">:</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="c1">// ...</span>
-  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">dataIn</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="拥有私用成员的单体"><span class="mr-2">拥有私用成员的单体</span><a href="#拥有私用成员的单体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>1.使用下划线表示法</p>
+<p>链式调用可以让代码的可读性更好，代码结构更清晰，易读， 减少了代码量。如下所示对比：</p>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -905,69 +730,30 @@
 6
 7
 8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="nx">AllNamespace</span><span class="p">.</span><span class="nx">DataParser</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="c1">// private method</span>
-  <span class="na">_function1</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
-    <span class="c1">// ....</span>
-  <span class="p">}</span>
+</pre></td><td class="rouge-code"><pre>
+  <span class="nx">baby</span><span class="p">.</span><span class="nf">read</span><span class="p">();</span>
+  <span class="nx">baby</span><span class="p">.</span><span class="nf">write</span><span class="p">();</span>
+  <span class="nx">baby</span><span class="p">.</span><span class="nf">eatFood</span><span class="p">();</span>
+  <span class="nx">baby</span><span class="p">.</span><span class="nf">sleep</span><span class="p">();</span>
 
-  <span class="c1">// public method</span>
-  <span class="nl">function2</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
-    <span class="c1">// ...</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+  <span class="nx">baby</span><span class="p">.</span><span class="nf">read</span><span class="p">().</span><span class="nf">write</span><span class="p">().</span><span class="nf">eatFood</span><span class="p">().</span><span class="nf">sleep</span><span class="p">()......</span>
+
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>由于在单体中使用 this 访问单体成员有一定的风险，因为它的 this 指向可能会不是指向 AllNamespace.DataParser，当然有的 js 库可能都会有作用域矫正，代码开发中可以去使用，去调试，只不过，使用 AllNamespace.DataParser 的方法去访问单体可能会更保险一点。</p>
-
-<p>2.使用闭包
-之前的单体是这样的：MyNamespace.singleton = {};</p>
-
-<p>现在我们首先用自执行函数创建一个基本的单体</p>
+<p>a.b().c()
+比如我们以前用的 jquery.js,就是用的链式调用。</p>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="nx">MyNamespace</span><span class="p">.</span><span class="nx">singleton</span> <span class="o">=</span> <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-  <span class="p">};</span>
-<span class="p">})();</span>
+</pre></td><td class="rouge-code"><pre><span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">).</span><span class="nf">mouseover</span><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nf">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>有些人喜欢在匿名函数的定义之外再加一个 (),这样会更醒目，更清晰一点。<br />
- 你可以把公用成员返回到那个返回的字面量对象中。</p>
-
-<div class="language-js highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="nx">MyNamespace</span><span class="p">.</span><span class="nx">singleton</span> <span class="o">=</span> <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-    <span class="na">attribute1</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="na">attribute2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="na">method1</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{},</span>
-    <span class="na">method2</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{}</span>
-  <span class="p">};</span>
-<span class="p">})();</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>不要忘了，我们之所以用闭包创建单体，是因为要拥有私有成员。</p>
+<p>jquery 中的 $(‘element’)实现代码如下：</p>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -990,39 +776,28 @@
 17
 18
 19
-20
-</pre></td><td class="rouge-code"><pre><span class="nx">MyNamespace</span><span class="p">.</span><span class="nx">singleton</span> <span class="o">=</span> <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// private 自己用的，不是给外界访问的</span>
-  <span class="kd">let</span> <span class="nx">privateAttr1</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">privateMethod1</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
-  <span class="p">};</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">$</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nf">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span><span class="o">=</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nf">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">element</span><span class="o">===</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">){</span>
+      <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nf">if</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">lenth</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+      <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">elements</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">elements</span><span class="p">;</span>
+<span class="p">}</span>
 
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="c1">// public</span>
-    <span class="c1">// ...</span>
-    <span class="na">attribute1</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="na">attribute2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="na">method1</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// maybe</span>
-      <span class="c1">// let s = privateMethod1(str);</span>
-      <span class="c1">// return s;</span>
-    <span class="p">},</span>
-    <span class="na">method2</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{}</span>
-  <span class="p">};</span>
-<span class="p">})();</span>
+<span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">element</span><span class="dl">'</span><span class="p">).</span><span class="nx">each</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="c1">// xxxx</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<blockquote class="prompt-tip">
-  <p>使用闭包 相比 下划线来说,前者的私用成员是不能被外界访问的，后者只是用下划线特殊标识了一下，还是可以访问到的。</p>
-</blockquote>
-
-<h3 id="惰性实例化单体懒加载实例化单体"><span class="mr-2">惰性实例化单体（懒加载实例化单体）</span><a href="#惰性实例化单体懒加载实例化单体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>上面讲的那些单体，脚本加载时候就会被创建出来，对于资源密集型，配置开销比较大的单体，我们可以将其实例化推迟到需要适用它的时候
-这种懒加载的实现方法在于，实例化时候要借助于一个静态方法。适用方法类似于：<br />
- Singleton.getInstance().methodName()<br />
- getInstance 方法会检查单体是否已经被实例化，如果还么有，就创建它，返回实例。如果已经实例化过，就返回现有实例。</p>
+<h4 id="那么我们-jquery-中的-方法showeach-等方法也是在其构造器内实现的"><span class="mr-2">那么，我们 jquery 中的 方法，show,each 等方法，也是在其构造器内实现的</span><a href="#那么我们-jquery-中的-方法showeach-等方法也是在其构造器内实现的" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -1060,88 +835,64 @@
 32
 33
 34
-</pre></td><td class="rouge-code"><pre><span class="nx">MyNamespace</span><span class="p">.</span><span class="nx">singleton</span> <span class="o">=</span> <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">uniqueInstance</span><span class="p">;</span>
-  <span class="kd">function</span> <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// private 自己用的，不是给外界访问的</span>
-    <span class="kd">let</span> <span class="nx">privateAttr1</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">privateMethod1</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-      <span class="c1">// ...</span>
-    <span class="p">};</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="c1">// public</span>
-      <span class="c1">// ...</span>
-      <span class="na">attribute1</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="na">attribute2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="na">method1</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// maybe</span>
-        <span class="c1">// let s = privateMethod1(str);</span>
-        <span class="c1">// return s;</span>
-      <span class="p">},</span>
-      <span class="na">method2</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{}</span>
-    <span class="p">};</span>
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">function</span> <span class="nf">_$</span><span class="p">(</span><span class="nx">els</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nf">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span><span class="o">=</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+      <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nf">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">element</span><span class="o">===</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">){</span>
+        <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="nf">if</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">lenth</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">elements</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">elements</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">getInstance</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-      <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nx">uniqueInstance</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">uniqueInstance</span> <span class="o">=</span> <span class="nf">constructor</span><span class="p">();</span>
+  <span class="nx">_$</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">show</span><span class="p">:</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">vat</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nf">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
+      <span class="nx">that</span><span class="p">.</span><span class="nf">setStyle</span><span class="p">(</span><span class="dl">'</span><span class="s1">display</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">block</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">})</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="na">each</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">){</span>
+      <span class="nf">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">fn</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
       <span class="p">}</span>
-      <span class="k">return</span> <span class="nx">uniqueInstance</span><span class="p">;</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="na">setStyle</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">prop</span><span class="p">,</span><span class="nx">val</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nf">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
+      <span class="p">})</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
     <span class="p">}</span>
-  <span class="p">};</span>
-<span class="p">})();</span>
+  <span class="p">}</span>
 
-<span class="c1">// 使用： MyNamespace.singleton.getInstance().method1();</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">$</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">_</span><span class="nf">$</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+  <span class="p">}</span>
+
+<span class="p">})()</span>
+
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="单体的分支"><span class="mr-2">单体的分支</span><a href="#单体的分支" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<div class="language-js highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre><span class="nx">MyNamespace</span><span class="p">.</span><span class="nx">singleton</span> <span class="o">=</span> <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">objA</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">attribute1</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="na">attribute2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="na">method1</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{},</span>
-    <span class="na">method2</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{}</span>
-  <span class="p">};</span>
-  <span class="kd">let</span> <span class="nx">objB</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">attribute1</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="na">attribute2</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="na">method1</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{},</span>
-    <span class="na">method2</span><span class="p">:</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{}</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="nx">someCondition</span> <span class="p">?</span> <span class="nx">objA</span> <span class="p">:</span> <span class="nx">objB</span><span class="p">;</span>
-<span class="p">})();</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>如上就是单体的两个分支。我们可以根据各种场景创建多个分支。比如我们原生的 ajax请求封装时候，就需要兼容不同版本的api.</p>
-
-<blockquote class="prompt-tip">
-  <p>其实我们日常工作中，前端开发代码，我们已经在不知不觉中可能使用了单体模式，而理论是一种总结，可以让我们更清晰的了解它，掌握它。单体是一种有属性有方法的一个组织，用来模仿关联数组或者容纳数据的对象不是单体。</p>
-</blockquote>
-
-<blockquote class="prompt-tip">
-  <p>后面将一点一点的理解掌握一些实用，常见的设计模式。。</p>
-</blockquote>
+<p>以上就是链式调用方法。
+未来我们接着开始理解设计模式中的 工厂模式</p>
 
 </div>
 
@@ -1187,19 +938,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&url=%2Fposts%2Fjs%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F-%25E5%258D%2595%25E4%25BD%2593%25E6%25A8%25A1%25E5%25BC%258F%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&url=%2Fposts%2Fjs%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F-%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E9%2593%25BE%25E5%25BC%258F%25E8%25B0%2583%25E7%2594%25A8%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&u=%2Fposts%2Fjs%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F-%25E5%258D%2595%25E4%25BD%2593%25E6%25A8%25A1%25E5%25BC%258F%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&u=%2Fposts%2Fjs%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F-%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E9%2593%25BE%25E5%25BC%258F%25E8%25B0%2583%25E7%2594%25A8%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=%2Fposts%2Fjs%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F-%25E5%258D%2595%25E4%25BD%2593%25E6%25A8%25A1%25E5%25BC%258F%2F&text=js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=%2Fposts%2Fjs%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F-%25E6%2596%25B9%25E6%25B3%2595%25E7%259A%2584%25E9%2593%25BE%25E5%25BC%258F%25E8%25B0%2583%25E7%2594%25A8%2F&text=js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1734,20 +1485,20 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1917,11 +1668,11 @@
   
     
     
-      
-      
-    
   
     
+    
+      
+      
     
   
     
@@ -1987,7 +1738,7 @@
       
       
       <div class="card">
-        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1999,13 +1750,13 @@
 
 
 <em class="small"
-    data-ts="1683882120"
+    data-ts="1683776940"
     data-df="YYYY/MM/DD"
     >
-  2023/05/12
+  2023/05/11
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-方法的链式调用</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-单体模式</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2014,24 +1765,11 @@
 
 
 
-                链式调用
+                单体模式
 
-链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。
+单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。
 
-
-  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
-
-
-1
-2
-3
-4
-5
-// 大概这个意思
-function b(dataIn) {
-  // ...
-  return dataIn;
-}...
+这种模式在 JavaScript 中非常...
               </p>
             </div>
           </div>
@@ -2095,17 +1833,17 @@ function b(dataIn) {
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/%E5%AF%8C%E6%96%87%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%AFbase64%E7%9A%84-%E5%AF%BC%E8%87%B4%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%BE%88%E5%A4%A7-%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2/" class="btn btn-outline-primary"
+  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/" class="btn btn-outline-primary"
     prompt="上一篇">
-    <p>富文本中的图片是base64的，导致提交数据很大，接口响应很慢</p>
+    <p>js设计模式-单体模式</p>
   </a>
   
 
   
-  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/" class="btn btn-outline-primary"
+  <div class="btn btn-outline-primary disabled"
     prompt="下一篇">
-    <p>js设计模式-方法的链式调用</p>
-  </a>
+    <p>-</p>
+  </div>
   
 
 </div>

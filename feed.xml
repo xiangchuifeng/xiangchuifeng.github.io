@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-05-11T17:54:48+08:00</updated>
+  <updated>2023-05-12T17:49:23+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>
@@ -17,6 +17,70 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>js设计模式-方法的链式调用</title>
+    <link href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/" rel="alternate" type="text/html" title="js设计模式-方法的链式调用" />
+    <published>2023-05-12T17:02:00+08:00</published>
+  
+    <updated>2023-05-12T17:02:00+08:00</updated>
+  
+    <id>/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/</id>
+    <content src="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/" />
+    <author>
+      <name>xiangchuifeng</name>
+    </author>
+
+  
+    
+    <category term="js设计模式理解" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      链式调用
+
+链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。
+
+
+  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
+
+
+// 大概这个意思
+function b(dataIn) {
+  // ...
+  return dataIn;
+}
+
+
+链式调用可以让代码的可读性更好，代码结构更清晰，易读， 减少了代码量。如下所示对比：
+
+
+  baby.read();
+  baby.write();
+  baby.eatFood();
+  baby.sleep();
+
+  baby.read().write().eatFood().sleep()......
+
+
+
+a.b().c()
+比如我们以前用的 jquery.js,就是用的链式调用。
+
+$("div"...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -200,56 +264,6 @@ const singleton = {
 
 
   那个，那个。。。，后来，7天假太长了，还是休5天吧，五一毕竟比不上国庆 ，所以法定时长由3天改回到了1天，再加上一个周六日，两天调...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>博客添加百度统计</title>
-    <link href="/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/" rel="alternate" type="text/html" title="博客添加百度统计" />
-    <published>2023-04-14T11:12:00+08:00</published>
-  
-    <updated>2023-04-14T11:12:00+08:00</updated>
-  
-    <id>/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/</id>
-    <content src="/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/" />
-    <author>
-      <name>xiangchuifeng</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码
-
-&amp;lt;script&amp;gt;
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?edfeb9717f4a5e0c482c0779c323d4f7";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-&amp;lt;/script&amp;gt;
-
-
-需要将这段代码添加到网站全部页面的head标签前
-建议在header.htm类似的页头模板页面中安装，以...
     </summary>
   
 

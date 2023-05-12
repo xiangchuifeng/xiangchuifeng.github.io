@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "js设计模式-方法的链式调用",
+    "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/",
+    "categories": "js设计模式理解",
+    "tags": "js基础知识",
+    "date": "2023-05-12 17:02:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "链式调用链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。// 大概这个意思function b(dataIn) {  // ...  return dataIn;}链式调用可以让代码的可读性更好，代码结构更清...",
+    "content": "链式调用链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。// 大概这个意思function b(dataIn) {  // ...  return dataIn;}链式调用可以让代码的可读性更好，代码结构更清晰，易读， 减少了代码量。如下所示对比：  baby.read();  baby.write();  baby.eatFood();  baby.sleep();  baby.read().write().eatFood().sleep()......a.b().c()比如我们以前用的 jquery.js,就是用的链式调用。$(\"div\").mouseover(function () {  $(this).css(\"color\", \"red\");});jquery 中的 $(‘element’)实现代码如下：function $(){  var elements = [];  for(var i=0;len=arguments.length;i&lt;len;++i){    var element = arguments[i];    if(typeof element==='string'){      element = document.getElementById(element)    }    if(arguments.lenth==1){      return element;    }    elements.push(element);  }  return elements;}$('element').each = function(){  // xxxx  return this;}那么，我们 jquery 中的 方法，show,each 等方法，也是在其构造器内实现的(function(){  function _$(els){    var elements = [];    for(var i=0;len=arguments.length;i&lt;len;++i){      var element = arguments[i];      if(typeof element==='string'){        element = document.getElementById(element)      }      if(arguments.lenth==1){        return element;      }      elements.push(element);    }    return elements;  }  _$.prototype = {    show:function(){      vat that = this;      this.each(function(el){      that.setStyle('display','block')      })      return this;    },    each:function(fn){      for(var i=0;len = this.elements.length;i&lt;len;i++){        fn.call(this,this.elements[i]);      }      return this;    },    setStyle:function(prop,val){      this.each(function(el){        el.style[prop] = val;      })      return this;    }  }  window.$ = function(){    return new _$(arguments)  }})()以上就是链式调用方法。未来我们接着开始理解设计模式中的 工厂模式"
+  },
+  
+  {
     "title": "js设计模式-单体模式",
     "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/",
     "categories": "js设计模式理解",

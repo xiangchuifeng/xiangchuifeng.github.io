@@ -39,6 +39,10 @@
   
 
   
+    
+
+    
+  
 
   
 
@@ -47,24 +51,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="博客" />
+<meta property="og:title" content="naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="frontend, 一个前端开发技术总结的博客." />
-<meta property="og:description" content="frontend, 一个前端开发技术总结的博客." />
-<link rel="canonical" href="/tags/%E5%8D%9A%E5%AE%A2/" />
-<meta property="og:url" content="/tags/%E5%8D%9A%E5%AE%A2/" />
+<meta name="description" content="naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；" />
+<meta property="og:description" content="naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；" />
+<link rel="canonical" href="/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/" />
+<meta property="og:url" content="/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/" />
 <meta property="og:site_name" content="王的宇" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-22T10:26:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="博客" />
+<meta property="twitter:title" content="naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"frontend, 一个前端开发技术总结的博客.","headline":"博客","url":"/tags/%E5%8D%9A%E5%AE%A2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-22T10:26:00+08:00","datePublished":"2023-05-22T10:26:00+08:00","description":"naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；","headline":"naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/"},"url":"/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>博客 | 王的宇
+  <title>naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决 | 王的宇
   </title>
 
   <!--
@@ -116,7 +121,12 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css">
+  
 
+  
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
@@ -444,19 +454,13 @@
       
 
         
-          <span>
-            <a href="/tags">
-              标签
-            </a>
-          </span>
-        
 
       
 
         
 
           
-            <span>博客</span>
+            <span>naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决</span>
           
 
         
@@ -470,7 +474,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      标签
+      文章
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -504,17 +508,100 @@
     
       
       
-        <div id="page-tag">
-  <h1 class="pl-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    博客
-    <span class="lead text-muted pl-2">1</span>
-  </h1>
-  <ul class="post-content pl-0">
+        <!--
+  Refactor the HTML structure.
+-->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+<!-- images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
     
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/">博客添加百度统计</a>
-      <span class="dash flex-grow-1"></span>
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+<h1 data-toc-skip>naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决</h1>
+
+<div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      发表于
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -524,17 +611,210 @@
 
 
 
-<span class="text-muted small"
-    data-ts="1681441920"
+<em class=""
+    data-ts="1684722360"
     data-df="YYYY/MM/DD"
-    >
-  2023/04/14
-</span>
+    data-toggle="tooltip" data-placement="bottom">
+  2023/05/22
+</em>
 
-    </li>
+    </span>
+
+    <!-- lastmod date -->
     
-  </ul>
+
+  
+
+  <div class="d-flex justify-content-between">
+    <!-- author(s) -->
+    <span>
+      
+
+      作者
+
+      <em>
+      
+        <a href="https://twitter.com/username">xiangchuifeng</a>
+      
+      </em>
+    </span>
+
+    <div>
+      <!-- page views -->
+      
+
+      <!-- read time -->
+      <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="413 字">
+  <em>2 分钟</em>阅读</span>
+
+    </div>
+
+  </div> <!-- .d-flex -->
+
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <h3 id="naive-ui中anchor点击侧边栏导航锚点跳转却是新页面的问题"><span class="mr-2">naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；</span><a href="#naive-ui中anchor点击侧边栏导航锚点跳转却是新页面的问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>最近开发过程用 有使用锚点定位跳转的功能，于是使用了naive-ui的Anchor组件，组件demo代码 套用到项目上的时候，右侧内容滚动时候，侧边栏的锚点会<br />
+自动高亮，这个是没有问题的，然后问题来了，点击左边锚点时候，右边的页面不会定向到对应位置，而是跳转了新页面，因为vue-router路由模式把锚点定位<br />
+理解成了新页面的跳转。</p>
+
+<p>再回头看了一下 naive-ui组件说明，它是提供的有组件方法的，scrollTo,但是点击事件直接是默认的组件里面的a链接跳转，跳珠到了新页面。
+终于在思考了片刻之后，想到组件上使用点击事件加vue指令的修饰符应该是可以解决的。</p>
+
+<p>于是最终解决方案如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="o">&lt;</span><span class="nx">n</span><span class="o">-</span><span class="nx">anchor</span>
+  <span class="nx">ref</span><span class="o">=</span><span class="dl">"</span><span class="s2">anchorRef</span><span class="dl">"</span>
+  <span class="p">:</span><span class="nx">show</span><span class="o">-</span><span class="nx">rail</span><span class="o">=</span><span class="dl">"</span><span class="s2">showRail</span><span class="dl">"</span>
+  <span class="p">:</span><span class="nx">show</span><span class="o">-</span><span class="nx">background</span><span class="o">=</span><span class="dl">"</span><span class="s2">showBackground</span><span class="dl">"</span>
+  <span class="p">:</span><span class="nx">bound</span><span class="o">=</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span>
+  <span class="p">:</span><span class="nx">offset</span><span class="o">-</span><span class="nx">target</span><span class="o">=</span><span class="dl">"</span><span class="s2">'.inner_page_bg.portrait .right'</span><span class="dl">"</span>
+<span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">n</span><span class="o">-</span><span class="nx">anchor</span><span class="o">-</span><span class="nx">link</span>
+    <span class="nx">v</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">(item, i) in anchorList</span><span class="dl">"</span>
+    <span class="p">:</span><span class="nx">title</span><span class="o">=</span><span class="dl">"</span><span class="s2">item.split('-')[0]</span><span class="dl">"</span>
+    <span class="p">:</span><span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">'#d' + (i + 1)</span><span class="dl">"</span>
+    <span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">item.split('-')[1] == 'later' ? 'disable_anchor' : ''</span><span class="dl">"</span>
+    <span class="p">@</span><span class="nd">click</span><span class="p">.</span><span class="nx">capture</span><span class="p">.</span><span class="nx">prevent</span><span class="o">=</span><span class="dl">"</span><span class="s2">item.split('-')[1] == 'later' ? scrollTo(i + 1) : ''</span><span class="dl">"</span>
+  <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/n-anchor</span><span class="err">&gt;
+</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>使用修饰符 capture设置捕获模式，prevent禁止捕获，最终点击事件止步于组件的外壳上，然后传参，使用scrollTo 滚动调位到对应的锚点
+@click.capture.prevent=”item.split(‘-‘)[1] == ‘later’ ? scrollTo(i + 1) : ‘’”</p>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre> <span class="kd">const</span> <span class="nx">anchorRef</span> <span class="o">=</span> <span class="nf">ref</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">scrollTo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">anchorRef</span><span class="p">.</span><span class="nx">value</span><span class="p">?.</span><span class="nf">scrollTo</span><span class="p">(</span><span class="dl">"</span><span class="s2">#d</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span>
+  <span class="p">};</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+<p>那么这个问题就解决了。</p>
+
+
 </div>
+
+<div class="post-tail-wrapper text-muted">
+
+  <!-- categories -->
+  
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
+    
+      <a href='/categories/ui%E7%BB%84%E4%BB%B6%E5%BA%93%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/'>ui组件库问题解决</a>,
+      <a href='/categories/naive-ui/'>naive-ui</a>
+  </div>
+  
+
+  <!-- tags -->
+  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/ui%E7%BB%84%E4%BB%B6%E5%BA%93%E9%97%AE%E9%A2%98/"
+          class="post-tag no-text-decoration" >ui组件库问题</a>
+      
+  </div>
+  
+
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
+
+      
+    </div>
+
+    <!--
+ Post sharing snippet
+-->
+
+<div class="share-wrapper">
+  <span class="share-label text-muted mr-1">分享</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+      
+        <a href="https://twitter.com/intent/tweet?text=naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&url=%2Fposts%2Fnaive-ui%25E4%25B8%25ADAnchor%25E7%2582%25B9%25E5%2587%25BB%25E9%2594%259A%25E7%2582%25B9%25E6%2597%25B6%25E5%2580%2599%25E5%258D%25B4%25E8%25B7%25B3%25E8%25BD%25AC%25E6%2596%25B0%25E9%25A1%25B5%25E9%259D%25A2%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%2F" data-toggle="tooltip" data-placement="top"
+          title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fa-fw fab fa-twitter"></i>
+        </a>
+    
+      
+        <a href="https://www.facebook.com/sharer/sharer.php?title=naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&u=%2Fposts%2Fnaive-ui%25E4%25B8%25ADAnchor%25E7%2582%25B9%25E5%2587%25BB%25E9%2594%259A%25E7%2582%25B9%25E6%2597%25B6%25E5%2580%2599%25E5%258D%25B4%25E8%25B7%25B3%25E8%25BD%25AC%25E6%2596%25B0%25E9%25A1%25B5%25E9%259D%25A2%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%2F" data-toggle="tooltip" data-placement="top"
+          title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-fw fab fa-facebook-square"></i>
+        </a>
+    
+      
+        <a href="https://t.me/share/url?url=%2Fposts%2Fnaive-ui%25E4%25B8%25ADAnchor%25E7%2582%25B9%25E5%2587%25BB%25E9%2594%259A%25E7%2582%25B9%25E6%2597%25B6%25E5%2580%2599%25E5%258D%25B4%25E8%25B7%25B3%25E8%25BD%25AC%25E6%2596%25B0%25E9%25A1%25B5%25E9%259D%25A2%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%2F&text=naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87" data-toggle="tooltip" data-placement="top"
+          title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-fw fab fa-telegram"></i>
+        </a>
+    
+
+    <i id="copy-link" class="fa-fw fas fa-link small"
+        data-toggle="tooltip" data-placement="top"
+        title="分享链接"
+        data-title-succeed="链接已复制！">
+    </i>
+
+  </span>
+</div>
+
+
+  </div><!-- .post-tail-bottom -->
+
+</div><!-- div.post-tail-wrapper -->
+
 
       
     
@@ -1007,11 +1287,460 @@
     </div>
 
     
+      
+      
+
+
+
+  <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+    <div class="panel-heading pl-3 pt-2 mb-2">文章内容</div>
+    <nav id="toc"></nav>
+  </div>
+
+  <!-- toc.js will be loaded at medium priority -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script>
+
+
+    
   </div>
 
 </div>
 
 <!-- tail -->
+
+<div class="row">
+  <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5">
+    
+      
+      <!--
+ Recommend the other 3 posts according to the tags and categories of the current post,
+ if the number is not enough, use the other latest posts to supplement.
+-->
+
+<!-- The total size of related posts  -->
+
+
+<!-- An random integer that bigger than 0  -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+
+
+
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+<!-- Fill with the other newlest posts  -->
+
+
+
+  
+    
+    
+  
+    
+    
+      
+      
+        
+        
+        
+      
+    
+  
+    
+    
+      
+      
+        
+        
+        
+      
+    
+  
+    
+    
+      
+      
+        
+        
+        
+          
+
+
+
+  <div id="related-posts" class="mb-2 mb-sm-4">
+    <h3 class="pt-2 mb-4 ml-1"
+      data-toc-skip>相关文章</h3>
+    <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1683882120"
+    data-df="YYYY/MM/DD"
+    >
+  2023/05/12
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-方法的链式调用</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                链式调用
+
+链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。
+
+
+  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
+
+
+// 大概这个意思
+function b(dataIn) {
+  // ...
+  return dataIn;
+}
+
+
+链式调用可以让...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1683776940"
+    data-df="YYYY/MM/DD"
+    >
+  2023/05/11
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-单体模式</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                单体模式
+
+单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。
+
+这种模式在 JavaScript 中非常...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/%E5%AF%8C%E6%96%87%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%AFbase64%E7%9A%84-%E5%AF%BC%E8%87%B4%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%BE%88%E5%A4%A7-%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682671020"
+    data-df="YYYY/MM/DD"
+    >
+  2023/04/28
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>富文本中的图片是base64的，导致提交数据很大，接口响应很慢</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                富文本中的图片是base64的，导致提交数据很大，接口响应很慢
+富文本编辑器 图片base64太长问题
+前端开发人员在遇到富文本编辑器的时候，经常会被测试 或者产品提各种需求优化或者一些体验的bug ;
+
+
+比如：
+
+
+  测试会提出富文本的内容过长，限制内容，限制输入等等类似的问题： 其实为什么是富文本，就是要写文章用的，这个用户行为，是不建议给限制的。 那么测试会提 内容太长，限制字数的...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+    </div> <!-- .card-deck -->
+  </div> <!-- #related-posts -->
+
+
+    
+      
+      <!--
+  Navigation buttons at the bottom of the post.
+-->
+
+<div class="post-navigation d-flex justify-content-between">
+  
+  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/" class="btn btn-outline-primary"
+    prompt="上一篇">
+    <p>js设计模式-方法的链式调用</p>
+  </a>
+  
+
+  
+  <div class="btn btn-outline-primary disabled"
+    prompt="下一篇">
+    <p>-</p>
+  </div>
+  
+
+</div>
+
+    
+      
+      <!--  The comments switcher -->
+
+
+    
+  </div>
+</div>
 
 
       </div>
@@ -1565,6 +2294,51 @@ SimpleJekyllSearch({
 <!-- layout specified -->
 
 
+  
+
+
+
+  <!-- image lazy-loading & popup & clipboard -->
+  
+
+  
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
 
 
 
@@ -1626,7 +2400,7 @@ SimpleJekyllSearch({
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 

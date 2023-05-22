@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决",
+    "url": "/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/",
+    "categories": "ui组件库问题解决, naive-ui",
+    "tags": "ui组件库问题",
+    "date": "2023-05-22 10:26:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；最近开发过程用 有使用锚点定位跳转的功能，于是使用了naive-ui的Anchor组件，组件demo代码 套用到项目上的时候，右侧内容滚动时候，侧边栏的锚点会自动高亮，这个是没有问题的，然后问题来了，点击左边锚点时候，右边的页面不会定向到对应位置，而是跳转了新页面，因为vue-router路由模式把锚点定位理解成了新页面...",
+    "content": "naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；最近开发过程用 有使用锚点定位跳转的功能，于是使用了naive-ui的Anchor组件，组件demo代码 套用到项目上的时候，右侧内容滚动时候，侧边栏的锚点会自动高亮，这个是没有问题的，然后问题来了，点击左边锚点时候，右边的页面不会定向到对应位置，而是跳转了新页面，因为vue-router路由模式把锚点定位理解成了新页面的跳转。再回头看了一下 naive-ui组件说明，它是提供的有组件方法的，scrollTo,但是点击事件直接是默认的组件里面的a链接跳转，跳珠到了新页面。终于在思考了片刻之后，想到组件上使用点击事件加vue指令的修饰符应该是可以解决的。于是最终解决方案如下：&lt;n-anchor  ref=\"anchorRef\"  :show-rail=\"showRail\"  :show-background=\"showBackground\"  :bound=\"0\"  :offset-target=\"'.inner_page_bg.portrait .right'\"&gt;  &lt;n-anchor-link    v-for=\"(item, i) in anchorList\"    :title=\"item.split('-')[0]\"    :href=\"'#d' + (i + 1)\"    :class=\"item.split('-')[1] == 'later' ? 'disable_anchor' : ''\"    @click.capture.prevent=\"item.split('-')[1] == 'later' ? scrollTo(i + 1) : ''\"  /&gt;&lt;/n-anchor&gt;使用修饰符 capture设置捕获模式，prevent禁止捕获，最终点击事件止步于组件的外壳上，然后传参，使用scrollTo 滚动调位到对应的锚点@click.capture.prevent=”item.split(‘-‘)[1] == ‘later’ ? scrollTo(i + 1) : ‘’” const anchorRef = ref(null);  const scrollTo = (num) =&gt; {    anchorRef.value?.scrollTo(\"#d\" + num);  };那么这个问题就解决了。"
+  },
+  
+  {
     "title": "js设计模式-方法的链式调用",
     "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/",
     "categories": "js设计模式理解",

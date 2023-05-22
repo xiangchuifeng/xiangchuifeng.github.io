@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-05-12T17:53:12+08:00</updated>
+  <updated>2023-05-22T10:27:10+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>
@@ -17,6 +17,56 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决</title>
+    <link href="/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/" rel="alternate" type="text/html" title="naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决" />
+    <published>2023-05-22T10:26:00+08:00</published>
+  
+    <updated>2023-05-22T10:26:00+08:00</updated>
+  
+    <id>/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/</id>
+    <content src="/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/" />
+    <author>
+      <name>xiangchuifeng</name>
+    </author>
+
+  
+    
+    <category term="ui组件库问题解决" />
+    
+    <category term="naive-ui" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；
+
+最近开发过程用 有使用锚点定位跳转的功能，于是使用了naive-ui的Anchor组件，组件demo代码 套用到项目上的时候，右侧内容滚动时候，侧边栏的锚点会
+自动高亮，这个是没有问题的，然后问题来了，点击左边锚点时候，右边的页面不会定向到对应位置，而是跳转了新页面，因为vue-router路由模式把锚点定位
+理解成了新页面的跳转。
+
+再回头看了一下 naive-ui组件说明，它是提供的有组件方法的，scrollTo,但是点击事件直接是默认的组件里面的a链接跳转，跳珠到了新页面。
+终于在思考了片刻之后，想到组件上使用点击事件加vue指令的修饰符应该是可以解决的。
+
+于是最终解决方案如下：
+
+&amp;lt;n-anchor
+  ref="anchorRef"
+  :show-rail="showRail"
+  :sh...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -214,56 +264,6 @@ const singleton = {
 
 若没有该行代码,对应添加进去就可以了
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>为什么休5天，却惹来网友骂声一片，放不起别放！这是为啥？</title>
-    <link href="/posts/%E4%BA%94%E4%B8%80-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%915%E5%A4%A9-%E5%8D%B4%E6%83%B9%E6%9D%A5%E7%BD%91%E5%8F%8B%E9%AA%82%E5%A3%B0%E4%B8%80%E7%89%87-%E6%94%BE%E4%B8%8D%E8%B5%B7%E5%88%AB%E6%94%BE-%E8%BF%99%E6%98%AF%E4%B8%BA%E5%95%A5/" rel="alternate" type="text/html" title="为什么休5天，却惹来网友骂声一片，放不起别放！这是为啥？" />
-    <published>2023-04-18T14:40:00+08:00</published>
-  
-    <updated>2023-04-18T14:40:00+08:00</updated>
-  
-    <id>/posts/%E4%BA%94%E4%B8%80-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%915%E5%A4%A9-%E5%8D%B4%E6%83%B9%E6%9D%A5%E7%BD%91%E5%8F%8B%E9%AA%82%E5%A3%B0%E4%B8%80%E7%89%87-%E6%94%BE%E4%B8%8D%E8%B5%B7%E5%88%AB%E6%94%BE-%E8%BF%99%E6%98%AF%E4%B8%BA%E5%95%A5/</id>
-    <content src="/posts/%E4%BA%94%E4%B8%80-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%915%E5%A4%A9-%E5%8D%B4%E6%83%B9%E6%9D%A5%E7%BD%91%E5%8F%8B%E9%AA%82%E5%A3%B0%E4%B8%80%E7%89%87-%E6%94%BE%E4%B8%8D%E8%B5%B7%E5%88%AB%E6%94%BE-%E8%BF%99%E6%98%AF%E4%B8%BA%E5%95%A5/" />
-    <author>
-      <name>xiangchuifeng</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      今天是4月18日，距离五一假期也不过两周而已，甚至两周远远不到。
-
-眼瞅着五一假期，能够美美的休息5天了，可是一些网友却不愿意了，甚至在网上口吐芬芳，这就纳闷了，好不容易能放个5天小长假，怎么会惹得如此争议？
-
-
-要知道早些年的时候五一放假法定节假日也不过3天而已，现在给你来回折腾，折腾出5天假期来，按理来说大家得开怀大笑，怎么感觉有点玩不起的样子？
-
-
-甚至还有一些网友在互联网上大放厥词，一些人就说了，这个假期不放也罢，你要是放不起那就别放，咱老老实实的回归3天假期。
-
-
-  其实啊，早些年的五一假期总的是3天假期的，再加上一个周六日就是5天假期了，那么这样，想法就来了，大家干脆前后调休一周，弄个五一七天乐好了，所以就有了“五一”7天假期的情况
-
-
-  那个，那个。。。，后来，7天假太长了，还是休5天吧，五一毕竟比不上国庆 ，所以法定时长由3天改回到了1天，再加上一个周六日，两天调...
     </summary>
   
 

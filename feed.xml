@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-06-08T11:36:06+08:00</updated>
+  <updated>2023-06-08T11:40:44+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>
@@ -46,13 +46,7 @@
 
 
 
-      
-
-
-  本文总阅读量次
-
-
-###
+      ###
 
 
   “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。
@@ -71,7 +65,8 @@
 
 一个比较基本的单体结构如下
 
-const singleton =...
+const singleton = {
+  attribute1...
     </summary>
   
 

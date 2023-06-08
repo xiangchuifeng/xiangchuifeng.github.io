@@ -54,8 +54,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="js设计模式-享元模式" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="###" />
-<meta property="og:description" content="###" />
+<meta name="description" content="享元模式" />
+<meta property="og:description" content="享元模式" />
 <link rel="canonical" href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
 <meta property="og:url" content="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
 <meta property="og:site_name" content="王的宇" />
@@ -65,7 +65,7 @@
 <meta property="twitter:title" content="js设计模式-享元模式" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-08T11:17:00+08:00","datePublished":"2023-06-08T11:17:00+08:00","description":"###","headline":"js设计模式-享元模式","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-08T11:17:00+08:00","datePublished":"2023-06-08T11:17:00+08:00","description":"享元模式","headline":"js设计模式-享元模式","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -631,6 +631,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -647,6 +659,18 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -748,8 +772,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2035 字">
-  <em>11 分钟</em>阅读</span>
+  title="2196 字">
+  <em>12 分钟</em>阅读</span>
 
     </div>
 
@@ -758,7 +782,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>###</p>
+  <h3 id="享元模式"><span class="mr-2">享元模式</span><a href="#享元模式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote class="prompt-tip">
   <p>“享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。</p>
@@ -768,8 +792,15 @@
   <p>用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。</p>
 </blockquote>
 
-<p>享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。
+<p>个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。</p>
+
+<p>在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式，享元模式也朦胧中蕴藏了此理念。</p>
+
+<p>下面先看一下享元模式的基本概念：<br />
+享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。
 模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存</p>
+
+<h4 id="下面理解一下它的具体基于js语言的案例实现以及它的应用场景"><span class="mr-2">下面理解一下它的具体基于js语言的案例实现，以及它的应用场景：</span><a href="#下面理解一下它的具体基于js语言的案例实现以及它的应用场景" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>使用场景编辑 播报
 如果一个应用程序使用了大量的对象，而这些对象造成了很大的存储开销的时候就可以考虑是否可以使用享元模式。

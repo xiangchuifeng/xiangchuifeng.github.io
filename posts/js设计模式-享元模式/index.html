@@ -54,8 +54,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="js设计模式-享元模式" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="###" />
-<meta property="og:description" content="###" />
+<meta name="description" content="本文总阅读量次" />
+<meta property="og:description" content="本文总阅读量次" />
 <link rel="canonical" href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
 <meta property="og:url" content="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
 <meta property="og:site_name" content="王的宇" />
@@ -65,7 +65,7 @@
 <meta property="twitter:title" content="js设计模式-享元模式" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-08T11:17:00+08:00","datePublished":"2023-06-08T11:17:00+08:00","description":"###","headline":"js设计模式-享元模式","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-08T11:17:00+08:00","datePublished":"2023-06-08T11:17:00+08:00","description":"本文总阅读量次","headline":"js设计模式-享元模式","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -741,7 +741,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2036 字">
+  title="2042 字">
   <em>11 分钟</em>阅读</span>
 
     </div>
@@ -751,14 +751,21 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>###</p>
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
-<blockquote class="prompt-tip">
-  <p>“享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。</p>
+<p><span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span></p>
+
+<p>###</p>
+
+<blockquote>
+  <p class="prompt-tip">“享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。</p>
 </blockquote>
 
-<blockquote class="prompt-tip">
-  <p>用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。</p>
+<blockquote>
+  <p class="prompt-tip">用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。</p>
 </blockquote>
 
 <p>享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。
@@ -790,8 +797,8 @@
 
 <p>在 js 设计模式中，我们给它的定义，显得更广义一点，上面的也算是单体。即：单体是一个用来划分命名空间并将已批相关方法和属性组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。</p>
 
-<blockquote class="prompt-tip">
-  <p>对象字面量只是创建单体的一种方法，并非所有的对象字面量都是单体，如果它用来模仿关联数组或者容纳数据的话，那就显然不是单体，但是用过它是组织一些相关的属性和方法，那就可能是单体，这个取决于设计者的意图。</p>
+<blockquote>
+  <p class="prompt-tip">对象字面量只是创建单体的一种方法，并非所有的对象字面量都是单体，如果它用来模仿关联数组或者容纳数据的话，那就显然不是单体，但是用过它是组织一些相关的属性和方法，那就可能是单体，这个取决于设计者的意图。</p>
 </blockquote>
 
 <h3 id="划分命名空间"><span class="mr-2">划分命名空间</span><a href="#划分命名空间" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -805,17 +812,11 @@
 3
 4
 5
-6
-7
-8
 </pre></td><td class="rouge-code"><pre><span class="cm">/* use a namespace */</span>
 <span class="kd">var</span> <span class="nx">myNamespace</span> <span class="o">=</span> <span class="p">{</span>
-<span class="na">function1</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
-
-<span class="p">}</span>
-<span class="c1">// ...</span>
-
-<span class="p">}</span>
+  <span class="na">function1</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="c1">// ...</span>
+<span class="p">};</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>1.内部的成员方法不会被全局命名空间中声明的变量所改写。<br />
@@ -845,13 +846,17 @@
   <span class="c1">// ...</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table></code></div></div>
+
 <p>来源于外部代码的与 AllNamespace 变量发生冲突的可能性比较小，如果真有冲突，也会很容易发现。</p>
-<blockquote class="prompt-tip">
-  <p>虽然中小项目开发参与人员不多，变量冲突的可能比较小，养成良好的习惯还是好的，自己也会更清晰。</p>
+
+<blockquote>
+  <p class="prompt-tip">虽然中小项目开发参与人员不多，变量冲突的可能比较小，养成良好的习惯还是好的，自己也会更清晰。</p>
 </blockquote>
 
 <h3 id="用作特定网页专用代码的包装器单体"><span class="mr-2">用作特定网页专用代码的包装器单体</span><a href="#用作特定网页专用代码的包装器单体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <h4 id="下面是包装特定网页专用代码的单体的骨架"><span class="mr-2">下面是包装特定网页专用代码的单体的骨架</span><a href="#下面是包装特定网页专用代码的单体的骨架" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -883,6 +888,7 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="拥有私用成员的单体"><span class="mr-2">拥有私用成员的单体</span><a href="#拥有私用成员的单体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p>1.使用下划线表示法</p>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
@@ -1003,8 +1009,8 @@
 <span class="p">})();</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<blockquote class="prompt-tip">
-  <p>使用闭包 相比 下划线来说,前者的私用成员是不能被外界访问的，后者只是用下划线特殊标识了一下，还是可以访问到的。</p>
+<blockquote>
+  <p class="prompt-tip">使用闭包 相比 下划线来说,前者的私用成员是不能被外界访问的，后者只是用下划线特殊标识了一下，还是可以访问到的。</p>
 </blockquote>
 
 <h3 id="惰性实例化单体懒加载实例化单体"><span class="mr-2">惰性实例化单体（懒加载实例化单体）</span><a href="#惰性实例化单体懒加载实例化单体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1123,14 +1129,15 @@
   <span class="k">return</span> <span class="nx">someCondition</span> <span class="p">?</span> <span class="nx">objA</span> <span class="p">:</span> <span class="nx">objB</span><span class="p">;</span>
 <span class="p">})();</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p>如上就是单体的两个分支。我们可以根据各种场景创建多个分支。比如我们原生的 ajax请求封装时候，就需要兼容不同版本的api.</p>
 
-<blockquote class="prompt-tip">
-  <p>其实我们日常工作中，前端开发代码，我们已经在不知不觉中可能使用了单体模式，而理论是一种总结，可以让我们更清晰的了解它，掌握它。单体是一种有属性有方法的一个组织，用来模仿关联数组或者容纳数据的对象不是单体。</p>
+<p>如上就是单体的两个分支。我们可以根据各种场景创建多个分支。比如我们原生的 ajax 请求封装时候，就需要兼容不同版本的 api.</p>
+
+<blockquote>
+  <p class="prompt-tip">其实我们日常工作中，前端开发代码，我们已经在不知不觉中可能使用了单体模式，而理论是一种总结，可以让我们更清晰的了解它，掌握它。单体是一种有属性有方法的一个组织，用来模仿关联数组或者容纳数据的对象不是单体。</p>
 </blockquote>
 
-<blockquote class="prompt-tip">
-  <p>后面将一点一点的理解掌握一些实用，常见的设计模式。。</p>
+<blockquote>
+  <p class="prompt-tip">后面将一点一点的理解掌握一些实用，常见的设计模式。。</p>
 </blockquote>
 
 </div>

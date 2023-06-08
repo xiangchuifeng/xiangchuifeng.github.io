@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-06-08T11:17:23+08:00</updated>
+  <updated>2023-06-08T11:17:48+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>
@@ -17,6 +17,60 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>js设计模式-享元模式</title>
+    <link href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="js设计模式-享元模式" />
+    <published>2023-06-08T11:17:00+08:00</published>
+  
+    <updated>2023-06-08T11:17:00+08:00</updated>
+  
+    <id>/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</id>
+    <content src="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
+    <author>
+      <name>xiangchuifeng</name>
+    </author>
+
+  
+    
+    <category term="js设计模式理解" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      ###
+
+
+  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。
+
+
+
+  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
+
+
+享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。
+模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存
+
+使用场景编辑 播报
+如果一个应用程序使用了大量的对象，而这些对象造成了很大的存储开销的时候就可以考虑是否可以使用享元模式。
+例如,如果发现某个对象的生成了大量细粒度的实例，并且这些实例除了几个参数外基本是相同的，如果把那些共享参数移到类外面，在方法调用时将他们传递进来，就可以通过共享大幅度单个实例的数目。
+
+一个比较基本的单体结构如下
+
+const singleton = {
+  attribute1...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -231,49 +285,6 @@ $("div"...
 
 const singleton = {
   attribute1: tru...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>富文本中的图片是base64的，导致提交数据很大，接口响应很慢</title>
-    <link href="/posts/%E5%AF%8C%E6%96%87%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%AFbase64%E7%9A%84-%E5%AF%BC%E8%87%B4%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%BE%88%E5%A4%A7-%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2/" rel="alternate" type="text/html" title="富文本中的图片是base64的，导致提交数据很大，接口响应很慢" />
-    <published>2023-04-28T16:37:00+08:00</published>
-  
-    <updated>2023-04-28T16:37:00+08:00</updated>
-  
-    <id>/posts/%E5%AF%8C%E6%96%87%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%AFbase64%E7%9A%84-%E5%AF%BC%E8%87%B4%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%BE%88%E5%A4%A7-%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2/</id>
-    <content src="/posts/%E5%AF%8C%E6%96%87%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%AFbase64%E7%9A%84-%E5%AF%BC%E8%87%B4%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%BE%88%E5%A4%A7-%E5%93%8D%E5%BA%94%E5%BE%88%E6%85%A2/" />
-    <author>
-      <name>xiangchuifeng</name>
-    </author>
-
-  
-    
-    <category term="工作中的问题" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      富文本中的图片是base64的，导致提交数据很大，接口响应很慢
-富文本编辑器 图片base64太长问题
-前端开发人员在遇到富文本编辑器的时候，经常会被测试 或者产品提各种需求优化或者一些体验的bug ;
-
-
-比如：
-
-
-  测试会提出富文本的内容过长，限制内容，限制输入等等类似的问题： 其实为什么是富文本，就是要写文章用的，这个用户行为，是不建议给限制的。 那么测试会提 内容太长，限制字数的问题，不用想，限制不了的，字数是不准确的，包括了html标签，特殊符号等等,或者会说可以使用获取text content 等各个富文本组件对应的api。但是这个只是限制了text 或者content的长度，无法限制html string 的总长度的。
-  —&amp;gt; 所以直白的结论是，这个限制富文本长度，富文本限制输入的问题，90% 不是问题，就是这样的，不用解决！或者限制一个极限最大长度，但这个...
     </summary>
   
 

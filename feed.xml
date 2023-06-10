@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-06-08T18:24:15+08:00</updated>
+  <updated>2023-06-11T01:04:24+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>
@@ -17,6 +17,61 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>前端常用的地图框架</title>
+    <link href="/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/" rel="alternate" type="text/html" title="前端常用的地图框架" />
+    <published>2023-06-11T01:04:00+08:00</published>
+  
+    <updated>2023-06-11T01:04:00+08:00</updated>
+  
+    <id>/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/</id>
+    <content src="/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/" />
+    <author>
+      <name>xiangchuifeng</name>
+    </author>
+
+  
+    
+    <category term="gis地图相关" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      前端常用的地图框架（webGIS）
+
+
+  
+    Leaflet
+Leaflet 是最著名的前端地图可视化库，它开源、体积小、结构清晰、简单易用。
+  
+  
+    Mapbox GL JS
+Mapbox GL JS 是目前最新潮的前端地图库，它的矢量压缩、动态样式和三维性能令人印象深刻。它本身是开源的，但一般依赖于Mapbox公司提供的底图服务。
+  
+  
+    ArcGIS API for JS
+ArcGIS API for JS 是较为学院派的前端地图库，它是ArcGIS开发套件中的一部分，和桌面端和服务器端ArcGIS软件有较好的协作。它不开源且收费不低，在学术场景下较为常用。
+  
+  
+    Openlayers
+Openlayers 也是常用的前端地图库，它开源，相比于Leaflet更加复杂和完备。
+  
+  
+    Cesium
+Cesium 是三维地理...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -239,53 +294,6 @@ a.b().c()
 比如我们以前用的 jquery.js,就是用的链式调用。
 
 $("div"...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>js设计模式-单体模式</title>
-    <link href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="js设计模式-单体模式" />
-    <published>2023-05-11T11:49:00+08:00</published>
-  
-    <updated>2023-05-11T11:49:00+08:00</updated>
-  
-    <id>/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/</id>
-    <content src="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/" />
-    <author>
-      <name>xiangchuifeng</name>
-    </author>
-
-  
-    
-    <category term="js设计模式理解" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      单体模式
-
-单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。
-
-这种模式在 JavaScript 中非常重要，也许比在其他任何语言中都更重要。在网页上使用全局变量有很大的风险，而用单体对象创建的命名空间则是清除这些全局变量的最佳手段之一，他们可以划分命名空间，清除减少全局的变量数目，
-
-
-  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
-
-
-一个比较基本的单体结构如下
-
-const singleton = {
-  attribute1: tru...
     </summary>
   
 

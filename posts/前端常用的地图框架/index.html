@@ -39,6 +39,10 @@
   
 
   
+    
+
+    
+  
 
   
 
@@ -46,26 +50,27 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Demo | 王的宇</title>
+<title>前端常用的地图框架 | 王的宇</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Demo" />
+<meta property="og:title" content="前端常用的地图框架" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="frontend, 一个前端开发技术总结的博客." />
-<meta property="og:description" content="frontend, 一个前端开发技术总结的博客." />
-<link rel="canonical" href="/categories/demo/" />
-<meta property="og:url" content="/categories/demo/" />
+<meta name="description" content="前端常用的地图框架（webGIS）" />
+<meta property="og:description" content="前端常用的地图框架（webGIS）" />
+<link rel="canonical" href="/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/" />
+<meta property="og:url" content="/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/" />
 <meta property="og:site_name" content="王的宇" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-11T01:04:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Demo" />
+<meta property="twitter:title" content="前端常用的地图框架" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"frontend, 一个前端开发技术总结的博客.","headline":"Demo","url":"/categories/demo/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-11T01:04:00+08:00","datePublished":"2023-06-11T01:04:00+08:00","description":"前端常用的地图框架（webGIS）","headline":"前端常用的地图框架","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/"},"url":"/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Demo | 王的宇
+  <title>前端常用的地图框架 | 王的宇
   </title>
 
   <!--
@@ -117,7 +122,12 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.css">
+  
 
+  
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
@@ -445,19 +455,13 @@
       
 
         
-          <span>
-            <a href="/categories">
-              分类
-            </a>
-          </span>
-        
 
       
 
         
 
           
-            <span>Demo</span>
+            <span>前端常用的地图框架</span>
           
 
         
@@ -471,7 +475,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      分类
+      文章
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -498,18 +502,101 @@
   <!-- core -->
   <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
     <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-          <div id="page-category">
-  <h1 class="pl-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
-    Demo
-    <span class="lead text-muted pl-2">1</span>
-  </h1>
+         
+      <!--
+  Refactor the HTML structure.
+-->
 
-  <ul class="post-content pl-0">
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+<!-- images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
     
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="/posts/text-and-typography/">Text and Typography</a>
-      <span class="dash flex-grow-1"></span>
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+<h1 data-toc-skip>前端常用的地图框架</h1>
+
+<div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      发表于
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -519,17 +606,196 @@
 
 
 
-<span class="text-muted small"
-    data-ts="1565235180"
+<em class=""
+    data-ts="1686416640"
     data-df="YYYY/MM/DD"
-    >
-  2019/08/08
-</span>
+    data-toggle="tooltip" data-placement="bottom">
+  2023/06/11
+</em>
 
-    </li>
+    </span>
+
+    <!-- lastmod date -->
     
-  </ul>
+    <!-- <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script> -->
+    <div>
+      <span id="busuanzi_container_page_pv" style="display:block!important;">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      </span>
+    </div>
+   
+  <!--  -->
+
+  <div class="d-flex justify-content-between">
+    <!-- author(s) -->
+    <span>
+      
+
+      作者
+
+      <em>
+      
+        <a href="https://twitter.com/username">xiangchuifeng</a>
+      
+      </em>
+    </span>
+
+    <div>
+      <!-- page views -->
+      
+
+      <!-- read time -->
+      <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="435 字">
+  <em>2 分钟</em>阅读</span>
+
+    </div>
+
+  </div> <!-- .d-flex -->
+
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <h3 id="前端常用的地图框架webgis"><span class="mr-2">前端常用的地图框架（webGIS）</span><a href="#前端常用的地图框架webgis" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ol>
+  <li>
+    <p>Leaflet
+Leaflet 是最著名的前端地图可视化库，它开源、体积小、结构清晰、简单易用。</p>
+  </li>
+  <li>
+    <p>Mapbox GL JS
+Mapbox GL JS 是目前最新潮的前端地图库，它的矢量压缩、动态样式和三维性能令人印象深刻。它本身是开源的，但一般依赖于Mapbox公司提供的底图服务。</p>
+  </li>
+  <li>
+    <p>ArcGIS API for JS
+ArcGIS API for JS 是较为学院派的前端地图库，它是ArcGIS开发套件中的一部分，和桌面端和服务器端ArcGIS软件有较好的协作。它不开源且收费不低，在学术场景下较为常用。</p>
+  </li>
+  <li>
+    <p>Openlayers
+Openlayers 也是常用的前端地图库，它开源，相比于Leaflet更加复杂和完备。</p>
+  </li>
+  <li>
+    <p>Cesium
+Cesium 是三维地理可视化的常用库，在大尺度的可视化（地形、建筑、地球）中十分常用。</p>
+  </li>
+  <li>
+    <p>百度地图 JS API /百度地图 API GL
+百度地图 JS API 是传统的二维地图，百度地图 API GL 是三维地图，它们依赖百度地图提供的后台服务。除了地图服务外还有检索、导航、实时交通等关联服务。开发者有免费的限额。</p>
+  </li>
+  <li>
+    <p>高德地图 JS API
+高德地图 JS API 与百度类似。</p>
+  </li>
+  <li>
+    <p>Google Maps JS API
+谷歌地图 JS API 在境外有更好的数据。</p>
+  </li>
+  <li>
+    <p>AntV L7
+AntV L7 是空间数据可视化库，它可以使用高德地图等协作构建地图可视化。</p>
+  </li>
+  <li>
+    <p>Mapbox.js
+Mapbox.js 是 Leaflet 的一个扩展插件（与 Mapbox GL JS 不同）。</p>
+  </li>
+</ol>
+
 </div>
+
+<div class="post-tail-wrapper text-muted">
+
+  <!-- categories -->
+  
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
+    
+      <a href='/categories/gis%E5%9C%B0%E5%9B%BE%E7%9B%B8%E5%85%B3/'>gis地图相关</a>
+  </div>
+  
+
+  <!-- tags -->
+  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/gis/"
+          class="post-tag no-text-decoration" >gis</a>
+      
+  </div>
+  
+
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
+
+      
+    </div>
+
+    <!--
+ Post sharing snippet
+-->
+
+<div class="share-wrapper">
+  <span class="share-label text-muted mr-1">分享</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+      
+        <a href="https://twitter.com/intent/tweet?text=%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&url=%2Fposts%2F%25E5%2589%258D%25E7%25AB%25AF%25E5%25B8%25B8%25E7%2594%25A8%25E7%259A%2584%25E5%259C%25B0%25E5%259B%25BE%25E6%25A1%2586%25E6%259E%25B6%2F" data-toggle="tooltip" data-placement="top"
+          title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fa-fw fab fa-twitter"></i>
+        </a>
+    
+      
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87&u=%2Fposts%2F%25E5%2589%258D%25E7%25AB%25AF%25E5%25B8%25B8%25E7%2594%25A8%25E7%259A%2584%25E5%259C%25B0%25E5%259B%25BE%25E6%25A1%2586%25E6%259E%25B6%2F" data-toggle="tooltip" data-placement="top"
+          title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-fw fab fa-facebook-square"></i>
+        </a>
+    
+      
+        <a href="https://t.me/share/url?url=%2Fposts%2F%25E5%2589%258D%25E7%25AB%25AF%25E5%25B8%25B8%25E7%2594%25A8%25E7%259A%2584%25E5%259C%25B0%25E5%259B%25BE%25E6%25A1%2586%25E6%259E%25B6%2F&text=%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87" data-toggle="tooltip" data-placement="top"
+          title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-fw fab fa-telegram"></i>
+        </a>
+    
+
+    <i id="copy-link" class="fa-fw fas fa-link small"
+        data-toggle="tooltip" data-placement="top"
+        title="分享链接"
+        data-title-succeed="链接已复制！">
+    </i>
+
+  </span>
+</div>
+
+
+  </div><!-- .post-tail-bottom -->
+
+</div><!-- div.post-tail-wrapper -->
+
    
     </div>
   </div>
@@ -1017,11 +1283,485 @@
 
     </div>
 
-    
+      
+
+
+
+  <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+    <div class="panel-heading pl-3 pt-2 mb-2">文章内容</div>
+    <nav id="toc"></nav>
+  </div>
+
+  <!-- toc.js will be loaded at medium priority -->
+  <script src="https://cdn.jsdelivr.net/npm/tocbot@4.20.1/dist/tocbot.min.js"></script>
+
+ 
   </div>
 </div>
 
 <!-- tail -->
+
+<div class="row">
+  <div
+    id="tail-wrapper"
+    class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5"
+  >
+      <!--
+ Recommend the other 3 posts according to the tags and categories of the current post,
+ if the number is not enough, use the other latest posts to supplement.
+-->
+
+<!-- The total size of related posts  -->
+
+
+<!-- An random integer that bigger than 0  -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+
+
+
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+<!-- Fill with the other newlest posts  -->
+
+
+
+  
+    
+    
+  
+    
+    
+      
+      
+        
+        
+        
+      
+    
+  
+    
+    
+      
+      
+        
+        
+        
+      
+    
+  
+    
+    
+      
+      
+        
+        
+        
+          
+
+
+
+  <div id="related-posts" class="mb-2 mb-sm-4">
+    <h3 class="pt-2 mb-4 ml-1"
+      data-toc-skip>相关文章</h3>
+    <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686194220"
+    data-df="YYYY/MM/DD"
+    >
+  2023/06/08
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-享元模式</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                享元模式
+
+
+  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。
+
+
+
+  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
+
+
+个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。
+
+在编程语言中共有的的理念即：抽离，封装，继承...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/AIGC%E7%9A%84%E6%A6%82%E5%BF%B5-%E5%92%8Cchatgpt%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E8%81%94/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1686016020"
+    data-df="YYYY/MM/DD"
+    >
+  2023/06/06
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>AIGC的概念，和chatgpt有什么关联？</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                AIGC 和 ChatGPT 是两个不同的概念，但是有一定的联系和关联.
+
+AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。AIGC 是一种利用人工智能技术自动化地生成各种类型的内容的方式，例如文本、音频、图像、视频等。
+
+
+  AIGC 可以应用在多个领域和场景，例如网络营销、品牌宣传、产品介绍、自动化客服、自动化翻译、自动化作曲等等
+  AIGC ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/naive-ui%E4%B8%ADAnchor%E7%82%B9%E5%87%BB%E9%94%9A%E7%82%B9%E6%97%B6%E5%80%99%E5%8D%B4%E8%B7%B3%E8%BD%AC%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1684722360"
+    data-df="YYYY/MM/DD"
+    >
+  2023/05/22
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>naive-ui中Anchor点击侧边栏锚点时候却跳转新页面的解决</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                naive-ui中Anchor点击侧边栏导航锚点跳转，却是新页面的问题；
+
+最近开发过程用 有使用锚点定位跳转的功能，于是使用了naive-ui的Anchor组件，组件demo代码 套用到项目上的时候，右侧内容滚动时候，侧边栏的锚点会
+自动高亮，这个是没有问题的，然后问题来了，点击左边锚点时候，右边的页面不会定向到对应位置，而是跳转了新页面，因为vue-router路由模式把锚点定位
+理解成...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+    </div> <!-- .card-deck -->
+  </div> <!-- #related-posts -->
+
+   <!--
+  Navigation buttons at the bottom of the post.
+-->
+
+<div class="post-navigation d-flex justify-content-between">
+  
+  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="btn btn-outline-primary"
+    prompt="上一篇">
+    <p>js设计模式-享元模式</p>
+  </a>
+  
+
+  
+  <div class="btn btn-outline-primary disabled"
+    prompt="下一篇">
+    <p>-</p>
+  </div>
+  
+
+</div>
+   <!--  The comments switcher -->
+
+ 
+  </div>
+</div>
 
 
       </div>
@@ -1583,6 +2323,51 @@ SimpleJekyllSearch({
 <!-- layout specified -->
 
 
+  
+
+
+
+  <!-- image lazy-loading & popup & clipboard -->
+  
+
+  
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
 
 
 
@@ -1644,7 +2429,7 @@ SimpleJekyllSearch({
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 

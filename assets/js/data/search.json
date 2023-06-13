@@ -30,8 +30,8 @@
 
 
     
-    "snippet": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式，享元模...",
-    "content": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式，享元模式也朦胧中蕴藏了此理念。下面先看一下享元模式的基本概念：享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存下面理解一下它的具体基于js语言的案例实现，以及它的应用场景：使用场景编辑 播报如果一个应用程序使用了大量的对象，而这些对象造成了很大的存储开销的时候就可以考虑是否可以使用享元模式。例如,如果发现某个对象的生成了大量细粒度的实例，并且这些实例除了几个参数外基本是相同的，如果把那些共享参数移到类外面，在方法调用时将他们传递进来，就可以通过共享大幅度单个实例的数目。一个比较基本的单体结构如下const singleton = {  attribute1: true,  attribute2: 10,  method1: function () {},  method2: function () {}};在通用的编程开发中单体模式单体是一个只能被实例化一次并且对象访问点 . 访问的类。如果按照这个意义来说，上面这个基本结构就算不上是一个单体，因为它不是一个可以实例化的类。在 js 设计模式中，我们给它的定义，显得更广义一点，上面的也算是单体。即：单体是一个用来划分命名空间并将已批相关方法和属性组织在一起的对象，如果它可以被实例化，那么它只能被实例化一次。  对象字面量只是创建单体的一种方法，并非所有的对象字面量都是单体，如果它用来模仿关联数组或者容纳数据的话，那就显然不是单体，但是用过它是组织一些相关的属性和方法，那就可能是单体，这个取决于设计者的意图。划分命名空间命名空间，其实就是上面那个基础例子的 变量名 singleton，/* use a namespace */var myNamespace = {  function1: function (id) {}  // ...};1.内部的成员方法不会被全局命名空间中声明的变量所改写。2.其他程序员在使用此方法时候，通过 namespace.function 去调用，大概能知道它出自哪里，它的作用3.用命名空间把类似的方法组织到一起，有助于增强代码的文档性。  命名空间还可以进一步的分割，网页上的代码，除了你写的代码，还有库代码、广告代码、徽章代码等，这些变量都会出现在全局命名空间中， 为了避免冲突，可以定义一个包含自己所有代码的全局对象/* AllNamespace */var AllNamespace = {};AllNamespace.common = {  // ...};AllNamespace.ErrorCodes = {  // ...};来源于外部代码的与 AllNamespace 变量发生冲突的可能性比较小，如果真有冲突，也会很容易发现。  虽然中小项目开发参与人员不多，变量冲突的可能比较小，养成良好的习惯还是好的，自己也会更清晰。用作特定网页专用代码的包装器单体下面是包装特定网页专用代码的单体的骨架AllNamespace.PageName = {  constant1:true,  constant2:10,  method1:function(){    // ...  },  method2:function(){    // ...  }，  init:function(){    // ...  }}拥有私用成员的单体1.使用下划线表示法AllNamespace.DataParser = {  // private method  _function1:function(str){    // ....  }  // public method  function2:function(str){    // ...  }}由于在单体中使用 this 访问单体成员有一定的风险，因为它的 this 指向可能会不是指向 AllNamespace.DataParser，当然有的 js 库可能都会有作用域矫正，代码开发中可以去使用，去调试，只不过，使用 AllNamespace.DataParser 的方法去访问单体可能会更保险一点。2.使用闭包之前的单体是这样的：MyNamespace.singleton = {};现在我们首先用自执行函数创建一个基本的单体MyNamespace.singleton = (function () {  return {    // ...  };})();有些人喜欢在匿名函数的定义之外再加一个 (),这样会更醒目，更清晰一点。 你可以把公用成员返回到那个返回的字面量对象中。MyNamespace.singleton = (function () {  return {    // ...    attribute1: true,    attribute2: 10,    method1: function () {},    method2: function () {}  };})();不要忘了，我们之所以用闭包创建单体，是因为要拥有私有成员。MyNamespace.singleton = (function () {  // private 自己用的，不是给外界访问的  let privateAttr1 = true;  let privateMethod1 = function () {    // ...  };  return {    // public    // ...    attribute1: true,    attribute2: 10,    method1: function (str) {      // maybe      // let s = privateMethod1(str);      // return s;    },    method2: function () {}  };})();  使用闭包 相比 下划线来说,前者的私用成员是不能被外界访问的，后者只是用下划线特殊标识了一下，还是可以访问到的。惰性实例化单体（懒加载实例化单体）上面讲的那些单体，脚本加载时候就会被创建出来，对于资源密集型，配置开销比较大的单体，我们可以将其实例化推迟到需要适用它的时候这种懒加载的实现方法在于，实例化时候要借助于一个静态方法。适用方法类似于： Singleton.getInstance().methodName() getInstance 方法会检查单体是否已经被实例化，如果还么有，就创建它，返回实例。如果已经实例化过，就返回现有实例。MyNamespace.singleton = (function () {  var uniqueInstance;  function constructor() {    // private 自己用的，不是给外界访问的    let privateAttr1 = true;    let privateMethod1 = function () {      // ...    };    return {      // public      // ...      attribute1: true,      attribute2: 10,      method1: function (str) {        // maybe        // let s = privateMethod1(str);        // return s;      },      method2: function () {}    };  }  return {    getInstance: function () {      if (!uniqueInstance) {        uniqueInstance = constructor();      }      return uniqueInstance;    }  };})();// 使用： MyNamespace.singleton.getInstance().method1();单体的分支MyNamespace.singleton = (function () {  let objA = {    attribute1: true,    attribute2: 10,    method1: function () {},    method2: function () {}  };  let objB = {    attribute1: true,    attribute2: 10,    method1: function () {},    method2: function () {}  };  return someCondition ? objA : objB;})();如上就是单体的两个分支。我们可以根据各种场景创建多个分支。比如我们原生的 ajax 请求封装时候，就需要兼容不同版本的 api.  其实我们日常工作中，前端开发代码，我们已经在不知不觉中可能使用了单体模式，而理论是一种总结，可以让我们更清晰的了解它，掌握它。单体是一种有属性有方法的一个组织，用来模仿关联数组或者容纳数据的对象不是单体。  后面将一点一点的理解掌握一些实用，常见的设计模式。。"
+    "snippet": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码...",
+    "content": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码执行开支的地方就去优化，去节省。在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式也蕴藏了此理念。享元模式的基本概念：享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存用一个简单的例子，我们看一下，找找感觉，这个设计模式 很基础，甚至感觉是一种开发理念。// 未经优化的 tooltip 类let Tooltip = function (targetElement, text) {  this.target = targetElement;  this.text = text;  this.delayTimeout = null;  this.delay = 1500;  // create the HTML  this.element = document.createElement(\"div\");  this.element.style.display = \"none\";  this.element.style.position = \"absolute\";  this.element.className = \"tooltip\";  document.getElementsByTagName(\"body\")[0].appendChild(this.element);  // attach the event  var that = this;  addEvent(this.target, \"mouseover\", function (e) {    that.startDelay(e);  });  addEvent(this.target, \"mouseout\", function (e) {    that.hide();  });};Tooltip.prototype = {  startDelay: function (e) {    if (this.delayTimeout == null) {      let that = this;      let x = e.clientX;      let y = e.clientY;      this.delayTimeout = setTimeout(function () {        this.show();      }, this.delay);    }  },  show: function (x, y) {    clearTimeout(this.delayTimeout);    this.delayTimeout = null;    this.element.style.left = x + \"px\";    this.element.style.top = y + 20 + \"px\";    this.element.style.display = \"block\";  },  hide: function () {    clearTimeout(this.delayTimeout);    this.delayTimeout = null;    this.element.style.display = \"none\";  }};  上述的这段代码，意味着，我们每每使用到一个提示，就需要创建一个提示 dom 元素，那一个项目操作下来，多少个都有可能，几百几千个的话，是不是会有点崩溃的，性能会很差，浏览器开销会很大。从良好的开发习惯上来讲，这个肯定要优化的，要把示例抽离，只创建一个 提示 dom,在需要的时候，控制展示不同的内容就好了。所以基础单元，要和数据单元进行分离。在实际应用中，这个唯一创建的提示 dom 这个逻辑，这个行为，就是享元，共享单元。 而我们需要用的动态数据变量，需要抽离出来单独处理，平常代码开发，我们经常提到的，代码功能独立性，就像积木，就像电子元器件，开发思想的重要性。下面我们看一下，设计模式-享元模式对上面这段案例的处理：// managerlet TooltipManager = (function () {  let storeInstance = null;  let Tooltip = function () {    this.delayTimeout = null;    this.delay = 1500;    // create the HTML    this.element = document.createElement(\"div\");    this.element.style.display = \"none\";    this.element.style.position = \"absolute\";    this.element.className = \"tooltip\";    document.getElementsByTagName(\"body\")[0].appendChild(this.element);  };  Tooltip.prototype = {    startDelay: function (e) {      if (this.delayTimeout == null) {        let that = this;        let x = e.clientX;        let y = e.clientY;        this.delayTimeout = setTimeout(function () {          this.show(x, y, text);        }, this.delay);      }    },    show: function (x, y, text) {      clearTimeout(this.delayTimeout);      this.delayTimeout = null;      this.element.innerHTML = text;      this.element.style.left = x + \"px\";      this.element.style.top = y + 20 + \"px\";      this.element.style.display = \"block\";    },    hide: function () {      clearTimeout(this.delayTimeout);      this.delayTimeout = null;      this.element.style.display = \"none\";    }  };  return {    addTooltip: function (targetElement, text) {      let tt = this.getTooltip();      addEvent(targetElement, \"mouseover\", function (e) {        tt.startDelay(e, text);      });      addEvent(targetElement, \"mouseout\", function (e) {        tt.hide();      });    },    getTooltip: function () {      if (storeInstance == null) {        storeInstance = new Tooltip();      }      return storeInstance;    }  };})();上面这个Tooltip类和未处理前做一个对比，去进一步了解享元模式。"
   },
   
   {
@@ -154,23 +154,6 @@
   },
   
   {
-    "title": "博客添加百度统计",
-    "url": "/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/",
-    "categories": "Blogging, Tutorial",
-    "tags": "博客",
-    "date": "2023-04-14 11:12:00 +0800",
-    
-
-
-
-
-
-    
-    "snippet": "现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码&lt;script&gt;var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?6b1bc98e...",
-    "content": "现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码&lt;script&gt;var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?6b1bc98e5849783639bc900dd30b6240\";  var s = document.getElementsByTagName(\"script\")[0];   s.parentNode.insertBefore(hm, s);})();&lt;/script&gt;需要将这段代码添加到网站全部页面的head标签前建议在header.htm类似的页头模板页面中安装，以达到一处安装，全站皆有的效果。如果代码安装正确，一般20分钟后，可以查看网站分析数据在百度统计的网站中心tab中检查首页代码状态，显示代码安装正确，就成功了代码安装完成后，您可以在“代码安装检查”页面自动检测或手动检测代码安装情况  春天是美好的季节"
-  },
-  
-  {
     "title": "gpt4和chatgpt区别在哪里",
     "url": "/posts/gpt4%E5%92%8Cchatgpt%E5%8C%BA%E5%88%AB%E5%9C%A8%E5%93%AA%E9%87%8C/",
     "categories": "Blogging, Tutorial",
@@ -202,6 +185,23 @@
     
     "snippet": "js设计模式什么是设计模式？先抛开javascript不讲，单单设计模式的定义：首先，设计模式可能你在平常开发中，已经或多或少的有类似的使用过了，我们只是给他起了一个理论概念的名字-设计模式，使其理论化，变得更容易总结，学习，易于使用。就像 笔直的打出去一圈，理论上或许交 冲拳，类似的道理；就像蔬菜我们一直在吃，现在我们要知道它是什么蔬菜，含有什么元素，具有什么功效。把它升级到理论总结，就变...",
     "content": "js设计模式什么是设计模式？先抛开javascript不讲，单单设计模式的定义：首先，设计模式可能你在平常开发中，已经或多或少的有类似的使用过了，我们只是给他起了一个理论概念的名字-设计模式，使其理论化，变得更容易总结，学习，易于使用。就像 笔直的打出去一圈，理论上或许交 冲拳，类似的道理；就像蔬菜我们一直在吃，现在我们要知道它是什么蔬菜，含有什么元素，具有什么功效。把它升级到理论总结，就变成了有用的知识，方便科学的使用。设计模式是指在软件设计中，被反复使用的一种代码设计经验。使用设计模式的目的是为了可重用代码，提高代码的可扩展性和可维护性学习设计模式，关键是学习设计思想，不能简单地生搬硬套，也不能为了使用设计模式而过度设计，要合理平衡设计的复杂度和灵活性，并意识到设计模式也并不是万能的。设计模式不单单是适用于javascript语言中的，它是一种理念，思路，解决方法，在其他程序应用中也同样适用。设计模式分类设计模式分为三种类型，共23种。创建型模式：单例模式、抽象工厂模式、建造者模式、工厂模式、原型模式。结构型模式：适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式。行为型模式：模版方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式（Interpreter模式）、状态模式、策略模式、职责链模式(责任链模式)、访问者模式。  后面将一点一点的理解掌握一些实用，常见的设计模式。。"
+  },
+  
+  {
+    "title": "博客添加百度统计",
+    "url": "/posts/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/",
+    "categories": "Blogging, Tutorial",
+    "tags": "博客",
+    "date": "2022-05-15 11:12:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码&lt;script&gt;var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?6b1bc98e...",
+    "content": "现在有很多站长工具可以统计网站的点击量。添加方式大同小异。我添加的是 百度统计。注册添加后，会得到最新版的统计代码&lt;script&gt;var _hmt = _hmt || [];(function() {  var hm = document.createElement(\"script\");  hm.src = \"https://hm.baidu.com/hm.js?6b1bc98e5849783639bc900dd30b6240\";  var s = document.getElementsByTagName(\"script\")[0];   s.parentNode.insertBefore(hm, s);})();&lt;/script&gt;需要将这段代码添加到网站全部页面的head标签前建议在header.htm类似的页头模板页面中安装，以达到一处安装，全站皆有的效果。如果代码安装正确，一般20分钟后，可以查看网站分析数据在百度统计的网站中心tab中检查首页代码状态，显示代码安装正确，就成功了代码安装完成后，您可以在“代码安装检查”页面自动检测或手动检测代码安装情况  春天是美好的季节"
   },
   
   {

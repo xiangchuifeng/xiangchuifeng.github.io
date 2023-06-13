@@ -4,7 +4,7 @@
   <id>/</id>
   <title>王的宇</title>
   <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-06-13T14:20:36+08:00</updated>
+  <updated>2023-06-13T14:28:59+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>js设计模式-享元模式</title>
+    <link href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="js设计模式-享元模式" />
+    <published>2023-06-13T11:17:00+08:00</published>
+  
+    <updated>2023-06-13T11:17:00+08:00</updated>
+  
+    <id>/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</id>
+    <content src="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
+    <author>
+      <name>xiangchuifeng</name>
+    </author>
+
+  
+    
+    <category term="js设计模式理解" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      享元模式
+
+
+  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。
+
+
+
+  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
+
+
+个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。
+简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码执行开支的地方就去优化，去节省。
+在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式也蕴藏了此理念。
+
+享元模式的基本概念：
+享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。
+模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存
+
+用一个简单的例子，我们看一下，找找感觉，这个设计模式 很基础，甚...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -68,58 +120,6 @@ Openlayers 也是常用的前端地图库，它开源，相比于Leaflet更加�
   
     Cesium
 Cesium 是三维地理...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>js设计模式-享元模式</title>
-    <link href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="js设计模式-享元模式" />
-    <published>2023-06-08T11:17:00+08:00</published>
-  
-    <updated>2023-06-08T11:17:00+08:00</updated>
-  
-    <id>/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</id>
-    <content src="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" />
-    <author>
-      <name>xiangchuifeng</name>
-    </author>
-
-  
-    
-    <category term="js设计模式理解" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      享元模式
-
-
-  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。
-
-
-
-  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
-
-
-个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。
-简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码执行开支的地方就去优化，去节省。
-在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式也蕴藏了此理念。
-
-享元模式的基本概念：
-享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。
-模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存
-
-用一个简单的例子，我们看一下，找找感觉，这个设计模式 很基础，甚...
     </summary>
   
 

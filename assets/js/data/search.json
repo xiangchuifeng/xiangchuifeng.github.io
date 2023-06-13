@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "js设计模式-享元模式",
+    "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/",
+    "categories": "js设计模式理解",
+    "tags": "js基础知识",
+    "date": "2023-06-13 11:17:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码...",
+    "content": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码执行开支的地方就去优化，去节省。在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式也蕴藏了此理念。享元模式的基本概念：享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存用一个简单的例子，我们看一下，找找感觉，这个设计模式 很基础，甚至感觉是一种开发理念。// 未经优化的 tooltip 类let Tooltip = function (targetElement, text) {  this.target = targetElement;  this.text = text;  this.delayTimeout = null;  this.delay = 1500;  // create the HTML  this.element = document.createElement(\"div\");  this.element.style.display = \"none\";  this.element.style.position = \"absolute\";  this.element.className = \"tooltip\";  document.getElementsByTagName(\"body\")[0].appendChild(this.element);  // attach the event  var that = this;  addEvent(this.target, \"mouseover\", function (e) {    that.startDelay(e);  });  addEvent(this.target, \"mouseout\", function (e) {    that.hide();  });};Tooltip.prototype = {  startDelay: function (e) {    if (this.delayTimeout == null) {      let that = this;      let x = e.clientX;      let y = e.clientY;      this.delayTimeout = setTimeout(function () {        this.show();      }, this.delay);    }  },  show: function (x, y) {    clearTimeout(this.delayTimeout);    this.delayTimeout = null;    this.element.style.left = x + \"px\";    this.element.style.top = y + 20 + \"px\";    this.element.style.display = \"block\";  },  hide: function () {    clearTimeout(this.delayTimeout);    this.delayTimeout = null;    this.element.style.display = \"none\";  }};  上述的这段代码，意味着，我们每每使用到一个提示，就需要创建一个提示 dom 元素，那一个项目操作下来，多少个都有可能，几百几千个的话，是不是会有点崩溃的，性能会很差，浏览器开销会很大。从良好的开发习惯上来讲，这个肯定要优化的，要把示例抽离，只创建一个 提示 dom,在需要的时候，控制展示不同的内容就好了。所以基础单元，要和数据单元进行分离。在实际应用中，这个唯一创建的提示 dom 这个逻辑，这个行为，就是享元，共享单元。 而我们需要用的动态数据变量，需要抽离出来单独处理，平常代码开发，我们经常提到的，代码功能独立性，就像积木，就像电子元器件，开发思想的重要性。下面我们看一下，设计模式-享元模式对上面这段案例的处理：// managerlet TooltipManager = (function () {  let storeInstance = null;  let Tooltip = function () {    this.delayTimeout = null;    this.delay = 1500;    // create the HTML    this.element = document.createElement(\"div\");    this.element.style.display = \"none\";    this.element.style.position = \"absolute\";    this.element.className = \"tooltip\";    document.getElementsByTagName(\"body\")[0].appendChild(this.element);  };  Tooltip.prototype = {    startDelay: function (e) {      if (this.delayTimeout == null) {        let that = this;        let x = e.clientX;        let y = e.clientY;        this.delayTimeout = setTimeout(function () {          this.show(x, y, text);        }, this.delay);      }    },    show: function (x, y, text) {      clearTimeout(this.delayTimeout);      this.delayTimeout = null;      this.element.innerHTML = text;      this.element.style.left = x + \"px\";      this.element.style.top = y + 20 + \"px\";      this.element.style.display = \"block\";    },    hide: function () {      clearTimeout(this.delayTimeout);      this.delayTimeout = null;      this.element.style.display = \"none\";    }  };  return {    addTooltip: function (targetElement, text) {      let tt = this.getTooltip();      addEvent(targetElement, \"mouseover\", function (e) {        tt.startDelay(e, text);      });      addEvent(targetElement, \"mouseout\", function (e) {        tt.hide();      });    },    getTooltip: function () {      if (storeInstance == null) {        storeInstance = new Tooltip();      }      return storeInstance;    }  };})();上面这个Tooltip类和未处理前做一个对比，去进一步了解享元模式。"
+  },
+  
+  {
     "title": "前端常用的地图框架",
     "url": "/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/",
     "categories": "gis地图相关",
@@ -15,23 +32,6 @@
     
     "snippet": "前端常用的地图框架（webGIS）      LeafletLeaflet 是最著名的前端地图可视化库，它开源、体积小、结构清晰、简单易用。        Mapbox GL JSMapbox GL JS 是目前最新潮的前端地图库，它的矢量压缩、动态样式和三维性能令人印象深刻。它本身是开源的，但一般依赖于Mapbox公司提供的底图服务。        ArcGIS API for JSArc...",
     "content": "前端常用的地图框架（webGIS）      LeafletLeaflet 是最著名的前端地图可视化库，它开源、体积小、结构清晰、简单易用。        Mapbox GL JSMapbox GL JS 是目前最新潮的前端地图库，它的矢量压缩、动态样式和三维性能令人印象深刻。它本身是开源的，但一般依赖于Mapbox公司提供的底图服务。        ArcGIS API for JSArcGIS API for JS 是较为学院派的前端地图库，它是ArcGIS开发套件中的一部分，和桌面端和服务器端ArcGIS软件有较好的协作。它不开源且收费不低，在学术场景下较为常用。        OpenlayersOpenlayers 也是常用的前端地图库，它开源，相比于Leaflet更加复杂和完备。        CesiumCesium 是三维地理可视化的常用库，在大尺度的可视化（地形、建筑、地球）中十分常用。        百度地图 JS API /百度地图 API GL百度地图 JS API 是传统的二维地图，百度地图 API GL 是三维地图，它们依赖百度地图提供的后台服务。除了地图服务外还有检索、导航、实时交通等关联服务。开发者有免费的限额。        高德地图 JS API高德地图 JS API 与百度类似。        Google Maps JS API谷歌地图 JS API 在境外有更好的数据。        AntV L7AntV L7 是空间数据可视化库，它可以使用高德地图等协作构建地图可视化。        Mapbox.jsMapbox.js 是 Leaflet 的一个扩展插件（与 Mapbox GL JS 不同）。  "
-  },
-  
-  {
-    "title": "js设计模式-享元模式",
-    "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/",
-    "categories": "js设计模式理解",
-    "tags": "js基础知识",
-    "date": "2023-06-08 11:17:00 +0800",
-    
-
-
-
-
-
-    
-    "snippet": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码...",
-    "content": "享元模式  “享元”,被共享的单元,即复用对象,节省内存,注意前提是享元对象是不可变对象。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。个人感觉这个享元模式，初步看上去，大概可以理解为一种写代码的良好习惯，性能优化、去掉冗余，在代码开发时候，要避免影响性能的不良习惯。简单概括就是 dom 创建加载，变量，缓存，代码重用 等等能节省代码执行开支的地方就去优化，去节省。在编程语言中共有的的理念即：抽离，封装，继承，多态，享元模式也蕴藏了此理念。享元模式的基本概念：享元是一种结构型设计模式，它允许你在消耗少量内存的情况下支持大量对象。模式通过共享多个对象的部分状态来实现上述功能。换句话来说，享元会将不同对象的相同数据进行缓存以节省内存用一个简单的例子，我们看一下，找找感觉，这个设计模式 很基础，甚至感觉是一种开发理念。// 未经优化的 tooltip 类let Tooltip = function (targetElement, text) {  this.target = targetElement;  this.text = text;  this.delayTimeout = null;  this.delay = 1500;  // create the HTML  this.element = document.createElement(\"div\");  this.element.style.display = \"none\";  this.element.style.position = \"absolute\";  this.element.className = \"tooltip\";  document.getElementsByTagName(\"body\")[0].appendChild(this.element);  // attach the event  var that = this;  addEvent(this.target, \"mouseover\", function (e) {    that.startDelay(e);  });  addEvent(this.target, \"mouseout\", function (e) {    that.hide();  });};Tooltip.prototype = {  startDelay: function (e) {    if (this.delayTimeout == null) {      let that = this;      let x = e.clientX;      let y = e.clientY;      this.delayTimeout = setTimeout(function () {        this.show();      }, this.delay);    }  },  show: function (x, y) {    clearTimeout(this.delayTimeout);    this.delayTimeout = null;    this.element.style.left = x + \"px\";    this.element.style.top = y + 20 + \"px\";    this.element.style.display = \"block\";  },  hide: function () {    clearTimeout(this.delayTimeout);    this.delayTimeout = null;    this.element.style.display = \"none\";  }};  上述的这段代码，意味着，我们每每使用到一个提示，就需要创建一个提示 dom 元素，那一个项目操作下来，多少个都有可能，几百几千个的话，是不是会有点崩溃的，性能会很差，浏览器开销会很大。从良好的开发习惯上来讲，这个肯定要优化的，要把示例抽离，只创建一个 提示 dom,在需要的时候，控制展示不同的内容就好了。所以基础单元，要和数据单元进行分离。在实际应用中，这个唯一创建的提示 dom 这个逻辑，这个行为，就是享元，共享单元。 而我们需要用的动态数据变量，需要抽离出来单独处理，平常代码开发，我们经常提到的，代码功能独立性，就像积木，就像电子元器件，开发思想的重要性。下面我们看一下，设计模式-享元模式对上面这段案例的处理：// managerlet TooltipManager = (function () {  let storeInstance = null;  let Tooltip = function () {    this.delayTimeout = null;    this.delay = 1500;    // create the HTML    this.element = document.createElement(\"div\");    this.element.style.display = \"none\";    this.element.style.position = \"absolute\";    this.element.className = \"tooltip\";    document.getElementsByTagName(\"body\")[0].appendChild(this.element);  };  Tooltip.prototype = {    startDelay: function (e) {      if (this.delayTimeout == null) {        let that = this;        let x = e.clientX;        let y = e.clientY;        this.delayTimeout = setTimeout(function () {          this.show(x, y, text);        }, this.delay);      }    },    show: function (x, y, text) {      clearTimeout(this.delayTimeout);      this.delayTimeout = null;      this.element.innerHTML = text;      this.element.style.left = x + \"px\";      this.element.style.top = y + 20 + \"px\";      this.element.style.display = \"block\";    },    hide: function () {      clearTimeout(this.delayTimeout);      this.delayTimeout = null;      this.element.style.display = \"none\";    }  };  return {    addTooltip: function (targetElement, text) {      let tt = this.getTooltip();      addEvent(targetElement, \"mouseover\", function (e) {        tt.startDelay(e, text);      });      addEvent(targetElement, \"mouseout\", function (e) {        tt.hide();      });    },    getTooltip: function () {      if (storeInstance == null) {        storeInstance = new Tooltip();      }      return storeInstance;    }  };})();上面这个Tooltip类和未处理前做一个对比，去进一步了解享元模式。"
   },
   
   {

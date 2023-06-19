@@ -1,9 +1,9 @@
 
 
 {
-  "name": "王的宇的个人博客",
-  "short_name": "王的宇的个人博客",
-  "description": "一个来自中国杭州的前端开发技术总结的博客. naive-ui, 美丽杭州，亚运赛事",
+  "name": "王的宇",
+  "short_name": "王的宇",
+  "description": "一个来自中国杭州的前端开发技术总结的博客,阿里,aigc,美丽杭州，亚运赛事",
   "icons": [
     {
       "src": "/assets/img/favicons/android-chrome-192x192.png",

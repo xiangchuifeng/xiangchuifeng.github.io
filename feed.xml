@@ -2,9 +2,9 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>/</id>
-  <title>王的宇</title>
-  <subtitle>frontend, 一个前端开发技术总结的博客.</subtitle>
-  <updated>2023-06-16T18:08:04+08:00</updated>
+  <title>王的宇的个人博客</title>
+  <subtitle>一个来自中国杭州的前端开发技术总结的博客. naive-ui, 美丽杭州，亚运赛事</subtitle>
+  <updated>2023-06-19T14:12:48+08:00</updated>
   <author>
     <name>xiangchuifeng</name>
     <uri>/</uri>

@@ -50,27 +50,27 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>vue好用的table组件 | 王的宇的技术博客</title>
+<title>js知识点-function、arguments、callee、caller的回顾理解. | 王的宇的技术博客</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="vue好用的table组件" />
+<meta property="og:title" content="js知识点-function、arguments、callee、caller的回顾理解." />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="在日常的开发中，我们总是重复的做重复的工作，比如我们做管理后台页面的列表页，我们每个项目都是用基于所选的ui组件去开发，每次都是用对应组件的api,虽然挺好，但是对于我来说，总感觉不是自己的东西，有点虚无缥缈的，感觉下一个项目，下一个需求再使用它就要重新熟悉一遍它的功能和使用方法，或者要把以前的冗长的代码copy过来使用，" />
-<meta property="og:description" content="在日常的开发中，我们总是重复的做重复的工作，比如我们做管理后台页面的列表页，我们每个项目都是用基于所选的ui组件去开发，每次都是用对应组件的api,虽然挺好，但是对于我来说，总感觉不是自己的东西，有点虚无缥缈的，感觉下一个项目，下一个需求再使用它就要重新熟悉一遍它的功能和使用方法，或者要把以前的冗长的代码copy过来使用，" />
-<link rel="canonical" href="/posts/vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6/" />
-<meta property="og:url" content="/posts/vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6/" />
+<meta name="description" content="用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀" />
+<meta property="og:description" content="用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀" />
+<link rel="canonical" href="/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/" />
+<meta property="og:url" content="/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/" />
 <meta property="og:site_name" content="王的宇的技术博客" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-06-25T00:41:00+08:00" />
+<meta property="article:published_time" content="2023-08-17T00:41:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="vue好用的table组件" />
+<meta property="twitter:title" content="js知识点-function、arguments、callee、caller的回顾理解." />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-25T00:41:00+08:00","datePublished":"2023-06-25T00:41:00+08:00","description":"在日常的开发中，我们总是重复的做重复的工作，比如我们做管理后台页面的列表页，我们每个项目都是用基于所选的ui组件去开发，每次都是用对应组件的api,虽然挺好，但是对于我来说，总感觉不是自己的东西，有点虚无缥缈的，感觉下一个项目，下一个需求再使用它就要重新熟悉一遍它的功能和使用方法，或者要把以前的冗长的代码copy过来使用，","headline":"vue好用的table组件","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6/"},"url":"/posts/vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-17T00:41:00+08:00","datePublished":"2023-08-17T00:41:00+08:00","description":"用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀","headline":"js知识点-function、arguments、callee、caller的回顾理解.","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/"},"url":"/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>vue好用的table组件 | 王的宇的技术博客
+  <title>js知识点-function、arguments、callee、caller的回顾理解. | 王的宇的技术博客
   </title>
 
   <!--
@@ -461,7 +461,7 @@
         
 
           
-            <span>vue好用的table组件</span>
+            <span>js知识点-function、arguments、callee、caller的回顾理解.</span>
           
 
         
@@ -532,6 +532,227 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -591,7 +812,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>vue好用的table组件</h1>
+<h1 data-toc-skip>js知识点-function、arguments、callee、caller的回顾理解.</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -607,10 +828,10 @@
 
 
 <em class=""
-    data-ts="1687624860"
+    data-ts="1692204060"
     data-df="YYYY/MM/DD"
     data-toggle="tooltip" data-placement="bottom">
-  2023/06/25
+  2023/08/17
 </em>
 
     </span>
@@ -665,8 +886,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1148 字">
-  <em>6 分钟</em>阅读</span>
+  title="480 字">
+  <em>2 分钟</em>阅读</span>
 
     </div>
 
@@ -675,24 +896,97 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h3 id="在日常的开发中我们总是重复的做重复的工作比如我们做管理后台页面的列表页我们每个项目都是用基于所选的ui组件去开发每次都是用对应组件的api虽然挺好但是对于我来说总感觉不是自己的东西有点虚无缥缈的感觉下一个项目下一个需求再使用它就要重新熟悉一遍它的功能和使用方法或者要把以前的冗长的代码copy过来使用"><span class="mr-2">在日常的开发中，我们总是重复的做重复的工作，比如我们做管理后台页面的列表页，我们每个项目都是用基于所选的ui组件去开发，每次都是用对应组件的api,虽然挺好，但是对于我来说，总感觉不是自己的东西，有点虚无缥缈的，感觉下一个项目，下一个需求再使用它就要重新熟悉一遍它的功能和使用方法，或者要把以前的冗长的代码copy过来使用，</span><a href="#在日常的开发中我们总是重复的做重复的工作比如我们做管理后台页面的列表页我们每个项目都是用基于所选的ui组件去开发每次都是用对应组件的api虽然挺好但是对于我来说总感觉不是自己的东西有点虚无缥缈的感觉下一个项目下一个需求再使用它就要重新熟悉一遍它的功能和使用方法或者要把以前的冗长的代码copy过来使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<blockquote class="prompt-tip">
-  <p>这不是一个良好的习惯，我的个人习惯里，总是要对拿来的ui组件，比较基础性的、常用性的组件进行符合自己开发习惯的，或者认为是最好解决方案的二次开发封装，这样我能把常用的业务场景，以及和页面布局，其他组件的搭配使用相结合起来，代码进行了抽离，再次有业务需要时候，使用起来会更简单，更高效，我认为这是一个好的习惯</p>
+  <blockquote class="prompt-tip">
+  <p>用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀</p>
 </blockquote>
+
+<h3 id="js-函数中提供的三个相关参数平常几乎用不到但是在看某些源码时候还是会遇到再次温顾记录一下提高认知巩固自己的编码掌控能力"><span class="mr-2">js 函数中提供的三个相关参数，平常几乎用不到，但是在看某些源码时候，还是会遇到，再次温顾记录一下，提高认知。巩固自己的编码掌控能力。</span><a href="#js-函数中提供的三个相关参数平常几乎用不到但是在看某些源码时候还是会遇到再次温顾记录一下提高认知巩固自己的编码掌控能力" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>
-    <p>由于本人日常使用的前端技术栈以vue为核心，由于naive-ui被尤大仁的极力推荐，本人已经使用该ui框架将近2年，从一开始使用，就像vue2时代一样，开始了组件的基于实际生产的二次开发，经过长久时间的丰富完善，二次封装开发的 <a href="https://www.npmjs.com/package/rong-table">rong-table</a> 组件 已经基本能使用于98%的列表业务场景，包括良好的场景布局方案，大大的提高了 开发的效率，降低了列表模块的开发代码繁杂程度，降低了代码量，如果你使用了naive-ui,这个可以帮你大大的解放该部分的开发时间</p>
-  </li>
-  <li>
-    <p>在日常开发环境中，我们常用到富文本编辑器，在实际业务中，富文本上传图片，如果不是长传到云存储，如果只是通过表单接口传递，这时候，如果图片被转为base64字符串，并提交接口的话，一个图片过大，表单接口提交的内容过大，1MB 3MB 5MB ..,接口请求会卡死的，或者接口会拦截，表单提交失败的，网上普遍的富文本 这个问题解决的不是非常经典完整，比如识别粘贴事件上传，这样会把文本内容也当图片上传了。或者把文本内容屏蔽掉了，这是不行的，本人经过妥善构思，现在可以使用函数 <a href="https://www.npmjs.com/package/html-base64-img-to-upload">html-base64-img-to-upload</a> 在表单提交时候检测对应字段，如果是base64格式的，如果长度大于使用设定的长度参数，则会把这个base64图片自动上传到设定的存储接口上，promise返回上传后的图片地址，避免在表单里面提交，另外，富文本一般会有新手测试提各种奇怪的bug,比较常见的是一个 富文本长度问题，这个我的做法 一般是不做长度限制的，从生产上来说实现不是很理想。。</p>
-  </li>
+  <li>先说 arguments,原先的两种写法，[functionName].arguments 已经废弃了,部分浏览器已经不用了，干脆都不要用了；现在我们可以在函数内部直接使用 arguments 访问，</li>
 </ul>
 
-<blockquote class="prompt-tip">
-  <p>在个人的看法里。vue,react 只是同一维度的两个竞争的js框架，一般应用场景96%的业务场景，彼此都能很好的解决，只需要把一门学好就行了，人的精力有限的，一个js框架是那么多技术大哥一起努力的产物，对于开发学习者，一个人的智慧力量和专注力是适当有限的，还是专人专事比较好，实际应用中来回切换这两个，可能精力会不够，也就用的不够到精髓，等用到了深处时候会发现框架和js是交互共生的，框架只是一种环境、开发范式、理念。一个vue3是有大概99位技术大哥，将近3000次代码提交，历时2年多时间才开发出来的，而且还借鉴对比于vue2、react、angular。未来的日子里，我也讲适当把vue3的源码读后感记录一下。学习要做笔记，不然学的不深。</p>
-</blockquote>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">xiangchuifeng</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span>
+    <span class="nx">xiangchuifeng</span><span class="p">.</span><span class="nx">arguments</span><span class="p">,</span>
+    <span class="nx">arguments</span><span class="p">,</span>
+    <span class="k">typeof</span> <span class="nx">arguments</span><span class="p">,</span>
+    <span class="nb">Array</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+<span class="nf">xiangchuifeng</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>测试输出如下图：
+<a href="/assets/img/arguments测试.png" class="popup img-link "><img data-src="/assets/img/arguments测试.png" alt="arguments测试" class="lazyload" data-proofer-ignore></a></p>
+
+<p>通过测试我们可以知道，arguments 是一个类数组，并且含有 callee 属性。</p>
+
+<p>获取函数的参数 我们也可以使用 es6 的 … 操作符号</p>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">b</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">b</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//[1,2,3]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>callee属性,是当前函数的引用，是正在被执行的函数本身，比如匿名函数可以使用该属性实现递归调用。</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>  <span class="kd">function</span> <span class="nf">diGui</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="nx">n</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">){</span>
+      <span class="nx">n</span><span class="o">=</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="dl">'</span><span class="s1">digui</span><span class="dl">'</span><span class="p">)</span>
+      <span class="nx">arguments</span><span class="p">.</span><span class="nf">callee</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nx">n</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p><a href="/assets/img/callee递归测试.png" class="popup img-link "><img data-src="/assets/img/callee递归测试.png" alt="callee测试" class="lazyload" data-proofer-ignore></a></p>
+
+<ul>
+  <li>caller：在一个函数调用另外一个函数时候，被调用函数会自动生成caller属性，指向调用它的函数对象。如果当前被调用函数，未被调用，或者未被其他函数调用，比如单独执行，这时候的caller返回为null;</li>
+</ul>
+
+<p><a href="/assets/img/caller测试.png" class="popup img-link "><img data-src="/assets/img/caller测试.png" alt="caller测试" class="lazyload" data-proofer-ignore></a>
+而arguments.callee.caller 意义和 ttCaller.caller 差不多了。</p>
+
+<p>以上就是对于该处js知识点的再回顾，平常用的不是很多，在一些js插件 框架 工具等源码中可能会涉及到，了解此知识点有利于阅读。</p>
 
 
 </div>
@@ -704,7 +998,7 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/vue/'>vue</a>
+      <a href='/categories/function%E4%B9%8Barguments-callee-caller/'>function之arguments-callee-caller</a>
   </div>
   
 
@@ -713,11 +1007,8 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/%E7%BB%84%E4%BB%B6/"
-          class="post-tag no-text-decoration" >组件</a>
-      
-      <a href="/tags/vue3%E7%BB%84%E4%BB%B6/"
-          class="post-tag no-text-decoration" >vue3组件</a>
+      <a href="/tags/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+          class="post-tag no-text-decoration" >js基础知识</a>
       
   </div>
   
@@ -742,19 +1033,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&url=%2Fposts%2Fvue%25E5%25A5%25BD%25E7%2594%25A8%25E7%259A%2584table%25E7%25BB%2584%25E4%25BB%25B6%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=js%E7%9F%A5%E8%AF%86%E7%82%B9-function%E3%80%81arguments%E3%80%81callee%E3%80%81caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3.%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&url=%2Fposts%2Fjs%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9-function-arguments-callee-caller%25E7%259A%2584%25E5%259B%259E%25E9%25A1%25BE%25E7%2590%2586%25E8%25A7%25A3%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&u=%2Fposts%2Fvue%25E5%25A5%25BD%25E7%2594%25A8%25E7%259A%2584table%25E7%25BB%2584%25E4%25BB%25B6%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=js%E7%9F%A5%E8%AF%86%E7%82%B9-function%E3%80%81arguments%E3%80%81callee%E3%80%81caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3.%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&u=%2Fposts%2Fjs%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9-function-arguments-callee-caller%25E7%259A%2584%25E5%259B%259E%25E9%25A1%25BE%25E7%2590%2586%25E8%25A7%25A3%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=%2Fposts%2Fvue%25E5%25A5%25BD%25E7%2594%25A8%25E7%259A%2584table%25E7%25BB%2584%25E4%25BB%25B6%2F&text=vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=%2Fposts%2Fjs%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9-function-arguments-callee-caller%25E7%259A%2584%25E5%259B%259E%25E9%25A1%25BE%25E7%2590%2586%25E8%25A7%25A3%2F&text=js%E7%9F%A5%E8%AF%86%E7%82%B9-function%E3%80%81arguments%E3%80%81callee%E3%80%81caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3.%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1317,20 +1608,20 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1588,39 +1879,6 @@
 
 
 
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
-  
-    
-    
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
-  
-    
-    
-      
-      
-        
-        
-        
-          
-
 
 
   <div id="related-posts" class="mb-2 mb-sm-4">
@@ -1631,7 +1889,7 @@
       
       
       <div class="card">
-        <a href="/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1643,13 +1901,13 @@
 
 
 <em class="small"
-    data-ts="1692204060"
+    data-ts="1683776940"
     data-df="YYYY/MM/DD"
     >
-  2023/08/17
+  2023/05/11
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js知识点-function、arguments、callee、caller的回顾理解.</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-单体模式</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1658,14 +1916,63 @@
 
 
 
+                单体模式
+
+单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。
+
+这种模式在 JavaScript 中非常...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1683882120"
+    data-df="YYYY/MM/DD"
+    >
+  2023/05/12
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-方法的链式调用</h3>
+            <div class="text-muted small">
+              <p>
                 
-  用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀
 
 
-js 函数中提供的三个相关参数，平常几乎用不到，但是在看某些源码时候，还是会遇到，再次温顾记录一下，提高认知。巩固自己的编码掌控能力。
 
 
-  先说 arguments,原先的两种写法，[functionName].arguments 已经废弃了,部分浏览器已经不用了，干脆都不要用了；现在我...
+
+                链式调用
+
+链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。
+
+
+  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
+
+
+// 大概这个意思
+function b(dataIn) {
+  // ...
+  return dataIn;
+}
+
+
+链式调用可以让...
               </p>
             </div>
           </div>
@@ -1720,55 +2027,6 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
         </a>
       </div>
     
-      
-      
-      <div class="card">
-        <a href="/posts/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%A1%86%E6%9E%B6/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1686416640"
-    data-df="YYYY/MM/DD"
-    >
-  2023/06/11
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>前端常用的地图框架</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                前端常用的地图框架（webGIS）
-
-
-  
-    Leaflet
-Leaflet 是最著名的前端地图可视化库，它开源、体积小、结构清晰、简单易用。
-  
-  
-    Mapbox GL JS
-Mapbox GL JS 是目前最新潮的前端地图库，它的矢量压缩、动态样式和三维性能令人印象深刻。它本身是开源的，但一般依赖于Mapbox公司提供的底图服务。
-  
-  
-    ArcGIS A...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1778,17 +2036,17 @@ Mapbox GL JS 是目前最新潮的前端地图库，它的矢量压缩、动态�
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="btn btn-outline-primary"
+  <a href="/posts/vue%E5%A5%BD%E7%94%A8%E7%9A%84table%E7%BB%84%E4%BB%B6/" class="btn btn-outline-primary"
     prompt="上一篇">
-    <p>js设计模式-享元模式</p>
+    <p>vue好用的table组件</p>
   </a>
   
 
   
-  <a href="/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/" class="btn btn-outline-primary"
+  <div class="btn btn-outline-primary disabled"
     prompt="下一篇">
-    <p>js知识点-function、arguments、callee、caller的回顾理解.</p>
-  </a>
+    <p>-</p>
+  </div>
   
 
 </div>

@@ -3,8 +3,8 @@
   {
     "title": "js知识点-function、arguments、callee、caller的回顾理解.",
     "url": "/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/",
-    "categories": "function之arguments-callee-caller",
-    "tags": "js基础知识",
+    "categories": "js基础知识",
+    "tags": "function之arguments-callee-caller",
     "date": "2023-08-17 00:41:00 +0800",
     
 
@@ -30,8 +30,8 @@
 
 
     
-    "snippet": "title: git reset 和 git revert的区别date: 2023-08-12 17:40:00 +0800categories: [reset和revert区别]tags: [git操作问题记录]pin: true—  用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀,在利用git版本管理工具时候，我们有时会出现错误提交的情况（当...",
-    "content": "title: git reset 和 git revert的区别date: 2023-08-12 17:40:00 +0800categories: [reset和revert区别]tags: [git操作问题记录]pin: true—  用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀,在利用git版本管理工具时候，我们有时会出现错误提交的情况（当然我们要有良好的操作习惯，避免这种不当的操作发生，实在发生之后，我们再这样去解决），此时我们希望能撒销提交操作，让程序回到提交前的样子，本文总结了两种解决方法：回退 (reset)、反做 ( revert)下面是 git的版本管理，及HEAD的理解使用git的每次提交，Git都会自动把它们串成一条时间线，这条时间线就是一个分支。如果没有新建分支，那么只有一条时间线，即只有-个分支，在Gt里，这个分支叫主分支，即master分支。有一个HEAD指针指向当前分支（只有一个分支的情况下会指向master，而master是指向最新提交）。每个版本都会有自己的版本信息，如特有的版本号、版本名等。如下图，假设只有一个分支：下面讲一下 git reset 与 git revert 的区别git reset 的作用是修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本，如下图所示，假设我们要回退到版本一reset 之后，目标版本之后的版本不见了可以知道，git reset之后，回到之前的版本之后，之后所有的版本都不要了，而相反，git revert 只是回退了目标版本，但是后面做的版本还会保留着，git reset 操作如下：git log； 查看提交日志，找到要回退的版本号git reset –hard 目标版本号; 将版本回退；版本号回退之后，git log再看 HEAD已经到目标分支上；这种版本回退之后，一般 git push 会报错，因为我们本地库已经回退到比远程库更旧的版本。所以我们要 “git push -f” 强制推上去就好了。下面讲一下 git revertgit revert 是用于“反做”某一个版本，以达到撤销该版本的修改的目的。比如，我们commit了三个版本（版本-、版本二、版本三），突然发现版本二不行（如：有bug），想要撤销版本二，但又不想影响撒销版本三的提交，就可以用 git revert 命令来反做版本二，生成新的版本四，这个版本四里会保留版本三的东西，但撤销了版本二的东西。如下图所示：那么具体实现方法是：使用 ”git revert -n 版本号“ 还原，如果文件出现冲突，手动解决即可，然后 ”git add 文件名“ ，然后 “git commit -m 注释或者版本名” 然后 git push 推送到远程仓库即可。注意，两者区别是，git reset是回退版本，该版本后面做的都没有了，git revert 是还原某一个版本的改动，但该版本后面的其他版本的改动依然保留"
+    "snippet": "title: git reset和git revert的区别date: 2023-08-12 17:40:00 +0800categories: [git操作问题记录]tags: [reset和revert区别]pin: true—  用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀,在利用git版本管理工具时候，我们有时会出现错误提交的情况（当然我...",
+    "content": "title: git reset和git revert的区别date: 2023-08-12 17:40:00 +0800categories: [git操作问题记录]tags: [reset和revert区别]pin: true—  用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀,在利用git版本管理工具时候，我们有时会出现错误提交的情况（当然我们要有良好的操作习惯，避免这种不当的操作发生，实在发生之后，我们再这样去解决），此时我们希望能撒销提交操作，让程序回到提交前的样子，本文总结了两种解决方法：回退 (reset)、反做 ( revert)下面是 git的版本管理，及HEAD的理解使用git的每次提交，Git都会自动把它们串成一条时间线，这条时间线就是一个分支。如果没有新建分支，那么只有一条时间线，即只有-个分支，在Gt里，这个分支叫主分支，即master分支。有一个HEAD指针指向当前分支（只有一个分支的情况下会指向master，而master是指向最新提交）。每个版本都会有自己的版本信息，如特有的版本号、版本名等。如下图，假设只有一个分支：下面讲一下 git reset 与 git revert 的区别git reset 的作用是修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本，如下图所示，假设我们要回退到版本一reset 之后，目标版本之后的版本不见了可以知道，git reset之后，回到之前的版本之后，之后所有的版本都不要了，而相反，git revert 只是回退了目标版本，但是后面做的版本还会保留着，git reset 操作如下：执行命令 git log， 查看提交日志，找到要回退的版本号执行命令 git reset –hard 目标版本号; 将版本回退；版本号回退之后，git log再看 HEAD已经到目标分支上；这种版本回退之后，一般 git push 会报错，因为我们本地库已经回退到比远程库更旧的版本。所以我们要 “git push -f” 强制推上去就好了。下面讲一下 git revertgit revert 是用于“反做”某一个版本，以达到撤销该版本的修改的目的。比如，我们commit了三个版本（版本-、版本二、版本三），突然发现版本二不行（如：有bug），想要撤销版本二，但又不想影响撒销版本三的提交，就可以用 git revert 命令来反做版本二，生成新的版本四，这个版本四里会保留版本三的东西，但撤销了版本二的东西。如下图所示：那么具体实现方法是：使用 ”git revert -n 版本号“ 还原，如果文件出现冲突，手动解决即可，然后 ”git add 文件名“ ，然后 “git commit -m 注释或者版本名” 然后 git push 推送到远程仓库即可。注意，两者区别是，git reset是回退版本，该版本后面做的都没有了，git revert 是还原某一个版本的改动， 但该版本后面的其他版本的改动依然保留"
   },
   
   {
@@ -55,7 +55,7 @@
     "title": "js设计模式-享元模式",
     "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/",
     "categories": "js设计模式理解",
-    "tags": "js基础知识",
+    "tags": "",
     "date": "2023-06-13 11:17:00 +0800",
     
 

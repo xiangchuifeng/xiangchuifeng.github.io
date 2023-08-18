@@ -54,8 +54,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Git reset 和 git revert的区别" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="title: git reset 和 git revert的区别 date: 2023-08-12 17:40:00 +0800 categories: [reset和revert区别] tags: [git操作问题记录] pin: true —" />
-<meta property="og:description" content="title: git reset 和 git revert的区别 date: 2023-08-12 17:40:00 +0800 categories: [reset和revert区别] tags: [git操作问题记录] pin: true —" />
+<meta name="description" content="title: git reset和git revert的区别" />
+<meta property="og:description" content="title: git reset和git revert的区别" />
 <link rel="canonical" href="/posts/git-reset-%E5%92%8C-git-revert%E7%9A%84%E5%8C%BA%E5%88%AB/" />
 <meta property="og:url" content="/posts/git-reset-%E5%92%8C-git-revert%E7%9A%84%E5%8C%BA%E5%88%AB/" />
 <meta property="og:site_name" content="王的宇的技术博客" />
@@ -65,7 +65,7 @@
 <meta property="twitter:title" content="Git reset 和 git revert的区别" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-12T00:00:00+08:00","datePublished":"2023-08-12T00:00:00+08:00","description":"title: git reset 和 git revert的区别 date: 2023-08-12 17:40:00 +0800 categories: [reset和revert区别] tags: [git操作问题记录] pin: true —","headline":"Git reset 和 git revert的区别","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/git-reset-%E5%92%8C-git-revert%E7%9A%84%E5%8C%BA%E5%88%AB/"},"url":"/posts/git-reset-%E5%92%8C-git-revert%E7%9A%84%E5%8C%BA%E5%88%AB/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-12T00:00:00+08:00","datePublished":"2023-08-12T00:00:00+08:00","description":"title: git reset和git revert的区别","headline":"Git reset 和 git revert的区别","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/git-reset-%E5%92%8C-git-revert%E7%9A%84%E5%8C%BA%E5%88%AB/"},"url":"/posts/git-reset-%E5%92%8C-git-revert%E7%9A%84%E5%8C%BA%E5%88%AB/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1126,7 +1126,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="908 字">
+  title="916 字">
   <em>5 分钟</em>阅读</span>
 
     </div>
@@ -1138,10 +1138,11 @@
 <div class="post-content">
   
 <hr />
-<p>title: git reset 和 git revert的区别
-date: 2023-08-12 17:40:00 +0800
-categories: [reset和revert区别]
-tags: [git操作问题记录]
+<p>title: git reset和git revert的区别</p>
+
+<p>date: 2023-08-12 17:40:00 +0800
+categories: [git操作问题记录]
+tags: [reset和revert区别]
 pin: true
 —</p>
 
@@ -1170,10 +1171,10 @@ pin: true
 <p>可以知道，git reset之后，回到之前的版本之后，之后所有的版本都不要了，而相反，git revert 只是回退了目标版本，但是后面做的版本还会保留着，
 git reset 操作如下：</p>
 
-<p>git log； 查看提交日志，找到要回退的版本号
+<p>执行命令 git log， 查看提交日志，找到要回退的版本号
 <a href="/assets/img/git-log.png" class="popup img-link "><img data-src="/assets/img/git-log.png" alt="" class="lazyload" data-proofer-ignore></a></p>
 
-<p>git reset –hard 目标版本号; 将版本回退；
+<p>执行命令 git reset –hard 目标版本号; 将版本回退；
 版本号回退之后，git log再看 HEAD已经到目标分支上；
 <a href="/assets/img/git-reset-log.png" class="popup img-link "><img data-src="/assets/img/git-reset-log.png" alt="git reset" class="lazyload" data-proofer-ignore></a></p>
 
@@ -1188,7 +1189,7 @@ git reset 操作如下：</p>
 使用 ”git revert -n 版本号“ 还原，如果文件出现冲突，手动解决即可，然后 ”git add 文件名“ ，然后 “git commit -m 注释或者版本名” <br />
 然后 git push 推送到远程仓库即可。</p>
 
-<h3 id="注意两者区别是git-reset是回退版本该版本后面做的都没有了git-revert-是还原某一个版本的改动但该版本后面的其他版本的改动依然保留"><span class="mr-2">注意，两者区别是，git reset是回退版本，该版本后面做的都没有了，git revert 是还原某一个版本的改动，<span style="color:pure;">但该版本后面的其他版本的改动依然保留</span></span><a href="#注意两者区别是git-reset是回退版本该版本后面做的都没有了git-revert-是还原某一个版本的改动但该版本后面的其他版本的改动依然保留" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="注意两者区别是git-reset是回退版本该版本后面做的都没有了git-revert-是还原某一个版本的改动-但该版本后面的其他版本的改动依然保留"><span class="mr-2">注意，两者区别是，git reset是回退版本，该版本后面做的都没有了，git revert 是还原某一个版本的改动， <span style="color:pure;">但该版本后面的其他版本的改动依然保留</span></span><a href="#注意两者区别是git-reset是回退版本该版本后面做的都没有了git-revert-是还原某一个版本的改动-但该版本后面的其他版本的改动依然保留" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 </div>
 
@@ -1334,85 +1335,6 @@ git reset 操作如下：</p>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1427,16 +1349,80 @@ git reset 操作如下：</p>
     
     
     
-      
-        
-        
-
   
     
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1453,7 +1439,9 @@ git reset 操作如下：</p>
     
     
       
-    
+        
+        
+
   
     
     
@@ -1490,23 +1478,9 @@ git reset 操作如下：</p>
     
     
       
-    
-  
-    
-    
-    
-    
-      
         
         
 
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1571,6 +1545,94 @@ git reset 操作如下：</p>
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1626,68 +1688,12 @@ git reset 操作如下：</p>
     
     
     
-  
-    
-    
-    
-    
       
     
   
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1725,6 +1731,9 @@ git reset 操作如下：</p>
       <a class="post-tag" href="/tags/favicon/">favicon</a>
     
       
+      <a class="post-tag" href="/tags/function%E4%B9%8Barguments-callee-caller/">function之arguments-callee-caller</a>
+    
+      
       <a class="post-tag" href="/tags/getting-started/">getting started</a>
     
       
@@ -1738,9 +1747,6 @@ git reset 操作如下：</p>
     
       
       <a class="post-tag" href="/tags/pageviews/">pageviews</a>
-    
-      
-      <a class="post-tag" href="/tags/typography/">typography</a>
     
 
     </div>
@@ -2335,85 +2341,6 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2428,16 +2355,80 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
     
-      
-        
-        
-
   
     
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2454,7 +2445,9 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
       
-    
+        
+        
+
   
     
     
@@ -2491,23 +2484,9 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
       
-    
-  
-    
-    
-    
-    
-      
         
         
 
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2572,6 +2551,94 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2627,68 +2694,12 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
     
-  
-    
-    
-    
-    
       
     
   
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2726,6 +2737,9 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
       <a class="post-tag" href="/tags/favicon/">favicon</a>
     
       
+      <a class="post-tag" href="/tags/function%E4%B9%8Barguments-callee-caller/">function之arguments-callee-caller</a>
+    
+      
       <a class="post-tag" href="/tags/getting-started/">getting started</a>
     
       
@@ -2739,9 +2753,6 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
       
       <a class="post-tag" href="/tags/pageviews/">pageviews</a>
-    
-      
-      <a class="post-tag" href="/tags/typography/">typography</a>
     
 
     </div>

@@ -776,6 +776,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -783,6 +795,29 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -870,8 +905,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1103 字">
-  <em>6 分钟</em>阅读</span>
+  title="1322 字">
+  <em>7 分钟</em>阅读</span>
 
     </div>
 
@@ -945,23 +980,87 @@
 <hr />
 
 <blockquote class="prompt-tip">
-  <p>这个可能我们日常开发中已经基本很好的用到了，从 js设计模式的内容来看，后面列举了三五个不用的方法，以捍卫该模式，然后列举出了使用适配器的场景，以及利弊。</p>
+  <p>这个可能我们日常开发中已经基本很好的用到了，从 js设计模式的内容来看，后面列举了三五个不用的方法，<br />
+以捍卫该模式，然后列举出了使用适配器的场景，以及利弊。</p>
 </blockquote>
+
+<ul>
+  <li>
+    <h4 id="22另外一个实际应用中比较常见的案例如下"><span class="mr-2">2.2另外一个实际应用中比较常见的案例如下：</span><a href="#22另外一个实际应用中比较常见的案例如下" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <p>假如一个项目需要用到另外一个项目的 代码方法，比如我们要使用到api相关的。但是他的好多变量需要改，这时候，<br />
+ 我们最好的做法是 适配这个变量，而不是替换这个变量。</p>
+  </li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>
+ <span class="kd">let</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">devUrl</span><span class="p">:</span><span class="dl">''</span>
+ <span class="p">}</span>
+  <span class="k">export</span> <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span><span class="nx">baseUrl</span><span class="p">.</span><span class="nx">devUrl</span><span class="o">+</span><span class="dl">'</span><span class="s1">/xx/xx</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span><span class="nx">baseUrl</span><span class="p">.</span><span class="nx">devUrl</span><span class="o">+</span><span class="dl">'</span><span class="s1">/xx/xx</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">}</span>
+  <span class="c1">// 如上这段代码，我们要替换 a,b元素中的baseUrl.devUrl变量改动会比较多的，</span>
+  <span class="c1">// 我们不如设置 给 baseUrl.devUrl复值待对接适配的变量值更好</span>
+  <span class="k">import</span> <span class="nx">newDevelopmentUrl</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">xx</span><span class="dl">'</span>
+  <span class="kd">let</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">devUrl</span><span class="p">:</span><span class="nx">newDevelopmentUrl</span>
+  <span class="p">}</span>
+
+  <span class="c1">// ....</span>
+  <span class="c1">// 这样我们就不需要替换obj对象中各个元素的baseUrl.devUrl 字段了</span>
+  
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="3-适配器模式之利"><span class="mr-2">3. 适配器模式之利</span><a href="#3-适配器模式之利" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>适配器有助于避免大规模改写现有客户代码。其工作机制是：用一个新的接口对现有类的接口进行包装，这样容户程序就能使用这个并非为其量身打造的类而又毋需为此大动手术。  
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="4-适配器模式之弊"><span class="mr-2">4. 适配器模式之弊</span><a href="#4-适配器模式之弊" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>适配器有助于避免大规模改写现有客户代码。其工作机制是：用一个新的接口对现有类的接口进行包装，这样容户程序就能使用这个并非为其量身打造的类而又毋需为此大动手术。 ### 4. 适配器模式之弊
-可能有些工程师不想使用适配器，其原因主要在于他们实际上需要彻底重写代码。有人认为适配器是一种不必要的开销，完全可以通过重写现有代码避免。此外适配器模式也会引入一批需要支持的新工具。如果现有API还未定形，或者新接口还末定形（这更有可能），那么适配器可能不会一直管用。在设计键盘的硬件工程师创造PS2-t0-USB适配器这个案例中，成千上万的键盘上面的PS2插头不会再有什么变化，而USB接口则成了新的标准，所以这种适配器才有意义。但是在软件开发这一行中，情况并非总是如此。
+3
+4
+</pre></td><td class="rouge-code"><pre>可能有些工程师不想使用适配器，其原因主要在于他们实际上需要彻底重写代码。  
+有人认为适配器是一种不必要的开销，完全可以通过重写现有代码避免。  
+此外适配器模式也会引入一批需要支持的新工具。如果现有API还未定形，或者新接口还末定形（这更有可能），  
+那么适配器可能不会一直管用。在设计键盘的硬件工程师创造PS2-t0-USB适配器这个案例中，成千上万的键盘上面的PS2插头不会再有什么变化，而USB接口则成了新的标准，所以这种适配器才有意义。但是在软件开发这一行中，情况并非总是如此。
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="我的读后感"><span class="mr-2">我的读后感；</span><a href="#我的读后感" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>适配器方式已经在代码开发中不经意的有在使用中，我们可能已经在潜移默化中，在考虑代码结构，可用性的时候，已经不经意的使用了，这里的理念算是一次特意的提醒，提亮技术专业度。平常适配器不需要刻意去使用，在某些场景遇到了综合考虑之后顺其自然的适当使用即可。
+2
+3
+</pre></td><td class="rouge-code"><pre>适配器方式已经在代码开发中不经意的有在使用中，我们可能已经在潜移默化中，  
+在考虑代码结构，可用性的时候，已经不经意的使用了，这里的理念算是一次特意的提醒,提亮技术专业度。  
+平常适配器不需要刻意去使用，在某些场景遇到了综合考虑之后顺其自然的适当使用即可。
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/menghuan-senlin.jpeg" class="popup img-link "><img data-src="/assets/img/menghuan-senlin.jpeg" alt="适配器" class="lazyload" data-proofer-ignore></a></p>
@@ -1581,6 +1680,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -1888,47 +2000,6 @@
       
       
       <div class="card">
-        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1683776940"
-    data-df="YYYY/MM/DD"
-    >
-  2023/05/11
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-单体模式</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                单体模式
-
-单你（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。
-
-这种模式在 JavaScript 中非常...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/">
           <div class="card-body">
             <!--
@@ -2026,6 +2097,50 @@ function b(dataIn) {
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1681179000"
+    data-df="YYYY/MM/DD"
+    >
+  2023/04/11
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>设计模式</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                js设计模式
+
+什么是设计模式？先抛开javascript不讲，单单设计模式的定义：
+
+首先，设计模式可能你在平常开发中，已经或多或少的有类似的使用过了，我们只是给他起了一个理论概念的名字-设计模式，使其理论化，变得更容易总结，学习，易于使用。
+就像 笔直的打出去一圈，理论上或许交 冲拳，类似的道理；
+就像蔬菜我们一直在吃，现在我们要知道它是什么蔬菜，含有什么元素，具有什么功效。
+把它升级到...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -2042,10 +2157,10 @@ function b(dataIn) {
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/" class="btn btn-outline-primary"
     prompt="下一篇">
-    <p>-</p>
-  </div>
+    <p>js设计模式-门面模式</p>
+  </a>
   
 
 </div>

@@ -54,8 +54,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="js设计模式-装饰者模式" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="一个来自中国杭州的前端开发人员的技术总结博客,aigc,美丽杭州，亚运赛事" />
-<meta property="og:description" content="一个来自中国杭州的前端开发人员的技术总结博客,aigc,美丽杭州，亚运赛事" />
+<meta name="description" content="装饰者模式" />
+<meta property="og:description" content="装饰者模式" />
 <link rel="canonical" href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" />
 <meta property="og:url" content="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" />
 <meta property="og:site_name" content="王的宇的技术博客" />
@@ -65,7 +65,7 @@
 <meta property="twitter:title" content="js设计模式-装饰者模式" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-22T11:20:00+08:00","datePublished":"2023-11-22T11:20:00+08:00","description":"一个来自中国杭州的前端开发人员的技术总结博客,aigc,美丽杭州，亚运赛事","headline":"js设计模式-装饰者模式","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-22T11:20:00+08:00","datePublished":"2023-11-22T11:20:00+08:00","description":"装饰者模式","headline":"js设计模式-装饰者模式","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/"},"url":"/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -830,9 +830,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p><a href="/assets/img/beautiful-scenery.png" class="popup img-link "><img data-src="/assets/img/beautiful-scenery.png" alt="甜美" width="700" class="lazyload" data-proofer-ignore></a></p>
-
-<h3 id="装饰者模式"><span class="mr-2"><font color="blue">装饰者模式</font></span><a href="#装饰者模式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+  <h3 id="装饰者模式"><span class="mr-2"><font color="blue">装饰者模式</font></span><a href="#装饰者模式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>装饰者模式，在js设计模式书中以自行车售卖为例做了讲解：一辆自行车是一个基础类，现在要根据不同的用户需求，<br />
 可能需求加车前灯、后灯、车铃、刹车盘、轮毅等，对应的价格也会再基础类之上有所不同。前灯、后灯、刹车盘。。。<br />
@@ -852,6 +850,8 @@
 对象的方法来使用它。从MethodProfiler这个示例中可以看到，这一切甚至可以动态实现，不用
 事先知道组件对象的接口。在为现有对象添砖加瓦这方面，装饰者模式为程序员带来了极大的灵
 活性。</p>
+
+<p><a href="/assets/img/beautiful-scenery.png" class="popup img-link "><img data-src="/assets/img/beautiful-scenery.png" alt="甜美" width="700" class="lazyload" data-proofer-ignore></a></p>
 
 <h4 id="装饰者模式缺点"><span class="mr-2">装饰者模式缺点</span><a href="#装饰者模式缺点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>装饰者模式的缺点主要表现在两个方面：<br />

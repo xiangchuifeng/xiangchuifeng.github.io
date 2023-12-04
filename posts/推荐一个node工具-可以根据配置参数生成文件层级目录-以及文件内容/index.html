@@ -50,27 +50,27 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>js知识点-function、arguments、callee、caller的回顾理解. | 王的宇的技术博客</title>
+<title>推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容 | 王的宇的技术博客</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="js知识点-function、arguments、callee、caller的回顾理解." />
+<meta property="og:title" content="推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀," />
-<meta property="og:description" content="用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀," />
-<link rel="canonical" href="/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/" />
-<meta property="og:url" content="/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/" />
+<meta name="description" content="fs-json-to-files" />
+<meta property="og:description" content="fs-json-to-files" />
+<link rel="canonical" href="/posts/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7-%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95-%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/" />
+<meta property="og:url" content="/posts/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7-%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95-%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/" />
 <meta property="og:site_name" content="王的宇的技术博客" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-08-17T00:41:00+08:00" />
+<meta property="article:published_time" content="2023-12-04T18:06:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="js知识点-function、arguments、callee、caller的回顾理解." />
+<meta property="twitter:title" content="推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-08-17T00:41:00+08:00","datePublished":"2023-08-17T00:41:00+08:00","description":"用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀,","headline":"js知识点-function、arguments、callee、caller的回顾理解.","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/"},"url":"/posts/js%E7%9F%A5%E8%AF%86%E7%82%B9-function-arguments-callee-caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-04T18:06:00+08:00","datePublished":"2023-12-04T18:06:00+08:00","description":"fs-json-to-files","headline":"推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7-%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95-%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/"},"url":"/posts/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7-%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95-%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>js知识点-function、arguments、callee、caller的回顾理解. | 王的宇的技术博客
+  <title>推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容 | 王的宇的技术博客
   </title>
 
   <!--
@@ -461,7 +461,7 @@
         
 
           
-            <span>js知识点-function、arguments、callee、caller的回顾理解.</span>
+            <span>推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容</span>
           
 
         
@@ -545,6 +545,155 @@
     
       
       
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    <!--  -->
+
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+      
+
+      
+
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    <!--  -->
+
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    <!-- make sure the `<img>` is wrapped by `<a>` -->
+    
+
+    
+      <!-- create the image wrapper -->
+      
+    
+
+    <!-- combine -->
+    
+
+  
     
 
     
@@ -774,6 +923,29 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -786,6 +958,42 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -818,7 +1026,7 @@
 
 <!-- return -->
 
-<h1 data-toc-skip>js知识点-function、arguments、callee、caller的回顾理解.</h1>
+<h1 data-toc-skip>推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -834,10 +1042,10 @@
 
 
 <em class=""
-    data-ts="1692204060"
+    data-ts="1701684360"
     data-df="YYYY/MM/DD"
     data-toggle="tooltip" data-placement="bottom">
-  2023/08/17
+  2023/12/04
 </em>
 
     </span>
@@ -892,8 +1100,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="480 字">
-  <em>2 分钟</em>阅读</span>
+  title="635 字">
+  <em>3 分钟</em>阅读</span>
 
     </div>
 
@@ -902,15 +1110,39 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <blockquote class="prompt-tip">
-  <p>用一段时间，抽空看完一部分知识点，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。😀,</p>
-</blockquote>
+  <h1 id="fs-json-to-files">fs-json-to-files</h1>
 
-<h3 id="js-函数中提供的三个相关参数平常几乎用不到但是在看某些源码时候还是会遇到再次温顾记录一下提高认知巩固自己的编码掌控能力"><span class="mr-2">js 函数中提供的三个相关参数，平常几乎用不到，但是在看某些源码时候，还是会遇到，再次温顾记录一下，提高认知。巩固自己的编码掌控能力。</span><a href="#js-函数中提供的三个相关参数平常几乎用不到但是在看某些源码时候还是会遇到再次温顾记录一下提高认知巩固自己的编码掌控能力" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div align="center">
+<a href="/assets/img/tool-icon.png" class="popup img-link "><img data-src="/assets/img/tool-icon.png" width="400px" style="margin-left:200px;" class="lazyload" data-proofer-ignore></a>
+</div>
 
-<ul>
-  <li>先说 arguments,原先的两种写法，[functionName].arguments 已经废弃了,部分浏览器已经不用了，干脆都不要用了；现在我们可以在函数内部直接使用 arguments 访问，</li>
-</ul>
+<p>使用这个node工具 可以在配置了文件目录结构，文件模板类型之后，一键快速生成你想要的文件夹、文件、文件内容，提高生产力，好东西。</p>
+
+<p>具体看下面介绍哈：</p>
+
+<p>use it, you can create you project folders by folder json data, width any you template content;</p>
+
+<p><a href="https://img.shields.io/badge/fs--json--to--files-v1.0.2-brightgreen" class="popup img-link "><img data-src="https://img.shields.io/badge/fs--json--to--files-v1.0.2-brightgreen" alt="v" class="lazyload" data-proofer-ignore></a></p>
+
+<h2 id="more-specificallythis-is-a-tool-generate-your-project-folderskeep-you-folder-structure-fill-template-content-your-configured"><span class="mr-2">More specifically，this is a tool, generate your project folders,keep you folder structure, fill template content your configured;</span><a href="#more-specificallythis-is-a-tool-generate-your-project-folderskeep-you-folder-structure-fill-template-content-your-configured" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>i search in the web,many content about folders generate text tree, like:</p>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">tree</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>then it give me a snippet <a href="/assets/img/tree-result-text.png" class="popup img-link "><img data-src="/assets/img/tree-result-text.png" alt="" class="lazyload" data-proofer-ignore></a></p>
+
+<p>every time i build a new project, many folders、files require to create, need to fill content,<br />
+if tree has reverse operation,it will be great;<br />
+i search in the web, Almost no discovery of this feature；npm 、github 、or Blog、Forum；</p>
+
+<p>so i did it , It took half a day , then It took another half day to publish。</p>
+
+<h3 id="usage"><span class="mr-2">usage:</span><a href="#usage" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -923,40 +1155,31 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">xiangchuifeng</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span>
-    <span class="nx">xiangchuifeng</span><span class="p">.</span><span class="nx">arguments</span><span class="p">,</span>
-    <span class="nx">arguments</span><span class="p">,</span>
-    <span class="k">typeof</span> <span class="nx">arguments</span><span class="p">,</span>
-    <span class="nb">Array</span><span class="p">.</span><span class="nf">from</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-<span class="nf">xiangchuifeng</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="c1">// example.js</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">genFilesByJsonData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fs-json-to-files</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">temps</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./tmpData.js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">fileJsonData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./fileJsonData.js</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nf">genFilesByJsonData</span><span class="p">(</span><span class="nx">temps</span><span class="p">,</span> <span class="nx">fileJsonData</span><span class="p">);</span>
+<span class="c1">// You can use it when creating projects, updating requirements,</span>
+<span class="c1">// and planning to create multiple file structures,</span>
+<span class="c1">// instead of manually generating them one by one</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>测试输出如下图：
-<a href="/assets/img/arguments测试.png" class="popup img-link "><img data-src="/assets/img/arguments测试.png" alt="arguments测试" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/img/generated-folders.png" class="popup img-link "><img data-src="/assets/img/generated-folders.png" alt="" class="lazyload" data-proofer-ignore></a><br />
+<a href="/assets/img/generated-temp.png" class="popup img-link "><img data-src="/assets/img/generated-temp.png" alt="" class="lazyload" data-proofer-ignore></a></p>
 
-<p>通过测试我们可以知道，arguments 是一个类数组，并且含有 callee 属性。</p>
+<h3 id="his-directory-will-be-the-current-directory-where-your-node-command-is-executed"><span class="mr-2">his directory will be the current directory where your node command is executed</span><a href="#his-directory-will-be-the-current-directory-where-your-node-command-is-executed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>获取函数的参数 我们也可以使用 es6 的 … 操作符号</p>
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">b</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nf">b</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//[1,2,3]</span>
+</pre></td><td class="rouge-code"><pre>  <span class="nx">node</span> <span class="nx">example</span><span class="p">.</span><span class="nx">js</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<ul>
-  <li>callee属性,是当前函数的引用，是正在被执行的函数本身，比如匿名函数可以使用该属性实现递归调用。</li>
-</ul>
+<h3 id="the-filejsondata-example"><span class="mr-2">the fileJsonData example:</span><a href="#the-filejsondata-example" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
@@ -971,28 +1194,110 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>  <span class="kd">function</span> <span class="nf">diGui</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span>
-    <span class="nf">if</span><span class="p">(</span><span class="nx">n</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">){</span>
-      <span class="nx">n</span><span class="o">=</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span><span class="dl">'</span><span class="s1">digui</span><span class="dl">'</span><span class="p">)</span>
-      <span class="nx">arguments</span><span class="p">.</span><span class="nf">callee</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
-    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
-      <span class="k">return</span> <span class="nx">n</span>
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="c1">// fileJsonData.js</span>
+<span class="c1">// I prefer to use this data structure here,</span>
+<span class="c1">// which is a one-to-one mapping of file structures without sub arrays such as children</span>
+<span class="c1">// each Object will renerate one folder, the inner Object is also，done and done,</span>
+<span class="c1">// if the value of key is type of string, it will be defined as a file,it can be followed a '-' ,</span>
+<span class="c1">// the later is content template type that will fill.if no,the file will a empty file, no bad impact.</span>
 
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fileJsonData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">src</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">views</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">app</span><span class="p">:</span> <span class="dl">"</span><span class="s2">app.vue-tempVue</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">config</span><span class="p">:</span> <span class="dl">"</span><span class="s2">config.js-tempA</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">common</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">util</span><span class="p">:</span> <span class="dl">"</span><span class="s2">util.js-tempA</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">a</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a.js-tempA</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">b</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">bb</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bb.js-tempB</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">cc</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cc.js-tempB</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p><a href="/assets/img/callee递归测试.png" class="popup img-link "><img data-src="/assets/img/callee递归测试.png" alt="callee测试" class="lazyload" data-proofer-ignore></a></p>
 
-<ul>
-  <li>caller：在一个函数调用另外一个函数时候，被调用函数会自动生成caller属性，指向调用它的函数对象。如果当前被调用函数，未被调用，或者未被其他函数调用，比如单独执行，这时候的caller返回为null;</li>
-</ul>
+<h3 id="the-temps-example"><span class="mr-2">the temps example:</span><a href="#the-temps-example" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="/assets/img/caller测试.png" class="popup img-link "><img data-src="/assets/img/caller测试.png" alt="caller测试" class="lazyload" data-proofer-ignore></a>
-而arguments.callee.caller 意义和 ttCaller.caller 差不多了。</p>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="c1">// tmpData.js</span>
+<span class="c1">// I have chosen to put the template type in a separate file, corresponding to the template in the JSON data file just now</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">temps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">tempVue</span><span class="p">:</span> <span class="s2">`
+    &lt;template&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/template&gt;
+    
+    &lt;script setup&gt;
+    
+    &lt;/script&gt;
+    &lt;style lang="less"&gt;
+    
+    &lt;/style&gt;
+  `</span><span class="p">,</span>
+  <span class="na">tempA</span><span class="p">:</span> <span class="s2">`
+    export const A = ()=&gt;{
+      console.log('23333')
+    }
+  `</span><span class="p">,</span>
 
-<p>以上就是对于该处js知识点的再回顾，平常用的不是很多，在一些js插件 框架 工具等源码中可能会涉及到，了解此知识点有利于阅读。</p>
+  <span class="na">tempB</span><span class="p">:</span> <span class="s2">`
+  export const B = ()=&gt;{
+    console.log('b3333')
+  }
+`</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote class="prompt-tip">
+  <p>node出现的作用，我的理解是提供了模块化开发的解决方案，让前端进一步实现工程化；node 作为一门后端语言，为前端开发者提供了可能，可以写后端服务代码，可以进行文件读写操作等各种，可以执行shell指令；是前端能力的扩展。 npm、webpack、express、koa、egg、以及各种编译打包的工具 都是基于node开发，为前端的开发提供了许多有效的工具、助手。</p>
+</blockquote>
 
 
 </div>
@@ -1004,7 +1309,7 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/'>js基础知识</a>
+      <a href='/categories/%E5%B7%A5%E5%85%B7%E7%9B%B8%E5%85%B3/'>【工具相关]</a>
   </div>
   
 
@@ -1013,8 +1318,8 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
-          class="post-tag no-text-decoration" >js基础知识</a>
+      <a href="/tags/node%E7%9B%B8%E5%85%B3/"
+          class="post-tag no-text-decoration" >node相关</a>
       
   </div>
   
@@ -1039,19 +1344,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=js%E7%9F%A5%E8%AF%86%E7%82%B9-function%E3%80%81arguments%E3%80%81callee%E3%80%81caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3.%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&url=%2Fposts%2Fjs%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9-function-arguments-callee-caller%25E7%259A%2584%25E5%259B%259E%25E9%25A1%25BE%25E7%2590%2586%25E8%25A7%25A3%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&url=%2Fposts%2F%25E6%258E%25A8%25E8%258D%2590%25E4%25B8%2580%25E4%25B8%25AAnode%25E5%25B7%25A5%25E5%2585%25B7-%25E5%258F%25AF%25E4%25BB%25A5%25E6%25A0%25B9%25E6%258D%25AE%25E9%2585%258D%25E7%25BD%25AE%25E5%258F%2582%25E6%2595%25B0%25E7%2594%259F%25E6%2588%2590%25E6%2596%2587%25E4%25BB%25B6%25E5%25B1%2582%25E7%25BA%25A7%25E7%259B%25AE%25E5%25BD%2595-%25E4%25BB%25A5%25E5%258F%258A%25E6%2596%2587%25E4%25BB%25B6%25E5%2586%2585%25E5%25AE%25B9%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=js%E7%9F%A5%E8%AF%86%E7%82%B9-function%E3%80%81arguments%E3%80%81callee%E3%80%81caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3.%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&u=%2Fposts%2Fjs%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9-function-arguments-callee-caller%25E7%259A%2584%25E5%259B%259E%25E9%25A1%25BE%25E7%2590%2586%25E8%25A7%25A3%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2&u=%2Fposts%2F%25E6%258E%25A8%25E8%258D%2590%25E4%25B8%2580%25E4%25B8%25AAnode%25E5%25B7%25A5%25E5%2585%25B7-%25E5%258F%25AF%25E4%25BB%25A5%25E6%25A0%25B9%25E6%258D%25AE%25E9%2585%258D%25E7%25BD%25AE%25E5%258F%2582%25E6%2595%25B0%25E7%2594%259F%25E6%2588%2590%25E6%2596%2587%25E4%25BB%25B6%25E5%25B1%2582%25E7%25BA%25A7%25E7%259B%25AE%25E5%25BD%2595-%25E4%25BB%25A5%25E5%258F%258A%25E6%2596%2587%25E4%25BB%25B6%25E5%2586%2585%25E5%25AE%25B9%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=%2Fposts%2Fjs%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9-function-arguments-callee-caller%25E7%259A%2584%25E5%259B%259E%25E9%25A1%25BE%25E7%2590%2586%25E8%25A7%25A3%2F&text=js%E7%9F%A5%E8%AF%86%E7%82%B9-function%E3%80%81arguments%E3%80%81callee%E3%80%81caller%E7%9A%84%E5%9B%9E%E9%A1%BE%E7%90%86%E8%A7%A3.%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=%2Fposts%2F%25E6%258E%25A8%25E8%258D%2590%25E4%25B8%2580%25E4%25B8%25AAnode%25E5%25B7%25A5%25E5%2585%25B7-%25E5%258F%25AF%25E4%25BB%25A5%25E6%25A0%25B9%25E6%258D%25AE%25E9%2585%258D%25E7%25BD%25AE%25E5%258F%2582%25E6%2595%25B0%25E7%2594%259F%25E6%2588%2590%25E6%2596%2587%25E4%25BB%25B6%25E5%25B1%2582%25E7%25BA%25A7%25E7%259B%25AE%25E5%25BD%2595-%25E4%25BB%25A5%25E5%258F%258A%25E6%2596%2587%25E4%25BB%25B6%25E5%2586%2585%25E5%25AE%25B9%2F&text=%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%20-%20%E7%8E%8B%E7%9A%84%E5%AE%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1655,98 +1960,98 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -2030,6 +2335,39 @@
 
 
 
+  
+    
+    
+  
+    
+    
+      
+      
+        
+        
+        
+      
+    
+  
+    
+    
+      
+      
+        
+        
+        
+      
+    
+  
+    
+    
+      
+      
+        
+        
+        
+          
+
 
 
   <div id="related-posts" class="mb-2 mb-sm-4">
@@ -2040,7 +2378,7 @@
       
       
       <div class="card">
-        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2052,13 +2390,13 @@
 
 
 <em class="small"
-    data-ts="1681179000"
+    data-ts="1700623200"
     data-df="YYYY/MM/DD"
     >
-  2023/04/11
+  2023/11/22
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>设计模式</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-组合模式</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2067,14 +2405,15 @@
 
 
 
-                js设计模式
+                组合模式
+。
 
-什么是设计模式？先抛开javascript不讲，单单设计模式的定义：
 
-首先，设计模式可能你在平常开发中，已经或多或少的有类似的使用过了，我们只是给他起了一个理论概念的名字-设计模式，使其理论化，变得更容易总结，学习，易于使用。
-就像 笔直的打出去一圈，理论上或许交 冲拳，类似的道理；
-就像蔬菜我们一直在吃，现在我们要知道它是什么蔬菜，含有什么元素，具有什么功效。
-把它升级到...
+  抽离封装、继承、多态、是贯穿于世间所有科学发展的项目的哈，包括软件、硬件，以及实体建筑工程、工业、等等。。。，然后作用到实际场景、维度、可能名称会有点大同小异，但是哲学理念是一样的。装饰器模式和适配器模式从实现哲理上还是有类似的共通之处的，只是作用维度不同，名称不同，细节不同。—当我们要学习使用它的时候，还是要落到实处去学习一下具体应用领域的专业细节的。
+
+
+
+  用一...
               </p>
             </div>
           </div>
@@ -2084,7 +2423,7 @@
       
       
       <div class="card">
-        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F/">
+        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2096,13 +2435,13 @@
 
 
 <em class="small"
-    data-ts="1683776940"
+    data-ts="1700623200"
     data-df="YYYY/MM/DD"
     >
-  2023/05/11
+  2023/11/22
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-单体模式</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-装饰者模式</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2111,11 +2450,14 @@
 
 
 
-                单体模式,也叫单例模式
+                装饰者模式
 
-单体（singleton）模式是 javascript 中最基本但又最有用的模式之一，这种模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一的变最进行访问。通过确保单体对象只存在一份实例，你就可以确信自己的所有代码使用的都是同样的全局资源.借助于单体模式，你可以把代码组织得更为一致，从而使其更容易阅读和维护。
+装饰者模式，在js设计模式书中以自行车售卖为例做了讲解：一辆自行车是一个基础类，现在要根据不同的用户需求，
+可能需求加车前灯、后灯、车铃、刹车盘、轮毅等，对应的价格也会再基础类之上有所不同。前灯、后灯、刹车盘。。。
+就是自行车的装饰。装饰者模式的大概理解如此。
 
-这种模式在 JavaScr...
+
+  抽离封装、继承、多态、是贯穿于世间所有科学发展的项目的哈，包括软件、硬件，以及实体建筑工程、工业、等等。。。，...
               </p>
             </div>
           </div>
@@ -2125,7 +2467,7 @@
       
       
       <div class="card">
-        <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%96%B9%E6%B3%95%E7%9A%84%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8/">
+        <a href="/posts/%E5%AF%B9%E4%BA%8E%E6%A1%86%E6%9E%B6%E7%9A%84%E7%90%86%E8%A7%A3-%E6%A1%86%E6%9E%B6%E5%92%8C%E7%B1%BB%E5%BA%93%E7%9A%84%E5%8C%BA%E5%88%AB-copy/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2137,13 +2479,13 @@
 
 
 <em class="small"
-    data-ts="1683882120"
+    data-ts="1699871400"
     data-df="YYYY/MM/DD"
     >
-  2023/05/12
+  2023/11/13
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>js设计模式-方法的链式调用</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>对于框架的理解，框架和类库的区别</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2152,22 +2494,13 @@
 
 
 
-                链式调用
+                
 
-链式调用是简单来讲就是 一个对象/主体 调用的方法，可以返回主体本身，可以接着去访问主体的下一个方法或者操作 ,它是一种语法招数。
+框架是一个实践的产物，而不是完全在实验室中理论研究出来的。所以设计一个框架最好的方法就是从一个具体的应用开始，以提供同一类
+型应用的通用解决方案为目标，不断地从具体应用中提炼、萃取框架！然后在应用中使用这个框架，并在使用的过程中不断地修正和完善
 
-
-  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。
-
-
-// 大概这个意思
-function b(dataIn) {
-  // ...
-  return dataIn;
-}
-
-
-链式调用可以让...
+我对前端开发中的 框架的理解
+架和类库等概念的出现都是源于人们对复用的渴望。〝不要重复发明轮子”，成了软件界的一句经典名言。从最初的单个函数源...
               </p>
             </div>
           </div>
@@ -2183,17 +2516,17 @@ function b(dataIn) {
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/git-reset-%E5%92%8C-git-revert%E7%9A%84%E5%8C%BA%E5%88%AB/" class="btn btn-outline-primary"
+  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="btn btn-outline-primary"
     prompt="上一篇">
-    <p>git reset和git revert的区别</p>
+    <p>js设计模式-组合模式</p>
   </a>
   
 
   
-  <a href="/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="btn btn-outline-primary"
+  <div class="btn btn-outline-primary disabled"
     prompt="下一篇">
-    <p>js设计模式-适配器模式</p>
-  </a>
+    <p>-</p>
+  </div>
   
 
 </div>

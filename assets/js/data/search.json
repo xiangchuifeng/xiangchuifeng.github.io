@@ -1,6 +1,40 @@
 [
   
   {
+    "title": "推荐一个node工具，可以根据配置参数生成文件层级目录，以及文件内容",
+    "url": "/posts/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AAnode%E5%B7%A5%E5%85%B7-%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E5%B1%82%E7%BA%A7%E7%9B%AE%E5%BD%95-%E4%BB%A5%E5%8F%8A%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/",
+    "categories": "【工具相关]",
+    "tags": "node相关",
+    "date": "2023-12-04 18:06:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "fs-json-to-files使用这个node工具 可以在配置了文件目录结构，文件模板类型之后，一键快速生成你想要的文件夹、文件、文件内容，提高生产力，好东西。具体看下面介绍哈：use it, you can create you project folders by folder json data, width any you template content;More specifi...",
+    "content": "fs-json-to-files使用这个node工具 可以在配置了文件目录结构，文件模板类型之后，一键快速生成你想要的文件夹、文件、文件内容，提高生产力，好东西。具体看下面介绍哈：use it, you can create you project folders by folder json data, width any you template content;More specifically，this is a tool, generate your project folders,keep you folder structure, fill template content your configured;i search in the web,many content about folders generate text tree, like:tree;then it give me a snippet every time i build a new project, many folders、files require to create, need to fill content,if tree has reverse operation,it will be great;i search in the web, Almost no discovery of this feature；npm 、github 、or Blog、Forum；so i did it , It took half a day , then It took another half day to publish。usage:// example.jsimport { genFilesByJsonData } from \"fs-json-to-files\";import { temps } from \"./tmpData.js\";import { fileJsonData } from \"./fileJsonData.js\";genFilesByJsonData(temps, fileJsonData);// You can use it when creating projects, updating requirements,// and planning to create multiple file structures,// instead of manually generating them one by onehis directory will be the current directory where your node command is executed  node example.jsthe fileJsonData example:// fileJsonData.js// I prefer to use this data structure here,// which is a one-to-one mapping of file structures without sub arrays such as children// each Object will renerate one folder, the inner Object is also，done and done,// if the value of key is type of string, it will be defined as a file,it can be followed a '-' ,// the later is content template type that will fill.if no,the file will a empty file, no bad impact.export const fileJsonData = {  src: {    views: {      app: \"app.vue-tempVue\",    },    config: \"config.js-tempA\",    common: {      util: \"util.js-tempA\",      data: {        a: \"a.js-tempA\",        b: {          bb: \"bb.js-tempB\",          cc: \"cc.js-tempB\",        },      },    },  },};the temps example:// tmpData.js// I have chosen to put the template type in a separate file, corresponding to the template in the JSON data file just nowexport const temps = {  tempVue: `    &lt;template&gt;      &lt;div&gt;&lt;/div&gt;    &lt;/template&gt;        &lt;script setup&gt;        &lt;/script&gt;    &lt;style lang=\"less\"&gt;        &lt;/style&gt;  `,  tempA: `    export const A = ()=&gt;{      console.log('23333')    }  `,  tempB: `  export const B = ()=&gt;{    console.log('b3333')  }`,};  node出现的作用，我的理解是提供了模块化开发的解决方案，让前端进一步实现工程化；node 作为一门后端语言，为前端开发者提供了可能，可以写后端服务代码，可以进行文件读写操作等各种，可以执行shell指令；是前端能力的扩展。 npm、webpack、express、koa、egg、以及各种编译打包的工具 都是基于node开发，为前端的开发提供了许多有效的工具、助手。"
+  },
+  
+  {
+    "title": "js设计模式-组合模式",
+    "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/",
+    "categories": "js设计模式理解",
+    "tags": "js设计模式",
+    "date": "2023-11-22 11:20:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "组合模式。  抽离封装、继承、多态、是贯穿于世间所有科学发展的项目的哈，包括软件、硬件，以及实体建筑工程、工业、等等。。。，然后作用到实际场景、维度、可能名称会有点大同小异，但是哲学理念是一样的。装饰器模式和适配器模式从实现哲理上还是有类似的共通之处的，只是作用维度不同，名称不同，细节不同。—当我们要学习使用它的时候，还是要落到实处去学习一下具体应用领域的专业细节的。  用一天的时间，抽空看...",
+    "content": "组合模式。  抽离封装、继承、多态、是贯穿于世间所有科学发展的项目的哈，包括软件、硬件，以及实体建筑工程、工业、等等。。。，然后作用到实际场景、维度、可能名称会有点大同小异，但是哲学理念是一样的。装饰器模式和适配器模式从实现哲理上还是有类似的共通之处的，只是作用维度不同，名称不同，细节不同。—当我们要学习使用它的时候，还是要落到实处去学习一下具体应用领域的专业细节的。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。下面讲一下具体案例"
+  },
+  
+  {
     "title": "js设计模式-装饰者模式",
     "url": "/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/",
     "categories": "js设计模式理解",
@@ -13,8 +47,8 @@
 
 
     
-    "snippet": "装饰者模式装饰者模式，在js设计模式书中以自行车售卖为例做了讲解：一辆自行车是一个基础类，现在要根据不同的用户需求，可能需求加车前灯、后灯、车铃、刹车盘、轮毅等，对应的价格也会再基础类之上有所不同。前灯、后灯、刹车盘。。。就是自行车的装饰。装饰者模式的大概理解如此。由于装饰者模式在js的具体示例适当有点冗长，该篇文章也是本人对该模式的阅读之后的理解，希望帮自己增进知识，也顺便可能帮到别人我个...",
-    "content": "装饰者模式装饰者模式，在js设计模式书中以自行车售卖为例做了讲解：一辆自行车是一个基础类，现在要根据不同的用户需求，可能需求加车前灯、后灯、车铃、刹车盘、轮毅等，对应的价格也会再基础类之上有所不同。前灯、后灯、刹车盘。。。就是自行车的装饰。装饰者模式的大概理解如此。由于装饰者模式在js的具体示例适当有点冗长，该篇文章也是本人对该模式的阅读之后的理解，希望帮自己增进知识，也顺便可能帮到别人我个人认为这个模式，应该先从概念理解和优缺点以及应用场景开始讲比较好。装饰者模式优点装饰者是在运行期间为对象增添特性或职责的有力工具。在自行车商店那个例子中，逦过使用裝饰者，你可以动态地为自行车对象添加可选的特色配件。在只有部分对象需要这些特性的情况下装饰者模式的好处尤为突出。如果不采用这种模式，那么要想实现同样的效果必须使用大量子类。裝饰者的运作过程是透明的，这就是说你可以用它包装其他对象，然后继续按之前使用那些对象的方法来使用它。从MethodProfiler这个示例中可以看到，这一切甚至可以动态实现，不用事先知道组件对象的接口。在为现有对象添砖加瓦这方面，装饰者模式为程序员带来了极大的灵活性。装饰者模式缺点装饰者模式的缺点主要表现在两个方面：首先，在遇到用装饰者包装起来的对象时，那些依赖于类型检查的代码会出问题。尽管在JavaScript中很少使用严格的类型检查，但是如果你的代码中执行了这样的检查，那么装饰者是无法匹配所需要的类型的。通常装饰者对客户代码来说是完全透明的，不过，在这种情况下，客户代码就能感知装饰者与其组件的不同。其次，使用装饰者模式往往会增加架构的复杂程度。这种模式常常要引入许多小对象，它们看起来比较相似（参见自行车商店一例），而实际功能却大相径庭。装饰者棪式往往不太容易理解，对于那些不熟悉这种模式的开发人员而言尤其如此。此外，实现具有动态接口的装饰者（如MethodProfiler）沙及的语法细节有时也会令人生畏。在设计一个使用了装饰者模式的架构时，你必须多花点心思，确保自己的代码有良好的文档说明，并且容易理解。总之本章讲述了一种既不用创建子类，又能透明、动态地为对象增添功能的设计模式。装饰者棪式可以在不修改类定义的前提下用来为具体对象添加特性。我们再次研究了自行车商店的例子，并用工厂模式来创建具有多种可定制选件的自行车。我们讨论了装饰者修改其包装的对象的各种做法，以及与每种做法相关的一些注意事项。作为一个实用性的练习，我们还创建了一个具有动态接口的装饰者，它可以用来记录执行一个对象的方法所耗费的时间。只要懂得裝饰者模式的工作机制，你就会明白它是多么有用。我们用7个装饰者就完成了本*需要几千个子类才能完成的任务，这足以说明问题。监于装饰者的完全透明性，使用这种模式时你不用老是担心系统会因此而失灵或产生不兼容问题。这是一种不用重新定义对象就能对其进行扩充的简便手段。  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。下面讲一下具体案例其实我个人认为分散性的一段代码一段大分析解释这种写文章的方式，这样思维考虑太健壮了，不利于很快的读懂和学习。我个人更喜欢先看完整的demo,先理解，然后再回过头来看它健壮性的考虑和思维。"
+    "snippet": "装饰者模式装饰者模式，在js设计模式书中以自行车售卖为例做了讲解：一辆自行车是一个基础类，现在要根据不同的用户需求，可能需求加车前灯、后灯、车铃、刹车盘、轮毅等，对应的价格也会再基础类之上有所不同。前灯、后灯、刹车盘。。。就是自行车的装饰。装饰者模式的大概理解如此。  抽离封装、继承、多态、是贯穿于世间所有科学发展的项目的哈，包括软件、硬件，以及实体建筑工程、工业、等等。。。，然后作用到实际...",
+    "content": "装饰者模式装饰者模式，在js设计模式书中以自行车售卖为例做了讲解：一辆自行车是一个基础类，现在要根据不同的用户需求，可能需求加车前灯、后灯、车铃、刹车盘、轮毅等，对应的价格也会再基础类之上有所不同。前灯、后灯、刹车盘。。。就是自行车的装饰。装饰者模式的大概理解如此。  抽离封装、继承、多态、是贯穿于世间所有科学发展的项目的哈，包括软件、硬件，以及实体建筑工程、工业、等等。。。，然后作用到实际场景、维度、可能名称会有点大同小异，但是哲学理念是一样的。装饰器模式和适配器模式从实现哲理上还是有类似的共通之处的，只是作用维度不同，名称不同，细节不同。—当我们要学习使用它的时候，还是要落到实处去学习一下具体应用领域的专业细节的。由于装饰者模式在js的具体示例适当有点冗长，该篇文章也是本人对该模式的阅读之后的理解，希望帮自己增进知识，也顺便可能帮到别人我个人认为这个模式，应该先从概念理解和优缺点以及应用场景开始讲比较好。装饰者模式优点装饰者是在运行期间为对象增添特性或职责的有力工具。在自行车商店那个例子中，逦过使用裝饰者，你可以动态地为自行车对象添加可选的特色配件。在只有部分对象需要这些特性的情况下装饰者模式的好处尤为突出。如果不采用这种模式，那么要想实现同样的效果必须使用大量子类。裝饰者的运作过程是透明的，这就是说你可以用它包装其他对象，然后继续按之前使用那些对象的方法来使用它。从MethodProfiler这个示例中可以看到，这一切甚至可以动态实现，不用事先知道组件对象的接口。在为现有对象添砖加瓦这方面，装饰者模式为程序员带来了极大的灵活性。装饰者模式缺点装饰者模式的缺点主要表现在两个方面：首先，在遇到用装饰者包装起来的对象时，那些依赖于类型检查的代码会出问题。尽管在JavaScript中很少使用严格的类型检查，但是如果你的代码中执行了这样的检查，那么装饰者是无法匹配所需要的类型的。通常装饰者对客户代码来说是完全透明的，不过，在这种情况下，客户代码就能感知装饰者与其组件的不同。其次，使用装饰者模式往往会增加架构的复杂程度。这种模式常常要引入许多小对象，它们看起来比较相似（参见自行车商店一例），而实际功能却大相径庭。装饰者棪式往往不太容易理解，对于那些不熟悉这种模式的开发人员而言尤其如此。此外，实现具有动态接口的装饰者（如MethodProfiler）沙及的语法细节有时也会令人生畏。在设计一个使用了装饰者模式的架构时，你必须多花点心思，确保自己的代码有良好的文档说明，并且容易理解。总之本章讲述了一种既不用创建子类，又能透明、动态地为对象增添功能的设计模式。装饰者棪式可以在不修改类定义的前提下用来为具体对象添加特性。我们再次研究了自行车商店的例子，并用工厂模式来创建具有多种可定制选件的自行车。我们讨论了装饰者修改其包装的对象的各种做法，以及与每种做法相关的一些注意事项。作为一个实用性的练习，我们还创建了一个具有动态接口的装饰者，它可以用来记录执行一个对象的方法所耗费的时间。只要懂得裝饰者模式的工作机制，你就会明白它是多么有用。我们用7个装饰者就完成了本*需要几千个子类才能完成的任务，这足以说明问题。监于装饰者的完全透明性，使用这种模式时你不用老是担心系统会因此而失灵或产生不兼容问题。这是一种不用重新定义对象就能对其进行扩充的简便手段。尽可能建议在合适需要的地方，该用的地方再用，这个要自己判断一下  用一天的时间，抽空看完一种设计模式，或者两天，还是有收获的，我们需要耐心，这个从长远来说，不算慢的。下面讲一下具体案例装饰器是装饰者模式的具体实现，现实应用中，typescript对装饰器模式有明确的使用实现。比如类的装饰可以类似下面这样：// 类的装饰器  @decortaor  class MyTestableClass {    // ...  }  function decortaor(target){    target.isTestable = true;  }  MyTestableClass.isTestable  // true;// 装饰类的属性 class Person{  @readonly  name(){    return this.first;  } } function readonly(target,name,descriptor){   // descriptor对象原来的值如下  // {  //   value: specifiedFunction,  //   enumerable: false,  //   configurable: true,  //   writable: true  // };  descriptor.writeable = false;  return descriptor; } readonly(Person.prototype,'name',descriptor)//  类似于Object.defineProperty(Person.prototype,'naem',descriptor)// 类的方法装饰器class C{  @addPrefix  toString(){    return 'str'  }}function addPrefix(target){  return 'pre'+target()}// 相当于 C.prototype.toString = addPrefix(C.prototype.toString)上面的部分示例装饰typescript的应用实现，如果用原生js实现装饰者模式 可以大概如下这样：比如我们文章顶部提到的，装饰者模式原文中举例的 自行车商店案例，可以大概的原生js实现如下：  //自行车商店有两种类型的自行车，例如山地车、公路车。 然后自行车又有刹车、按铃、售后维修、等服务，对应的价格也会不同。我们要获取对应的报价  function Bicycle(){}  Bicycle.prototype.getPrice = function(){    return 1000;  }  function BicycleRailway(){}  BicycleRailway.prototype.price = 1500;  function BicycleMountain(){}  BicycleMountain.prototype.price = 1000;  // const BicycleShop = {  //   BicycleRailway,  //   BicycleMountain  // }  const DecoratorBell = function(){}  extends(DecoratorBell,Bicycle);  DecoratorBell.prototype.price = "
   },
   
   {

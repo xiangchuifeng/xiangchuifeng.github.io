@@ -1361,7 +1361,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1744 字">
+  title="1756 字">
   <em>9 分钟</em>阅读</span>
 
     </div>
@@ -1372,7 +1372,7 @@
 
 <div class="post-content">
   <div>
-<a href="/assets/img/vite-logo.png" class="popup img-link "><img data-src="/assets/img/vite-logo.png" width="300px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-logo.png" class="popup img-link "><img data-src="/assets/img/vite-logo.png" width="350px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <!-- [元宇宙入口](http://blockcity.vip/?czat)    🌾 -->
@@ -1397,7 +1397,7 @@
   搜索preview查看到vite 发现preview代码内部实现文件在  vite/src/node/preview.ts，</li>
 </ol>
 <div>
-<a href="/assets/img/vite-preview-file.png" class="popup img-link "><img data-src="/assets/img/vite-preview-file.png" width="300px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-file.png" class="popup img-link "><img data-src="/assets/img/vite-preview-file.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <blockquote>
@@ -1429,7 +1429,7 @@ app是中间件应用，是一个函数哈，httpServer 是写在另一个文件
 <h4 id="connect是一个可扩展的http服务器框架用于使用被称为中间件的插件的节点"><span class="mr-2">Connect是一个可扩展的HTTP服务器框架，用于使用被称为中间件的“插件”的节点。</span><a href="#connect是一个可扩展的http服务器框架用于使用被称为中间件的插件的节点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>不要想的太复杂哈，接着我们看httpServer 所在的文件，哦，是resolveHttpServer，在http.ts文件里，如下：</p>
 <div>
-<a href="/assets/img/vite-preview-httpServer.png" class="popup img-link "><img data-src="/assets/img/vite-preview-httpServer.png" width="400px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-httpServer.png" class="popup img-link "><img data-src="/assets/img/vite-preview-httpServer.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>看到了吧，我们还是按照最基本的逻辑去看，其他多余的逻辑不看，resolveHttpServer里面，使用的是node的api,createServer;  参数是 app,  我们回头复习一下，createServer的参数是一个function ,现在是 app这个变量，即connect(),</p>
@@ -1452,7 +1452,7 @@ app是中间件应用，是一个函数哈，httpServer 是写在另一个文件
 <p>接着我们再回到preview.ts主文件接着往下看：</p>
 
 <div>
-<a href="/assets/img/vite-preview-use.png" class="popup img-link "><img data-src="/assets/img/vite-preview-use.png" width="450px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-use.png" class="popup img-link "><img data-src="/assets/img/vite-preview-use.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p><span style="color:lightRed;">
@@ -1545,19 +1545,19 @@ htmlFallbackMiddleware 等等。
 
 <p>在vite preview里面使用了一个关键的中间件 viteAssetMiddleware它指向的是 sirv(xx…)：</p>
 <div>
-<a href="/assets/img/vite-preview-assets.png" class="popup img-link "><img data-src="/assets/img/vite-preview-assets.png" width="450px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-assets.png" class="popup img-link "><img data-src="/assets/img/vite-preview-assets.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>sirv这个单词不好理解，我的理解是 serve,谐音词，sirv.js 执行之后返回的也是一个 function mid(req,res,next){} 中间件，它的作用是加载静态资源的，访问静态资源，相关的各种全面的响应处理 <a href="https://github.com/lukeed/sirv/blob/master/packages/sirv/index.js">sirv</a>。具体实现可以预览如下：</p>
 
 <div>
-<a href="/assets/img/vite-preview-sirv1.png" class="popup img-link "><img data-src="/assets/img/vite-preview-sirv1.png" width="450px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-sirv1.png" class="popup img-link "><img data-src="/assets/img/vite-preview-sirv1.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>代码里可以看到，核心到最后是 send(req, res, data.abs, data.stats, data.headers);我们再看一下 send方法里面的实现逻辑：</p>
 
 <div>
-<a href="/assets/img/vite-preview-send.png" class="popup img-link "><img data-src="/assets/img/vite-preview-send.png" width="450px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-send.png" class="popup img-link "><img data-src="/assets/img/vite-preview-send.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>最终它的逻辑还是回到了
@@ -1569,11 +1569,34 @@ fs.createReadStream(file, opts).pipe(res);</p>
 <h4 id="下面是我简化使用的代码"><span class="mr-2">下面是我简化使用的代码：</span><a href="#下面是我简化使用的代码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ol>
-  <li>vite里面简化的</li>
+  <li>vite里面简化的<br />
+```js 
+import http from ‘node:http’
+import fs from ‘node:fs’;
+import connect from ‘connect’
+import sirv from ‘sirv’</li>
 </ol>
 
-<div class="language-js highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+<p>const distDir = (‘./sirv-test-dist’)</p>
+
+<p>const si = sirv(distDir, {
+  etag: true,
+  dev: true,
+  extensions: [],
+  ignores: false,
+})</p>
+
+<p>console.log(String(si),’si—’)</p>
+
+<p>const app = connect();
+const server = http.createServer(app)
+app.use(si)</p>
+
+<p>server.listen(‘3032’)
+console.log(server,’server–’,’http://127.0.0.1:3032’)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1597,41 +1620,37 @@ fs.createReadStream(file, opts).pipe(res);</p>
 21
 22
 23
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">http</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">node:http</span><span class="dl">'</span>
-<span class="k">import</span> <span class="nx">fs</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">node:fs</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">connect</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">connect</span><span class="dl">'</span>
-<span class="k">import</span> <span class="nx">sirv</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">sirv</span><span class="dl">'</span>
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="rouge-code"><pre>
 
-<span class="kd">const</span> <span class="nx">distDir</span> <span class="o">=</span> <span class="p">(</span><span class="dl">'</span><span class="s1">./sirv-test-dist</span><span class="dl">'</span><span class="p">)</span>
-
-<span class="kd">const</span> <span class="nx">si</span> <span class="o">=</span> <span class="nf">sirv</span><span class="p">(</span><span class="nx">distDir</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">etag</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">dev</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">extensions</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="na">ignores</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-<span class="p">})</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nc">String</span><span class="p">(</span><span class="nx">si</span><span class="p">),</span><span class="dl">'</span><span class="s1">si---</span><span class="dl">'</span><span class="p">)</span>
-
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span>
-<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nx">si</span><span class="p">)</span>
-
-<span class="nx">server</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="dl">'</span><span class="s1">3032</span><span class="dl">'</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span><span class="dl">'</span><span class="s1">server--</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">http://127.0.0.1:3032</span><span class="dl">'</span><span class="p">)</span>
-
-</pre></td></tr></tbody></table></code></div></div>
-
-<ol>
-  <li>使用最原始的createServer 模仿一个：
+2. 使用最原始的createServer 模仿一个：
  ```js
- import http from ‘node:http’
-import fs from ‘node:fs’;
-import sirv from ‘sirv’
-import { parse } from ‘@polka/url’;</li>
-</ol>
+ import http from 'node:http'
+import fs from 'node:fs';
+import sirv from 'sirv'
+import { parse } from '@polka/url';
 
-<p>const distDir = (‘./sirv-test-dist’)
+const distDir = ('./sirv-test-dist')
 const si = sirv(distDir, {
   etag: true,
   dev: true,
@@ -1641,41 +1660,32 @@ const si = sirv(distDir, {
 const server = http.createServer((req, res) =&gt; {
   // one  中间件可以在createServer里面直接执行的，可以不携带next,
   //在connect里面是当中间件使用，在这里直接使用也是可以通过的
-  // si(req,res);</p>
+  // si(req,res);
 
-<p>// two
-  if(req.method==’GET’&amp;&amp;req.url==’/index.html’){
+
+  // two
+  if(req.method=='GET'&amp;&amp;req.url=='/index.html'){
     console.log(req)
-    res.writeHead(200, { ‘Content-Type’: ‘text/html’ });</p>
+    res.writeHead(200, { 'Content-Type': 'text/html' });
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre>fs.createReadStream('./dist/index.html').pipe(res)   }else if(req.method=='GET'){
-let mimeType = req.url.split('.')[1]
-let ms={
-  js:'javascript',
-  css:'css',
-  ico:'ico'
-}
-console.log(mimeType,'mmmm====')
-res.writeHead(200,{ 'Content-Type': `text/${ms[mimeType]}` });
-fs.createReadStream('./dist'+req.url).pipe(res)    } });
+    fs.createReadStream('./dist/index.html').pipe(res)
+  }else if(req.method=='GET'){
+    let mimeType = req.url.split('.')[1]
+    let ms={
+      js:'javascript',
+      css:'css',
+      ico:'ico'
+    }
+    console.log(mimeType,'mmmm====')
+    res.writeHead(200,{ 'Content-Type': `text/${ms[mimeType]}` });
+    fs.createReadStream('./dist'+req.url).pipe(res) 
+  }
+});
+
+server.listen(3033)
+
+console.log(server,'server--','http://127.0.0.1:3033')
 </pre></td></tr></tbody></table></code></div></div>
-
-<p>server.listen(3033)</p>
-
-<p>console.log(server,’server–’,’http://127.0.0.1:3033’)
- ```</p>
 
 <p>all in all,以上基本阅读了vite preview 的实现逻辑，也自行模仿了一下，换个原始方式写了一下，<br />
 但是模仿的毕竟考虑的综合细节因素不全面，还是使用人家写好的比较好。</p>

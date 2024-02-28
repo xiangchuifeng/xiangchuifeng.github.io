@@ -1361,7 +1361,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1756 字">
+  title="1758 字">
   <em>9 分钟</em>阅读</span>
 
     </div>
@@ -1397,7 +1397,7 @@
   搜索preview查看到vite 发现preview代码内部实现文件在  vite/src/node/preview.ts，</li>
 </ol>
 <div>
-<a href="/assets/img/vite-preview-file.png" class="popup img-link "><img data-src="/assets/img/vite-preview-file.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-file.png" class="popup img-link "><img data-src="/assets/img/vite-preview-file.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <blockquote>
@@ -1429,7 +1429,7 @@ app是中间件应用，是一个函数哈，httpServer 是写在另一个文件
 <h4 id="connect是一个可扩展的http服务器框架用于使用被称为中间件的插件的节点"><span class="mr-2">Connect是一个可扩展的HTTP服务器框架，用于使用被称为中间件的“插件”的节点。</span><a href="#connect是一个可扩展的http服务器框架用于使用被称为中间件的插件的节点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>不要想的太复杂哈，接着我们看httpServer 所在的文件，哦，是resolveHttpServer，在http.ts文件里，如下：</p>
 <div>
-<a href="/assets/img/vite-preview-httpServer.png" class="popup img-link "><img data-src="/assets/img/vite-preview-httpServer.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-httpServer.png" class="popup img-link "><img data-src="/assets/img/vite-preview-httpServer.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>看到了吧，我们还是按照最基本的逻辑去看，其他多余的逻辑不看，resolveHttpServer里面，使用的是node的api,createServer;  参数是 app,  我们回头复习一下，createServer的参数是一个function ,现在是 app这个变量，即connect(),</p>
@@ -1452,7 +1452,7 @@ app是中间件应用，是一个函数哈，httpServer 是写在另一个文件
 <p>接着我们再回到preview.ts主文件接着往下看：</p>
 
 <div>
-<a href="/assets/img/vite-preview-use.png" class="popup img-link "><img data-src="/assets/img/vite-preview-use.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-use.png" class="popup img-link "><img data-src="/assets/img/vite-preview-use.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p><span style="color:lightRed;">
@@ -1545,19 +1545,19 @@ htmlFallbackMiddleware 等等。
 
 <p>在vite preview里面使用了一个关键的中间件 viteAssetMiddleware它指向的是 sirv(xx…)：</p>
 <div>
-<a href="/assets/img/vite-preview-assets.png" class="popup img-link "><img data-src="/assets/img/vite-preview-assets.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-assets.png" class="popup img-link "><img data-src="/assets/img/vite-preview-assets.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
-<p>sirv这个单词不好理解，我的理解是 serve,谐音词，sirv.js 执行之后返回的也是一个 function mid(req,res,next){} 中间件，它的作用是加载静态资源的，访问静态资源，相关的各种全面的响应处理 <a href="https://github.com/lukeed/sirv/blob/master/packages/sirv/index.js">sirv</a>。具体实现可以预览如下：</p>
+<p>sirv这个单词不好理解，我的理解是 serve,谐音词，sirv.js 执行之后返回的也是一个 function mid(req,res,next){} 中间件，它的作用是加载静态资源的，访问静态资源，相关的各种全面的响应处理， <a href="https://github.com/lukeed/sirv/blob/master/packages/sirv/index.js">sirv</a>。具体实现可以预览如下：</p>
 
 <div>
-<a href="/assets/img/vite-preview-sirv1.png" class="popup img-link "><img data-src="/assets/img/vite-preview-sirv1.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-sirv1.png" class="popup img-link "><img data-src="/assets/img/vite-preview-sirv1.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>代码里可以看到，核心到最后是 send(req, res, data.abs, data.stats, data.headers);我们再看一下 send方法里面的实现逻辑：</p>
 
 <div>
-<a href="/assets/img/vite-preview-send.png" class="popup img-link "><img data-src="/assets/img/vite-preview-send.png" width="500px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
+<a href="/assets/img/vite-preview-send.png" class="popup img-link "><img data-src="/assets/img/vite-preview-send.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>最终它的逻辑还是回到了
@@ -1569,8 +1569,8 @@ fs.createReadStream(file, opts).pipe(res);</p>
 <h4 id="下面是我简化使用的代码"><span class="mr-2">下面是我简化使用的代码：</span><a href="#下面是我简化使用的代码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ol>
-  <li>vite里面简化的<br />
-```js 
+  <li>vite里面简化的:<br />
+```js
 import http from ‘node:http’
 import fs from ‘node:fs’;
 import connect from ‘connect’

@@ -1361,7 +1361,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1758 字">
+  title="1757 字">
   <em>9 分钟</em>阅读</span>
 
     </div>
@@ -1577,18 +1577,16 @@ import connect from ‘connect’
 import sirv from ‘sirv’</li>
 </ol>
 
-<p>const distDir = (‘./sirv-test-dist’)</p>
-
-<p>const si = sirv(distDir, {
+<p>const distDir = (‘./sirv-test-dist’)
+const si = sirv(distDir, {
   etag: true,
   dev: true,
   extensions: [],
   ignores: false,
 })</p>
 
-<p>console.log(String(si),’si—’)</p>
-
-<p>const app = connect();
+<p>console.log(String(si),’si—’)
+const app = connect();
 const server = http.createServer(app)
 app.use(si)</p>
 
@@ -1689,13 +1687,9 @@ console.log(server,'server--','http://127.0.0.1:3033')
 <p>all in all,以上基本阅读了vite preview 的实现逻辑，也自行模仿了一下，换个原始方式写了一下，<br />
 但是模仿的毕竟考虑的综合细节因素不全面，还是使用人家写好的比较好。</p>
 
-<p><span style="font-size:15px;"></span></p>
-
 <blockquote class="prompt-tip">
   <p>查看源码就像 开锁 破解密码 拆解飞机构造等等，有的简单，有的非常难，这不是代码本身的，而是里面的逻辑很复杂，而且代码各种抽离，你要翻山越岭，俄罗斯套娃一般去理清逻辑，挺不简单的，有的时候适当浅尝辄止也好的，毕竟人家花费几年时间、精力才写好的，交付给应用开发人员的阶段性产品，我们可以按文档使用，可以窥探源码实现原理，但是还要量力而行，以实际组合应用为主，社会分工各个环节不同，没精力掌握所有环节。本人最近在换工作，求机会哈</p>
 </blockquote>
-
-<p>&lt;/span&gt;</p>
 
 
 </div>

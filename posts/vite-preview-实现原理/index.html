@@ -1361,7 +1361,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1771 字">
+  title="1775 字">
   <em>9 分钟</em>阅读</span>
 
     </div>
@@ -1658,6 +1658,8 @@ fs.createReadStream(file, opts).pipe(res);</p>
 38
 39
 40
+41
+42
 </pre></td><td class="rouge-code"><pre> <span class="k">import</span> <span class="nx">http</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">node:http</span><span class="dl">'</span>
 <span class="k">import</span> <span class="nx">fs</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">node:fs</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">sirv</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">sirv</span><span class="dl">'</span>
@@ -1690,8 +1692,10 @@ fs.createReadStream(file, opts).pipe(res);</p>
       <span class="na">ico</span><span class="p">:</span><span class="dl">'</span><span class="s1">ico</span><span class="dl">'</span>
     <span class="p">}</span>
     <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">mimeType</span><span class="p">,</span><span class="dl">'</span><span class="s1">mmmm====</span><span class="dl">'</span><span class="p">)</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nf">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,{</span> <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="s2">`text/</span><span class="p">${</span><span class="nx">ms</span><span class="p">[</span><span class="nx">mimeType</span><span class="p">]}</span><span class="s2">`</span> <span class="p">});</span>
-    <span class="nx">fs</span><span class="p">.</span><span class="nf">createReadStream</span><span class="p">(</span><span class="dl">'</span><span class="s1">./dist</span><span class="dl">'</span><span class="o">+</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nf">pipe</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> 
+    <span class="nf">if</span><span class="p">(</span><span class="nx">mimeType</span><span class="p">){</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,{</span> <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="s2">`text/</span><span class="p">${</span><span class="nx">ms</span><span class="p">[</span><span class="nx">mimeType</span><span class="p">]}</span><span class="s2">`</span> <span class="p">});</span>
+      <span class="nx">fs</span><span class="p">.</span><span class="nf">createReadStream</span><span class="p">(</span><span class="dl">'</span><span class="s1">./dist</span><span class="dl">'</span><span class="o">+</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nf">pipe</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> 
+    <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">});</span>
 

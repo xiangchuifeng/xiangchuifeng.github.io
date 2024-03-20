@@ -1193,6 +1193,66 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1298,12 +1358,12 @@
 
 <!-- [元宇宙入口](http://blockcity.vip/?czat)    🌾 -->
 
-<blockquote>
+<blockquote class="prompt-tip">
   <p>最近在查看vue3源码的时候，突发奇想，想去了解一下 vue代码的运行环境，具体怎么执行的，vite dev\build\preview 都做了什么，接着上篇vite preview实现原理，本篇文章介绍一下 vite dev的实现原理，vite dev都做了什么</p>
 </blockquote>
 
-<blockquote>
-  <p>看vite dev源码实现话费了本人好几天断断续续的时间，要知道，查看源码就像 开锁 破解密码 拆解飞机构造等等，有的简单，有的非常难，这不是代码本身的，而是里面的逻辑很复杂，而且代码各种抽离，你要翻山越岭，俄罗斯套娃一般去理清逻辑，挺不简单的，有的时候适当浅尝辄止也好的，毕竟人家花费几年时间、精力才写好的，交付给应用开发人员的阶段性产品，我们可以按文档使用，可以窥探源码实现原理，但是还要量力而行，以实际组合应用为主，社会分工各个环节不同，没精力掌握所有环节。</p>
+<blockquote class="prompt-tip">
+  <p>看vite dev源码实现花费了本人好几天断断续续的时间，要知道，查看源码就像 开锁 破解密码 拆解飞机构造等等，有的简单，有的非常难，这不是代码本身的，而是里面的逻辑很复杂，而且代码各种抽离，你要翻山越岭，俄罗斯套娃一般去理清逻辑，挺不简单的，有的时候适当浅尝辄止也好的，毕竟人家花费几年时间、精力才写好的，交付给应用开发人员的阶段性产品，我们可以按文档使用，可以窥探源码实现原理，但是还要量力而行，以实际组合应用为主，社会分工各个环节不同，没精力掌握所有环节。</p>
 </blockquote>
 
 <h4 id="以本人在网上学习查资料的习惯我更喜欢先看到结果是什么简要的而不是罗列举例一步一步的说一堆我更想要你的答案能给我的实际应用直接解决问题"><span class="mr-2">以本人在网上学习查资料的习惯，我更喜欢先看到结果是什么，简要的，而不是罗列举例一步一步的说一堆，我更想要你的答案，能给我的实际应用直接解决问题，</span><a href="#以本人在网上学习查资料的习惯我更喜欢先看到结果是什么简要的而不是罗列举例一步一步的说一堆我更想要你的答案能给我的实际应用直接解决问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1372,27 +1432,21 @@
   <p>对源码进行简化抽离，不需要面面俱到的看每一处的细节逻辑，我们总是要站在巨人的肩膀上做事的，科技发展到现在就是产业链 继续一次次的迭代累积的过程，我们不需要把之前已有的成果再重新研究一遍，软件开发延伸开来很庞大的，太多知识了，我们需要截流到我们当前产业链节点需要的就行了。组织应用。</p>
 </blockquote>
 
-<ol>
-  <li>查看package.json文件，找到 bin 属性，看到指令执行文件是 bin/vite.js</li>
-</ol>
+<h4 id="查看packagejson文件找到-bin-属性看到指令执行文件是-binvitejs"><span class="mr-2">查看package.json文件，找到 bin 属性，看到指令执行文件是 bin/vite.js</span><a href="#查看packagejson文件找到-bin-属性看到指令执行文件是-binvitejs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <div>
 <a href="/assets/img/vite-package.png" class="popup img-link "><img data-src="/assets/img/vite-package.png" width="300px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
 </div>
 
 <p>然后vite.js代码我发现接着的指令生成文件 vite/src/node/cli.ts</p>
 
-<ol>
-  <li>vite指令的是由cac实现的.</li>
-</ol>
+<h4 id="vite指令的是由cac实现的"><span class="mr-2">vite指令的是由cac实现的.</span><a href="#vite指令的是由cac实现的" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>在cli.ts文件里面找到了 dev指令部分,如图</p>
 <div>
   <a href="/assets/img/vite-dev/vite-dev-1.png" class="popup img-link "><img data-src="/assets/img/vite-dev/vite-dev-1.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
   </div>
 
-<ol>
-  <li>在对应的action代码里面我们找到了 createServer;这个createServer 方法是在 /node/server/index.ts 文件里的，我们找到它</li>
-</ol>
+<h4 id="在对应的action代码里面我们找到了-createserver这个createserver-方法是在-nodeserverindexts-文件里的我们找到它"><span class="mr-2">在对应的action代码里面我们找到了 createServer;这个createServer 方法是在 /node/server/index.ts 文件里的，我们找到它</span><a href="#在对应的action代码里面我们找到了-createserver这个createserver-方法是在-nodeserverindexts-文件里的我们找到它" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <div>
   <a href="/assets/img/vite-dev/vite-dev-2.png" class="popup img-link "><img data-src="/assets/img/vite-dev/vite-dev-2.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
   </div>
@@ -1439,27 +1493,22 @@
 <p>&lt;/div&gt;</p>
 
 <ol>
-  <li>
-    <p>httpServer 添加了各种中间件，其中和 vite plugins关系比较大的中间件是  transformMiddleware， 这个中间件里面的逻辑涉及到响应内容的转换，比如里面最重要的业务逻辑 transformRequest，vite-plugin-vue 以及各种vite的基础plugins都是再这个逻辑里调用执行的, …readFile loadAndTransform transformResult ..等</p>
-  </li>
-  <li>
-    <p>在 client/client.ts 文件里面 websocket客户端 根据服务端消息推送决定是 页面reload,或者更新部分资源链接，等相关操作，具体可以看源码。</p>
-  </li>
+  <li>httpServer 添加了各种中间件，其中和 vite plugins关系比较大的中间件是  transformMiddleware， 这个中间件里面的逻辑涉及到响应内容的转换，比如里面最重要的业务逻辑 transformRequest，vite-plugin-vue 以及各种vite的基础plugins都是再这个逻辑里调用执行的, …readFile loadAndTransform transformResult ..等</li>
 </ol>
+
+<h4 id="在-clientclientts-文件里面-websocket客户端-根据服务端消息推送决定是-页面reload或者更新部分资源链接等相关操作具体可以看源码"><span class="mr-2">在 client/client.ts 文件里面 websocket客户端 根据服务端消息推送决定是 页面reload,或者更新部分资源链接，等相关操作，具体可以看源码。</span><a href="#在-clientclientts-文件里面-websocket客户端-根据服务端消息推送决定是-页面reload或者更新部分资源链接等相关操作具体可以看源码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div>
      <a href="/assets/img/vite-dev/vite-dev-6.png" class="popup img-link "><img data-src="/assets/img/vite-dev/vite-dev-6.png" width="600px" style="margin:0 auto;" class="lazyload" data-proofer-ignore></a>
   </div>
 
-<ol>
-  <li>另外涉及到的文件有 hmr middlewares/  moduleGraph pluginContainer  transformRequest plugins/ 等等 需要的可以自己看源码。</li>
-</ol>
+<h4 id="另外涉及到的文件有-hmr-middlewares--modulegraph-plugincontainer--transformrequest-plugins-等等-需要的可以自己看源码"><span class="mr-2">另外涉及到的文件有 hmr middlewares/  moduleGraph pluginContainer  transformRequest plugins/ 等等 需要的可以自己看源码。</span><a href="#另外涉及到的文件有-hmr-middlewares--modulegraph-plugincontainer--transformrequest-plugins-等等-需要的可以自己看源码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<blockquote>
+<blockquote class="prompt-tip">
   <p>总之，vite dev 和 vue、react 是相互独立的， 它开了一个node httpServer,  然后 开了一个websocketServer, 创建了 fs watcher, 前端创建了 client, 根据文件变化 重载前端页面，或者重启服务，根据plugins的实现逻辑处理对应的响应内容。我们可以尝试在 vite vue脚手架项目的 vite.config.js注释掉 plugins:[ vue() ]部分，然后main.js 不引入，  随便引入一个 dom操作的js,或什么资源文件，vite dev 依然会正常运行。</p>
 </blockquote>
 
-<blockquote>
+<blockquote class="prompt-tip">
   <p>写一篇文章花了挺多功夫，可见那些开发源码的作者是多么的值得尊敬和崇拜，他们写的东西，考虑的很全面，很多细节，技术点和基础知识，那么多的‘代码产物/代码产品’的思想逻辑 都体现在上面了 🐣</p>
 </blockquote>
 

@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "vite dev 实现原理",
+    "url": "/posts/vite-dev-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/",
+    "categories": "【vite, 源码阅读]",
+    "tags": "vite",
+    "date": "2024-03-20 22:11:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  最近在查看vue3源码的时候，突发奇想，想去了解一下 vue代码的运行环境，具体怎么执行的，vite dev\\build\\preview 都做了什么，接着上篇vite preview实现原理，本篇文章介绍一下 vite dev的实现原理，vite dev都做了什么  看vite dev源码实现话费了本人好几天断断续续的时间，要知道，查看源码就像 开锁 破解密码 拆解飞机构造等等，有的简单...",
+    "content": "  最近在查看vue3源码的时候，突发奇想，想去了解一下 vue代码的运行环境，具体怎么执行的，vite dev\\build\\preview 都做了什么，接着上篇vite preview实现原理，本篇文章介绍一下 vite dev的实现原理，vite dev都做了什么  看vite dev源码实现话费了本人好几天断断续续的时间，要知道，查看源码就像 开锁 破解密码 拆解飞机构造等等，有的简单，有的非常难，这不是代码本身的，而是里面的逻辑很复杂，而且代码各种抽离，你要翻山越岭，俄罗斯套娃一般去理清逻辑，挺不简单的，有的时候适当浅尝辄止也好的，毕竟人家花费几年时间、精力才写好的，交付给应用开发人员的阶段性产品，我们可以按文档使用，可以窥探源码实现原理，但是还要量力而行，以实际组合应用为主，社会分工各个环节不同，没精力掌握所有环节。以本人在网上学习查资料的习惯，我更喜欢先看到结果是什么，简要的，而不是罗列举例一步一步的说一堆，我更想要你的答案，能给我的实际应用直接解决问题，但是有的问题没有办法直接给出简要的答案，那么也只能一步一步的论述告知与你。 当然本篇文章，我选择先说简要的最直接的结果vite dev 都做了什么，先说简要的结果，再适当分析论述。当执行vite dev的时候，vite 在本地开了一个基于node的httpServer,它和 vite preview 类似，也是使用了connect.js中间件插件，然后基于httpServer 创建了一个 websocket服务端， 同时在前端项目中加入了websocket 客户端实例，使用chokidar.js 创建了 httpServer服务端的文件监听器，监听文件的变化,然后websocket 发送消息告知，websocket 客户端收到消息执行对应的 更新资源链接或者reload;在httpServer创建时候解析 root目录下的配置文件 vite.config.js 、环境变量文件 .env[.*] 等在httpserver 中间件响应的时候，执行各种中间件逻辑，这些中间件逻辑里就调用执行了各种 vite plugins,在响应时候会判断url类型，按照顺序执行各种 vite plugins;比如 vite-plugin-vue  vite-plugin-react 以及各种基础plugins 等等:由于vite dev 是不需要bundle的，新时代的浏览器版本是支持ESM的，文件可以不需要再bundle到一起，所以它本地运行会快很多。比如说 vite-plugin-vue 它做了什么。vite httpServer进行请求响应的时候，执行了中间件，中间件中调用了 vite plugins, vite-plugin-vue 就是返回了 sfc文件transform之后的代码，httpServer把转换后的文件代码作为content,响应请求，我们可以看vite vue的项目生成模板，可以看到network请求里面的 .vue 文件内容都经过处理转换成了 render函数相关的js代码，也就是vue项目打包时候用到的 compiler-sfc，在本地响应的时候，对.vue 本地做了转换处理。import { defineConfig } from 'vite'import vue from '@vitejs/plugin-vue'console.log(vue(),'vue---',String(vue),String(vue().buildStart))// https://vitejs.dev/config/export default defineConfig({  plugins: [    vue(),  ],})// -----import { defineConfig } from 'vite'import react from '@vitejs/plugin-react'console.log(react(),'react--')// https://vitejs.dev/config/export default defineConfig({  plugins: [react()],})  下面我们看一下具体的代码执行逻辑  对源码进行简化抽离，不需要面面俱到的看每一处的细节逻辑，我们总是要站在巨人的肩膀上做事的，科技发展到现在就是产业链 继续一次次的迭代累积的过程，我们不需要把之前已有的成果再重新研究一遍，软件开发延伸开来很庞大的，太多知识了，我们需要截流到我们当前产业链节点需要的就行了。组织应用。  查看package.json文件，找到 bin 属性，看到指令执行文件是 bin/vite.js然后vite.js代码我发现接着的指令生成文件 vite/src/node/cli.ts  vite指令的是由cac实现的.在cli.ts文件里面找到了 dev指令部分,如图      在对应的action代码里面我们找到了 createServer;这个createServer 方法是在 /node/server/index.ts 文件里的，我们找到它    在createServer 源码中我们看到它首先做了一下几件事：      resolveConfig, 解析得到config配置数据，这个resolveConfig里面，对vite.config.js文件的配置数据(vite使用文档提供的各种属性参数 plugins、server、css、base等等)进行了合并，初步处理、plugins排序等，同时对 环境变量配置文件 .env做了处理，把配置参数和vite默认参数做了归并，loadEnv;  具体代码也比较多，这部分可以按照源码指引到对应的实现文件里去看具体实现逻辑        创建了 httpServer,创建了 websocketServer        使用 chokidar 创建了文件监听器 watcher        创建了插件容器  pluginContainer           初始化创建了 server对象，并把  config、middlewares、httpServer、watcher、listen等等属性添加了进去。最终 createServer 得到的就是这个 server对象         初始化了 文件监听 热更新代码逻辑。得到 pluginHooks&lt;div&gt; &lt;img src=\"/assets/img/vite-dev/vite-dev-5.png\" width=\"600px\" style=\"margin:0 auto;\" /&gt;&lt;/div&gt;      httpServer 添加了各种中间件，其中和 vite plugins关系比较大的中间件是  transformMiddleware， 这个中间件里面的逻辑涉及到响应内容的转换，比如里面最重要的业务逻辑 transformRequest，vite-plugin-vue 以及各种vite的基础plugins都是再这个逻辑里调用执行的, …readFile loadAndTransform transformResult ..等        在 client/client.ts 文件里面 websocket客户端 根据服务端消息推送决定是 页面reload,或者更新部分资源链接，等相关操作，具体可以看源码。           另外涉及到的文件有 hmr middlewares/  moduleGraph pluginContainer  transformRequest plugins/ 等等 需要的可以自己看源码。  总之，vite dev 和 vue、react 是相互独立的， 它开了一个node httpServer,  然后 开了一个websocketServer, 创建了 fs watcher, 前端创建了 client, 根据文件变化 重载前端页面，或者重启服务，根据plugins的实现逻辑处理对应的响应内容。我们可以尝试在 vite vue脚手架项目的 vite.config.js注释掉 plugins:[ vue() ]部分，然后main.js 不引入，  随便引入一个 dom操作的js,或什么资源文件，vite dev 依然会正常运行。  写一篇文章花了挺多功夫，可见那些开发源码的作者是多么的值得尊敬和崇拜，他们写的东西，考虑的很全面，很多细节，技术点和基础知识，那么多的‘代码产物/代码产品’的思想逻辑 都体现在上面了 🐣"
+  },
+  
+  {
     "title": "vite preview 实现原理",
     "url": "/posts/vite-preview-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/",
     "categories": "【vite, 源码阅读]",

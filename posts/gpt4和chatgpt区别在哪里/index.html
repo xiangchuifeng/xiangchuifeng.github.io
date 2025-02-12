@@ -969,6 +969,72 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1043,6 +1109,13 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1149,6 +1222,13 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1265,43 +1345,6 @@
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1346,6 +1389,9 @@
       <a class="post-tag" href="/tags/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">js基础知识</a>
     
       
+      <a class="post-tag" href="/tags/python/">python</a>
+    
+      
       <a class="post-tag" href="/tags/vite/">vite</a>
     
       
@@ -1365,9 +1411,6 @@
     
       
       <a class="post-tag" href="/tags/gis/">gis</a>
-    
-      
-      <a class="post-tag" href="/tags/google-analytics/">google analytics</a>
     
 
     </div>
@@ -1417,6 +1460,32 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1957,7 +2026,7 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
       
       
       <div class="card">
-        <a href="/posts/vite-dev-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">
+        <a href="/posts/appium%E7%9A%84appPackage-appActivity%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1969,13 +2038,13 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
 
 
 <em class="small"
-    data-ts="1710943860"
+    data-ts="1739014320"
     data-df="YYYY/MM/DD"
     >
-  2024/03/20
+  2025/02/08
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>vite dev 实现原理</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>appium的appPackage、appActivity参数获取;</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1986,16 +2055,18 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
 
                 
 
+appPackage、appActivity 参数获取方式网上说的有很多种 我看的有点缭乱，最终我选择的是如下这种：
+
+首先，你前提已经安装了 adb 工具， 也都正常运行了，你的真机或者虚拟机已经连接上了。
+然后执行如下操作：
+在 shell 命令行输入 adb shell
+然后进入一个新的命令执行环境
+
+  
 
 
-
-
-
-  最近在查看vue3源码的时候，突发奇想，想去了解一下 vue代码的运行环境，具体怎么执行的，vite dev\build\preview 都做了什么，接着上篇vite preview实现原理，本篇文章介绍一下 vite dev的实现原理，vite dev都做了什么
-
-
-
-  看vite dev源码实现花费了本人好几天断断续续的时间，要知道，查看源码就像 开锁 破解密码 拆解...
+如图，接着输入： logcat | grep cmp= 然后按回车键
+...
               </p>
             </div>
           </div>
@@ -2184,6 +2255,72 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2258,6 +2395,13 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2364,6 +2508,13 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2480,43 +2631,6 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2561,6 +2675,9 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
       <a class="post-tag" href="/tags/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">js基础知识</a>
     
       
+      <a class="post-tag" href="/tags/python/">python</a>
+    
+      
       <a class="post-tag" href="/tags/vite/">vite</a>
     
       
@@ -2580,9 +2697,6 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
     
       
       <a class="post-tag" href="/tags/gis/">gis</a>
-    
-      
-      <a class="post-tag" href="/tags/google-analytics/">google analytics</a>
     
 
     </div>
@@ -2604,7 +2718,7 @@ AIGC 是 AI Generate Content 的意思，意味着人工智能生成的内容。
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2024
+          © 2025
           <a href="https://twitter.com/username">xiangchuifeng</a>.
           
           <span data-toggle="tooltip" data-placement="top"

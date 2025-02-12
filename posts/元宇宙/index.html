@@ -1014,6 +1014,72 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1088,6 +1154,13 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1194,6 +1267,13 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1310,43 +1390,6 @@
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1391,6 +1434,9 @@
       <a class="post-tag" href="/tags/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">js基础知识</a>
     
       
+      <a class="post-tag" href="/tags/python/">python</a>
+    
+      
       <a class="post-tag" href="/tags/vite/">vite</a>
     
       
@@ -1410,9 +1456,6 @@
     
       
       <a class="post-tag" href="/tags/gis/">gis</a>
-    
-      
-      <a class="post-tag" href="/tags/google-analytics/">google analytics</a>
     
 
     </div>
@@ -1454,6 +1497,32 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1909,9 +1978,6 @@
   
     
     
-  
-    
-    
       
       
         
@@ -1925,6 +1991,103 @@
     <h3 class="pt-2 mb-4 ml-1"
       data-toc-skip>相关文章</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/appium%E7%9A%84appPackage-appActivity%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1739014320"
+    data-df="YYYY/MM/DD"
+    >
+  2025/02/08
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>appium的appPackage、appActivity参数获取;</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                
+
+appPackage、appActivity 参数获取方式网上说的有很多种 我看的有点缭乱，最终我选择的是如下这种：
+
+首先，你前提已经安装了 adb 工具， 也都正常运行了，你的真机或者虚拟机已经连接上了。
+然后执行如下操作：
+在 shell 命令行输入 adb shell
+然后进入一个新的命令执行环境
+
+  
+
+
+如图，接着输入： logcat | grep cmp= 然后按回车键
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/appium-inspector%E6%8A%A5%E9%94%99Cannot-start-the-'xx'-application/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1739011920"
+    data-df="YYYY/MM/DD"
+    >
+  2025/02/08
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>appium inspector报错Cannot start the 'xx' application;</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                
+
+
+
+appium inspector报错Cannot start the ‘xx’ application; Command output: Error: Intent matches multiple activities
+
+
+  这个问题 在我安装使用 appium inspector的时候卡了一小段时间，下面给大家说说我的问题，最终怎么解决了的
+
+
+对于没有操作过的朋友来说 似乎不...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1968,100 +2131,6 @@
 
 
   看vite dev源码实现花费了本人好几天断断续续的时间，要知道，查看源码就像 开锁 破解密码 拆解...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/vite-preview-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1709102160"
-    data-df="YYYY/MM/DD"
-    >
-  2024/02/28
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>vite preview 实现原理</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                
-
-
-
-
-
-
-  最近在查看vue3源码的时候，突发奇想，想去了解一下 vue代码的运行环境，具体怎么执行的，vite dev\build\preview 都做了什么，由于 preview是预览 build打包好的项目文件的，考虑到会比较简单一点，所以先从vite preview 指令开始，看它的运行原理
-
-
-我先不看代码，大概设想一下，是个本地开的静态服务，和我本地的nginx 类似的。接...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/prettierrc.js%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E4%BA%86%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1704420360"
-    data-df="YYYY/MM/DD"
-    >
-  2024/01/05
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>.prettierrc.js不起作用了？</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                
-
-
-
-.prettierrc.js 不起作用了，发生了什么  🌾
-
-这两天想着把公司目前使用的前端组件、工具、框架各种做一次升级，升级了 vite-5.0.10,发现.prettierrc.js代码格式化配置文件不起作用了
-
-第一件事就是上网搜症状，这个问题是大概什么情况，经过一番了解，vite-5.x vue脚手架默认的模块化模式为 ESM模式，type:module
-
-然后原来的 .p...
               </p>
             </div>
           </div>
@@ -2250,6 +2319,72 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2324,6 +2459,13 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2430,6 +2572,13 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2546,43 +2695,6 @@
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2627,6 +2739,9 @@
       <a class="post-tag" href="/tags/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">js基础知识</a>
     
       
+      <a class="post-tag" href="/tags/python/">python</a>
+    
+      
       <a class="post-tag" href="/tags/vite/">vite</a>
     
       
@@ -2646,9 +2761,6 @@
     
       
       <a class="post-tag" href="/tags/gis/">gis</a>
-    
-      
-      <a class="post-tag" href="/tags/google-analytics/">google analytics</a>
     
 
     </div>
@@ -2670,7 +2782,7 @@
     <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
       <div class="footer-left">
         <p class="mb-0">
-          © 2024
+          © 2025
           <a href="https://twitter.com/username">xiangchuifeng</a>.
           
           <span data-toggle="tooltip" data-placement="top"

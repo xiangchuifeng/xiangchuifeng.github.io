@@ -2,7 +2,7 @@
   
   {
     "title": "appium的appPackage、appActivity参数获取;",
-    "url": "/posts/appium%E7%9A%84appPackage-appActivity%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96/",
+    "url": "/posts/appium%E7%9A%84appPackage-appActivity%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96-copy/",
     "categories": "【python]",
     "tags": "python",
     "date": "2025-02-08 19:32:00 +0800",
@@ -32,6 +32,23 @@
     
     "snippet": "appium inspector报错Cannot start the ‘xx’ application; Command output: Error: Intent matches multiple activities  这个问题 在我安装使用 appium inspector的时候卡了一小段时间，下面给大家说说我的问题，最终怎么解决了的对于没有操作过的朋友来说 似乎不知道是什么问题，网上...",
     "content": "appium inspector报错Cannot start the ‘xx’ application; Command output: Error: Intent matches multiple activities  这个问题 在我安装使用 appium inspector的时候卡了一小段时间，下面给大家说说我的问题，最终怎么解决了的对于没有操作过的朋友来说 似乎不知道是什么问题，网上搜索的 尝试的也是模棱两可的，有点卡时间，我遇到的上面这个问题 如下图：报错的原始内容如下：Failed to create session. An unknown server-side error occurred while processing the command. Original error: Cannot start the ‘com.hpbr.bosszhipin’ application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Error executing adbExec. Original error: ‘Command ‘/Users/a0/Library/Android/sdk/platform-tools/adb -P 5037 -s 238800ac2c017ece shell am start -W -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000’ exited with code 1’; Command output: Error: Intent matches multiple activities; can’t stop: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 }首先提示的一点：下面的Automatically add necessary Appium vendor prefixes on start 这个选择框如果不勾选的话，是不会自动填充前缀的，运行也会报异常，即勾选了前缀，就可以直接配置各种参数 platformName、deviceName ….之类的，不勾选的话，要加上对应的前缀，比如 “appium:” 这个默认勾选不动就好了。ANDROID_HOME JAVA_HOME已配置好。下面再看我遇到的这个主要报错问题，我直接说解决结果吧，经过几次上网查资料等等，最终发现 连接android 设备时候的参数少加了一个 appActivity ,最终把appPackage、appActivity 参数正确配置上就正常打开了。示例如下。{  \"appium:platformName\": \"Android\",  \"appium:deviceName\": \"238800ac2c017ece\",  \"appium:appPackage\": \"com.douguo.recipe\",  \"appium:platformVersion\": \"10.0\",  \"appium:appActivity\": \"com.douguo.recipe.HomeActivity\"}如果你不知道 appPackage、appActivity 这两个参数值是从哪里来的，可以网上看一下，当然可以看我另一个文章，获取方式有好几种，我喜欢用的是这种"
+  },
+  
+  {
+    "title": "mac下无法打开uiautomatorviewer;",
+    "url": "/posts/mac%E4%B8%8B%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80uiautomatorviewer/",
+    "categories": "【python]",
+    "tags": "python",
+    "date": "2025-02-07 19:40:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": " 安装了 android studio 2024.2.2,配置好 adb 之后，然后把uiautomatorviewer 环境变量配置好，我用的mac 电脑，等我打开这个工具的时候，我发现界面上没有 左上角的操作按钮 即连接设备那一排  然后在网上查看了很多原因，解决方法。比较明显的一个是说 把  sdk/tools/lib/x86_64 文件夹上的 swt.jar文件替换，重新下载一个，重...",
+    "content": " 安装了 android studio 2024.2.2,配置好 adb 之后，然后把uiautomatorviewer 环境变量配置好，我用的mac 电脑，等我打开这个工具的时候，我发现界面上没有 左上角的操作按钮 即连接设备那一排  然后在网上查看了很多原因，解决方法。比较明显的一个是说 把  sdk/tools/lib/x86_64 文件夹上的 swt.jar文件替换，重新下载一个，重命名一下，本人按照此方法执行了一下，还是没有展示左上角的操作按钮，这个问题困扰了一部分时间，一直想不通原因🐣#### 今天抽空再看一下，找一下问题，突然灵光一现，打开uiautomatorviewer 默认窗口之后，我在想是不是这个应用布局的问题呀，于是我随便拖动了一下应用界面，拉伸了一下宽度。哇！! 真的 左上角的操作按钮出现了，我又重新尝试一下，打开应用，双击放大到最大化，按钮也出现了，唯独应用窗口默认打开时候是不显示的。然后我把swt.jar 恢复到默认最新的那一版，替换的那个去掉不用，依然如此。问题得到解决，原来是应用布局有bug，或者和电脑当前分辨率有出入导致的应用布局异常。  如果有朋友遇到这个问题，可以看我这个参考一下，可以减少不必要的时间浪费还有 调试的时候，如果手机息屏了，那么这个应用上显示的也是黑屏的,注意下。  "
   },
   
   {

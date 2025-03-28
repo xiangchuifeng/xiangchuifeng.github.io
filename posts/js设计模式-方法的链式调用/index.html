@@ -51,7 +51,7 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>js设计模式-方法的链式调用 | 王的宇的技术博客</title>
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="js设计模式-方法的链式调用" />
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="链式调用" />
@@ -780,12 +780,12 @@
 19
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">$</span><span class="p">(){</span>
   <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nf">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span><span class="o">=</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span><span class="o">=</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-    <span class="nf">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">element</span><span class="o">===</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">element</span><span class="o">===</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">){</span>
       <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
     <span class="p">}</span>
-    <span class="nf">if</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">lenth</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">lenth</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
       <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nx">elements</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
@@ -850,12 +850,12 @@
 </pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="kd">function</span> <span class="nf">_$</span><span class="p">(</span><span class="nx">els</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="nf">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span><span class="o">=</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span><span class="o">=</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">){</span>
       <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-      <span class="nf">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">element</span><span class="o">===</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">element</span><span class="o">===</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">){</span>
         <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
       <span class="p">}</span>
-      <span class="nf">if</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">lenth</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">lenth</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
         <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
       <span class="p">}</span>
       <span class="nx">elements</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
@@ -872,7 +872,7 @@
       <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
     <span class="p">},</span>
     <span class="na">each</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">){</span>
-      <span class="nf">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
         <span class="nx">fn</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
       <span class="p">}</span>
       <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
@@ -1062,35 +1062,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1135,45 +1106,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1313,6 +1249,95 @@
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1349,6 +1374,11 @@
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -1581,6 +1611,9 @@
       <a class="post-tag" href="/tags/%E7%83%AD%E9%97%A8%E7%9F%A5%E8%AF%86/">热门知识</a>
     
       
+      <a class="post-tag" href="/tags/ai/">AI</a>
+    
+      
       <a class="post-tag" href="/tags/aigc/">AIGC</a>
     
       
@@ -1588,9 +1621,6 @@
     
       
       <a class="post-tag" href="/tags/getting-started/">getting started</a>
-    
-      
-      <a class="post-tag" href="/tags/gis/">gis</a>
     
 
     </div>
@@ -1640,6 +1670,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2336,35 +2379,6 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2409,45 +2423,10 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2587,6 +2566,95 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2623,6 +2691,11 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -2855,6 +2928,9 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
       <a class="post-tag" href="/tags/%E7%83%AD%E9%97%A8%E7%9F%A5%E8%AF%86/">热门知识</a>
     
       
+      <a class="post-tag" href="/tags/ai/">AI</a>
+    
+      
       <a class="post-tag" href="/tags/aigc/">AIGC</a>
     
       
@@ -2862,9 +2938,6 @@ js 函数中提供的三个相关参数，平常几乎用不到，但是在看�
     
       
       <a class="post-tag" href="/tags/getting-started/">getting started</a>
-    
-      
-      <a class="post-tag" href="/tags/gis/">gis</a>
     
 
     </div>
